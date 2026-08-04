@@ -1,0 +1,79 @@
+generated: '2026-08-04'
+method: searched
+source: https://docs.digitalasset.com/registry/releases/release-notes
+scheme: "X.Y minor releases of the Registry App, each pinned to a set of Daml package (DAR) versions"
+current_version: '0.13'
+dated: false
+dated_note: >-
+  The release-notes index lists versions but publishes no release dates. Entries below are
+  ordered by version, not by date, because no date is published to record.
+entries:
+- version: '0.13'
+  url: https://docs.digitalasset.com/registry/releases/release-notes/0.13
+  breaking: false
+  daml_lf: '2.3'
+  prerequisite: PQS 3.5.5 or later (earlier PQS versions are not compatible with Daml LF 2.3)
+  dars:
+  - {package: utility-registry-app-v0, version: 0.8.2}
+  - {package: utility-registry-v0, version: 0.7.1}
+  - {package: utility-registry-holding-v0, version: 0.2.2}
+  - {package: utility-credential-app-v0, version: 0.4.2}
+  - {package: utility-credential-v0, version: 0.1.1}
+  bundle: https://get.digitalasset.com/utility-dars/canton-network-utility-dars-0.13.0.tar.gz
+  checksum: https://get.digitalasset.com/utility-dars/canton-network-utility-dars-0.13.0.tar.gz.sha256
+  additions:
+  - >-
+    Blocklist: a Registrar can define a blocklist of parties barred from transferring, minting
+    or burning an instrument. InstrumentConfiguration gains a `checkBlocklist` field.
+  - >-
+    Optional `extraArgs` argument on the BurnRequest_Cancel, MintRequest_Cancel,
+    BurnOffer_Cancel and MintOffer_Cancel choices, with matching operator-backend endpoints
+    serving the execution context (currently always empty).
+  - Batched archival choice on RegistrarService for executed mint/burn contracts.
+  changes:
+  - Transfer history in the UI now reads ledger transaction trees directly instead of ExecutedTransfer contracts.
+  - Paginated query endpoints introduced in Canton 3.5 are used to improve UI responsiveness.
+  - Changes to the DvpLegAllocation ensure clause.
+  removals:
+  - Collateral tile removed (app decommissioned after successful pilot trades).
+  - Canton Coin balance no longer displayed in the UI.
+  - Ability to create paid credentials removed from the UI.
+- version: '0.12'
+  url: https://docs.digitalasset.com/registry/releases/release-notes/0.12
+  breaking: true
+  breaking_note: >-
+    For integrations still on the backward-compatible 0.10/0.11 workflows, the Utility Operator
+    Backend API no longer provides the context required to create activity markers.
+  dars:
+  - {package: utility-commercials-v0, version: 0.4.1}
+  - {package: utility-credential-app-v0, version: 0.4.1}
+  - {package: utility-registry-app-v0, version: 0.7.0}
+  - {package: utility-registry-v0, version: 0.6.0}
+  - {package: utility-registry-holding-v0, version: 0.2.1}
+  additions:
+  - >-
+    Batched Featured App Markers — markers are now produced by a batched automation operated
+    by Digital Asset; providers opt in via a DelegatedBatchedMarkersProxy created from the
+    Registry Onboarding tab.
+  - >-
+    TransferRule_ExecuteAllocation choice; allocations now execute via the TransferRule, so a
+    TransferRule instance of the token admin or registrar must exist.
+  - Dedicated TransferRule_TwoStepTransfer and TransferRule_DirectTransfer choices.
+  - Batch archival choice on RegistrarService for ExecutedTransfer and RejectedTransfer contracts.
+  changes:
+  - >-
+    Transaction cost reductions of 30–70% across all Registry workflows (published per-workflow
+    in USD, e.g. Direct Transfer TransferFactory_Transfer ~$0.5, a 70% reduction vs 0.11).
+  - Operator removed as an observer on all Executed*/Rejected* result contracts.
+  - Registry Daml workflows no longer create featured app activity markers.
+support_window: >-
+  Two minor versions before the current release. With 0.12 shipping, 0.9 support was dropped.
+related:
+  daml_releases: https://github.com/digital-asset/daml/releases
+  canton_releases: https://github.com/digital-asset/canton/releases
+  xreserve_releases: https://docs.digitalasset.com/usdc-xreserve/releases
+gaps:
+- >-
+  Release notes carry no dates and no RSS/Atom feed, so an agent cannot tell when a release
+  landed or subscribe to changes.
+- Only the two most recent releases (0.12, 0.13) are retained on the index; earlier history is not published.

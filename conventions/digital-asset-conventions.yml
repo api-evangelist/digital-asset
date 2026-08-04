@@ -1,0 +1,94 @@
+generated: '2026-08-04'
+method: derived
+source: >-
+  openapi/*.yml plus https://docs.digitalasset.com/registry/apis/operator-backend-api,
+  https://docs.digitalasset.com/registry/releases/versioning and the harvested llms-full docs.
+authentication:
+  style: bearer-jwt
+  scheme: BearerAuth (http bearer)
+  applied: >-
+    Declared as a components.securityScheme on the Utilities API. The Canton JSON Ledger API
+    calls in the Registry tutorials use `Authorization: Bearer <JWT>` with an OIDC-issued
+    token (issuerUri / audience / clientId configured per participant node).
+  note: >-
+    The four Token Standard off-ledger specs declare no securityScheme at all — those
+    endpoints are documented as publicly accessible.
+  artifact: authentication/digital-asset-authentication.yml
+idempotency:
+  supported: false
+  evidence: >-
+    No Idempotency-Key header, parameter, or documented retry-safe token appears in any of the
+    five OpenAPI specs or in the docs corpus (0 matches for "idempoten" across llms-full.txt).
+  note: >-
+    Mutating semantics live on the ledger, not in the HTTP layer: every POST on this surface
+    returns a *choice context* used to submit a Daml command, and the ledger provides
+    deduplication via command IDs. The HTTP surface itself publishes no idempotency contract,
+    so no Idempotency pointer is emitted for this provider.
+pagination:
+  supported: partial
+  style: page-token
+  operations: [listInstruments]
+  request_params:
+  - {name: pageSize, in: query, type: integer, default: 25, description: Number of instruments per page.}
+  - {name: pageToken, in: query, type: string, description: The nextPageToken received from the previous page's response.}
+  response_fields:
+  - {name: nextPageToken, schema: ListInstrumentsResponse}
+  note: >-
+    Only the Token Standard listInstruments operation is paginated. Release notes for 0.13
+    record that the Registry UI adopted "paginated query endpoints introduced in Canton 3.5"
+    on the ledger side.
+field_expansion:
+  supported: partial
+  mechanism: >-
+    Transfer Instruction and Allocation factory requests accept `excludeDebugFields` (boolean)
+    on GetFactoryRequest, which controls whether disclosed contracts return debugPackageName,
+    debugPayload and debugCreatedAt.
+metadata:
+  supported: true
+  mechanism: >-
+    Free-form key/value metadata is carried in `meta` blocks — TransferMeta.values on
+    TransferObject, and a `meta` object on GetChoiceContextRequest.
+request_tracing:
+  request_id_header: null
+  evidence: No request-id / correlation-id header is documented or declared in any spec.
+  ledger_correlation: >-
+    Ledger-level correlation is by `updateId` (used by verifyTransferProof) and by contractId
+    on ContractMeta — an on-ledger identity, not an HTTP trace header.
+versioning:
+  scheme: uri-path
+  current:
+    utilities_api: v0 (spec info.version 2.1.0)
+    token_standard: v0 registry path + v1 sub-API versions
+  registry_app: >-
+    X.Y numbering; current 0.13. Minor releases adopt a new set of Daml models that are
+    compatible upgrades of the previous minor. Major increments signal breaking changes
+    requiring contract migration.
+  docs: https://docs.digitalasset.com/registry/releases/versioning
+  cadence: at most one release per month
+  rollout: staggered DevNet -> TestNet -> MainNet at one-week intervals
+error_envelope:
+  shapes: [Error, ErrorResponse]
+  rfc9457: false
+  artifact: errors/digital-asset-problem-types.yml
+rate_limiting:
+  documented: false
+  headers: null
+  evidence: No rate-limit policy, quota, or RateLimit/X-RateLimit header is documented anywhere in the docs corpus.
+  economic_limiter: >-
+    Cost control on this platform is economic rather than quota-based — release notes publish
+    per-workflow Canton transaction costs in USD (e.g. Direct Transfer ~$0.5) rather than
+    request-per-second ceilings.
+content_types:
+  request: application/json
+  response: application/json
+health_checks:
+  endpoints: [/, /livez, /readyz]
+  note: >-
+    Present only in the runtime-served spec at /api/utilities/v0/openapi, not in the
+    docs-published spec.
+cross_links:
+  errors: errors/digital-asset-problem-types.yml
+  lifecycle: lifecycle/digital-asset-lifecycle.yml
+  authentication: authentication/digital-asset-authentication.yml
+  changelog: changelog/digital-asset-changelog.yml
+  data_model: data-model/digital-asset-data-model.yml

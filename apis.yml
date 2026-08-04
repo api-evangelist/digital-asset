@@ -1,23 +1,196 @@
 aid: digital-asset
 name: Digital Asset
-description: 'Digital Asset is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Digital Asset is the company behind Canton, a privacy-enabled public blockchain built for
+  regulated institutional finance, and Daml, the smart-contract language that runs on it.
+  Its commercial products sit on top of the Canton Network: the DA Registry, a
+  production platform for issuing, minting, burning, transferring and redeeming
+  institutional-grade tokenized assets with credential-based allowlists, blocklists and
+  proof-of-transfer; xReserve, which brings Circle's USDC onto Canton; and a Covalidation
+  Service for operating validator infrastructure. Its public developer surface is the
+  Utilities (Operator Backend) API plus four Canton Token Standard (CIP-56) off-ledger
+  APIs — token metadata, transfer instruction, allocation and allocation instruction —
+  all published as OpenAPI 3.0 and served across MainNet, TestNet and DevNet environments.
+  Digital Asset also publishes an A2A agent card and a packaged Agent Skill for its
+  Registry workflows.
+image: https://www.digitalasset.com/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/digital-asset/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-04'
 modified: '2026-08-04'
 tags:
-- Company
-apis: []
+- Blockchain
+- Tokenization
+- Digital Assets
+- Financial Services
+- Distributed Ledger
+- Smart Contracts
+- Capital Markets
+- Canton Network
+- Daml
+- Stablecoins
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: digital-asset:utilities
+  name: Digital Asset Utilities API (Operator Backend)
+  description: >-
+    The Operator Backend for the DA Registry. Exposes publicly accessible endpoints that serve
+    the off-ledger information required to advance Utility Daml workflows via explicit contract
+    disclosure — the operator party identifier, the vetted Daml packages, instrument
+    configurations, and the factory and choice contexts for mint, burn, burn-mint and transfer
+    proof workflows. Used by the Registry UI, by wallets, and by third-party apps.
+  humanURL: https://docs.digitalasset.com/registry/apis/operator-backend-api
+  baseURL: https://api.utilities.digitalasset.com
+  tags:
+  - Tokenization
+  - Registry
+  - Blockchain
+  properties:
+  - type: OpenAPI
+    url: openapi/digital-asset-utilities-openapi.yml
+  - type: OpenAPI
+    name: Runtime-served specification
+    url: openapi/digital-asset-utilities-runtime-openapi.yml
+  - type: Documentation
+    url: https://docs.digitalasset.com/registry/apis/operator-backend-api
+  - type: APIReference
+    url: https://docs.digitalasset.com/api-reference/operator/get-apiutilitiesv0operator
+- aid: digital-asset:token-metadata-v1
+  name: Digital Asset Token Metadata API (CIP-56)
+  description: >-
+    Canton Token Standard token metadata service. Read-only off-ledger API returning registry
+    information — including the token-standard versions the registry supports — and the
+    instruments a registrar administers, with per-instrument metadata lookup.
+  humanURL: https://docs.digitalasset.com/registry/apis/token-standard/off-ledger-api
+  baseURL: https://api.utilities.digitalasset.com
+  tags:
+  - Token Standard
+  - Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/digital-asset-token-metadata-v1-openapi.yml
+  - type: Documentation
+    url: https://docs.digitalasset.com/registry/apis/token-standard
+- aid: digital-asset:transfer-instruction-v1
+  name: Digital Asset Transfer Instruction API (CIP-56)
+  description: >-
+    Canton Token Standard transfer-instruction off-ledger API. Returns the transfer factory and
+    choice context needed to execute a direct transfer, and the choice contexts to accept,
+    reject or withdraw a two-step transfer instruction.
+  humanURL: https://docs.digitalasset.com/registry/apis/token-standard/off-ledger-api
+  baseURL: https://api.utilities.digitalasset.com
+  tags:
+  - Token Standard
+  - Transfers
+  properties:
+  - type: OpenAPI
+    url: openapi/digital-asset-transfer-instruction-v1-openapi.yml
+  - type: Documentation
+    url: https://docs.digitalasset.com/registry/apis/token-standard
+- aid: digital-asset:allocation-v1
+  name: Digital Asset Allocation API (CIP-56)
+  description: >-
+    Canton Token Standard allocation off-ledger API. Returns the choice contexts required to
+    execute the transfer of, withdraw, or cancel an existing allocation — the settlement
+    primitive behind delivery-versus-payment style workflows on Canton.
+  humanURL: https://docs.digitalasset.com/registry/apis/token-standard/off-ledger-api
+  baseURL: https://api.utilities.digitalasset.com
+  tags:
+  - Token Standard
+  - Settlement
+  properties:
+  - type: OpenAPI
+    url: openapi/digital-asset-allocation-v1-openapi.yml
+  - type: Documentation
+    url: https://docs.digitalasset.com/registry/apis/token-standard
+- aid: digital-asset:allocation-instruction-v1
+  name: Digital Asset Allocation Instruction API (CIP-56)
+  description: >-
+    Canton Token Standard allocation-instruction off-ledger API. Returns the allocation factory
+    and choice context for creating allocations through the AllocationFactory_Allocate choice.
+  humanURL: https://docs.digitalasset.com/registry/apis/token-standard/off-ledger-api
+  baseURL: https://api.utilities.digitalasset.com
+  tags:
+  - Token Standard
+  - Settlement
+  properties:
+  - type: OpenAPI
+    url: openapi/digital-asset-allocation-instruction-v1-openapi.yml
+  - type: Documentation
+    url: https://docs.digitalasset.com/registry/apis/token-standard
+x-enrichment:
+  date: '2026-08-04'
+  status: enriched
+  artifacts_added: 24
+  pass: local-v1
 common:
 - type: Website
-  url: https://forgeglobal.com/digital-asset_stock/
+  url: https://www.digitalasset.com/
+- type: DeveloperPortal
+  url: https://docs.digitalasset.com/
+- type: Documentation
+  url: https://docs.digitalasset.com/registry/overview
+- type: APIReference
+  url: https://docs.digitalasset.com/api-reference/operator/get-apiutilitiesv0operator
+- type: GettingStarted
+  url: https://docs.digitalasset.com/registry/get-started/quickstart
+- type: Support
+  url: https://docs.digitalasset.com/registry/support/contact
+- type: HelpCenter
+  url: https://support.digitalasset.com/
+- type: Blog
+  url: https://blog.digitalasset.com/blog
+- type: GitHubOrganization
+  url: https://github.com/digital-asset
+- type: PrivacyPolicy
+  url: https://www.digitalasset.com/privacy-policy
+- type: TrustCenter
+  url: https://www.digitalasset.com/trust-center
+- type: Compliance
+  url: https://www.digitalasset.com/trust-center
+- type: Security
+  url: https://www.digitalasset.com/responsible-disclosure
+- type: VulnerabilityDisclosure
+  url: security/digital-asset-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/digital-asset-domain-security.yml
+- type: Authentication
+  url: authentication/digital-asset-authentication.yml
+- type: AgentCard
+  url: a2a/digital-asset-a2a.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/digital-asset-llms.txt
+- type: WellKnown
+  url: well-known/digital-asset-well-known.yml
+- type: Packages
+  url: packages/digital-asset-packages.yml
+- type: SDKs
+  url: packages/digital-asset-packages.yml
+- type: Conformance
+  url: conformance/digital-asset-conformance.yml
+- type: ErrorCatalog
+  url: errors/digital-asset-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/digital-asset-lifecycle.yml
+- type: Deprecation
+  url: https://docs.digitalasset.com/registry/releases/versioning
+- type: ChangeLog
+  url: changelog/digital-asset-changelog.yml
+- type: Conventions
+  url: conventions/digital-asset-conventions.yml
+- type: DataModel
+  url: data-model/digital-asset-data-model.yml
+- type: Sandbox
+  url: sandbox/digital-asset-sandbox.yml
+- type: CLI
+  url: cli/digital-asset-cli.yml
+- type: Overlay
+  url: overlays/digital-asset-utilities-overlay.yaml

@@ -1,0 +1,63 @@
+generated: '2026-08-04'
+method: searched
+source: >-
+  https://docs.digitalasset.com/registry/apis/operator-backend-api,
+  openapi/digital-asset-utilities-openapi.yml servers[],
+  https://docs.digitalasset.com/.well-known/agent-skills/digitalasset/skill.md
+model: separate-environments
+model_note: >-
+  There is no test-mode key prefix and no test/live toggle on a single host. Digital Asset
+  separates test from production by deploying the whole stack to three distinct Canton
+  networks, each on its own domain, each with its own OpenAPI-declared server entry.
+environments:
+- name: MainNet
+  kind: production
+  api_base_url: https://api.utilities.digitalasset.com
+  app_url: https://registry.app.digitalasset.com/
+  openapi_probe: {path: /api/utilities/v0/openapi, status: 200}
+- name: TestNet
+  kind: test
+  api_base_url: https://api.utilities.digitalasset-staging.com
+  app_url: https://registry.test.app.digitalasset.com/
+  openapi_probe: {path: /api/utilities/v0/openapi, status: 200}
+- name: DevNet
+  kind: development
+  api_base_url: https://api.utilities.digitalasset-dev.com
+  app_url: https://registry.dev.app.digitalasset.com/
+  openapi_probe: {path: /api/utilities/v0/openapi, status: 200}
+- name: Local
+  kind: local
+  api_base_url: http://localhost:8080
+  note: Declared as a server in every published spec for running the stack locally.
+release_flow: >-
+  New releases roll out DevNet first, then TestNet, then MainNet, at one-week intervals — so
+  DevNet doubles as the forward-compatibility preview environment.
+local_development:
+  quickstart_repo: https://github.com/digital-asset/cn-quickstart
+  quickstart_description: >-
+    "Accelerate building apps on Canton Network using this quickstart" — bootstraps and deploys
+    a first Canton Network application locally.
+  docs: https://docs.digitalasset.com/registry/get-started/quickstart
+  canton_sandbox: >-
+    The Daml SDK ships a local in-memory `daml sandbox` ledger plus `daml start`; Canton itself
+    runs locally against the http://localhost:8080 server entry declared in the specs.
+test_credentials:
+  published: false
+  note: >-
+    No magic test values, test cards, seeded parties, or shared test tokens are published.
+    Access to TestNet/DevNet requires operating (or being onboarded to) a validator node and
+    obtaining an OIDC-issued JWT — onboarding is a gated commercial process described in the
+    Registrar Onboarding guide, not a self-serve sandbox signup.
+  onboarding_docs: https://docs.digitalasset.com/registry/guides/registrar-onboarding
+time_simulation:
+  supported: false
+  note: No test clock / time-simulation tooling is documented for the Registry surface.
+fixtures_and_triggers:
+  published: false
+gaps:
+- >-
+  There is no anonymous, self-serve sandbox. A developer cannot obtain a TestNet token from a
+  documentation page — every path to a callable request runs through node onboarding.
+- >-
+  No sample/example request or response values are published in the OpenAPI specs, so the
+  three environments cannot be exercised from the contract alone.

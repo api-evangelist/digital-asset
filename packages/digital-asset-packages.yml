@@ -1,0 +1,78 @@
+generated: '2026-08-04'
+method: searched
+source: >-
+  npm registry, PyPI, Maven Central search API, and github.com/digital-asset — each
+  package below was fetched and its repository/author field checked for first-party origin.
+packages:
+  - language: javascript
+    registry: npm
+    name: "@daml/ledger"
+    version: 2.10.4
+    url: https://www.npmjs.com/package/@daml/ledger
+    install: npm install @daml/ledger
+    repository: https://github.com/digital-asset/daml
+    description: Client side API implementation for a Daml based ledger.
+    official: true
+  - language: typescript
+    registry: npm
+    name: "@daml/types"
+    version: 3.5.2
+    url: https://www.npmjs.com/package/@daml/types
+    install: npm install @daml/types
+    repository: https://github.com/digital-asset/daml
+    description: Primitive types of the Daml language and their serialization.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@daml/react"
+    version: 2.10.4
+    url: https://www.npmjs.com/package/@daml/react
+    install: npm install @daml/react
+    repository: https://github.com/digital-asset/daml
+    description: React framework to interact with a Daml ledger.
+    official: true
+  - language: python
+    registry: pypi
+    name: dazl
+    version: 8.9.0
+    url: https://pypi.org/project/dazl/
+    install: pip install dazl
+    repository: https://github.com/digital-asset/dazl-client
+    description: dazl Ledger API client — high-level Python client for the Daml/Canton Ledger API.
+    official: true
+  - language: scala
+    registry: maven-central
+    group: com.daml
+    name: "com.daml:* (388 published artifacts, e.g. community-admin-api_2.13, base-grpc-utils_2.13)"
+    url: https://central.sonatype.com/search?q=g:com.daml
+    install: 'libraryDependencies += "com.daml" %% "community-admin-api" % "<version>"'
+    description: Canton / Daml JVM artifacts published under the com.daml groupId.
+    official: true
+ecosystem_packages:
+  - language: typescript
+    registry: npm
+    name: "@canton-network/wallet-sdk"
+    version: 1.4.0
+    url: https://www.npmjs.com/package/@canton-network/wallet-sdk
+    repository: https://github.com/canton-network/wallet
+    description: Node/browser SDK for integrating with Canton Network.
+    official: false
+    note: >-
+      Published by the canton-network GitHub organization (the Canton Network / Global
+      Synchronizer ecosystem), not by digital-asset directly. Recorded as ecosystem, not
+      first-party, per the no-fabrication rule.
+not_first_party:
+  - {registry: pypi, name: daml, reason: "unrelated project (aria-ml/daml), different author"}
+  - {registry: pypi, name: canton, reason: "unrelated project (ctmakro/canton)"}
+  - {registry: pypi, name: splice, reason: "unrelated project, no Digital Asset linkage"}
+registries_probed:
+  - {registry: npm, result: hit}
+  - {registry: pypi, result: hit}
+  - {registry: maven-central, result: hit}
+  - {registry: rubygems, result: miss}
+  - {registry: nuget, result: miss}
+  - {registry: crates.io, result: "not determinable (403 to automated probe)"}
+  - {registry: pkg.go.dev, result: "not probed via API; dpm (Daml Package Manager) is distributed as a Go binary from github.com/digital-asset/dpm"}
+summary:
+  official_count: 5
+  languages: [javascript, typescript, python, scala]

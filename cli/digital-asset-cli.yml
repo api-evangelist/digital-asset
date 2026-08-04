@@ -1,0 +1,63 @@
+generated: '2026-08-04'
+method: searched
+source: >-
+  https://github.com/digital-asset (org repository listing), the Daml SDK docs, and
+  https://docs.digitalasset.com/registry/get-started/quickstart
+note: >-
+  Digital Asset ships developer CLIs for the Daml/Canton platform layer. There is no CLI for
+  the Utilities / Token Standard HTTP APIs themselves — those are consumed over HTTP or via
+  the SDKs in packages/digital-asset-packages.yml.
+clis:
+- name: daml
+  kind: sdk-cli
+  description: >-
+    The Daml SDK assistant — the primary developer CLI for the platform. Creates projects,
+    builds Daml packages into DARs, runs a local ledger and the Navigator/Studio tooling, and
+    generates language bindings.
+  install:
+  - method: dpm
+    note: The Daml Package Manager is the current installer for the SDK.
+  - method: script
+    command: "curl -sSL https://get.daml.com/ | sh"
+    note: Historical installer for the Daml SDK.
+  repository: https://github.com/digital-asset/daml
+  official: true
+  command_groups:
+  - {group: "daml new / daml init", purpose: scaffold a Daml project}
+  - {group: "daml build", purpose: compile Daml source into a DAR package}
+  - {group: "daml start", purpose: run the local sandbox ledger plus the JSON API and UI}
+  - {group: "daml sandbox", purpose: run a local in-memory ledger}
+  - {group: "daml codegen", purpose: generate Java / TypeScript / JS bindings from a DAR}
+  - {group: "daml test / daml script", purpose: run Daml Script test scenarios}
+  - {group: "daml damlc", purpose: invoke the underlying Daml compiler directly}
+  caveat: >-
+    Command groups are recorded from the Daml SDK's documented developer workflow. The
+    subcommand surface was not enumerated from a `--help` capture in this pass, so treat the
+    list as the documented shape rather than an exhaustive reference.
+- name: dpm
+  kind: package-manager
+  description: "Package manager for Digital Asset components — installs and pins SDK and Canton component versions."
+  repository: https://github.com/digital-asset/dpm
+  language: Go
+  official: true
+  assembly_repo: https://github.com/digital-asset/dpm-assembly
+  assembly_note: "Assembles and releases the SDK, including the Daml Package Manager itself."
+- name: darsyncer
+  kind: operations-tool
+  description: "Synchronizes and vets DARs to a participant node."
+  repository: https://github.com/digital-asset/darsyncer
+  language: Go
+  official: true
+  relevance: >-
+    Directly relevant to the Registry release flow — adopting a new Registry release requires
+    the new Daml packages to be uploaded and vetted on the operator's validator node.
+- name: canton
+  kind: node-console
+  description: >-
+    The Canton binary ships an interactive administration console for participant and
+    synchronizer nodes (bootstrap scripts, party allocation, DAR upload, connectivity).
+  repository: https://github.com/digital-asset/canton
+  official: true
+related_artifacts:
+  packages: packages/digital-asset-packages.yml
+  sandbox: sandbox/digital-asset-sandbox.yml

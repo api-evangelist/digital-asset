@@ -1,0 +1,63 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Digital Asset Utilities API
+  version: 1.0.0
+extends: openapi/digital-asset-utilities-openapi.yml
+x-generated: '2026-08-04'
+x-method: generated
+x-source: >-
+  Derived from this repo's harvested artifacts. Captures API Evangelist annotations without
+  mutating the provider's published specification.
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: digital-asset
+    x-apievangelist-artifacts:
+      authentication: authentication/digital-asset-authentication.yml
+      conventions: conventions/digital-asset-conventions.yml
+      errors: errors/digital-asset-problem-types.yml
+      lifecycle: lifecycle/digital-asset-lifecycle.yml
+      changelog: changelog/digital-asset-changelog.yml
+      data_model: data-model/digital-asset-data-model.yml
+      sandbox: sandbox/digital-asset-sandbox.yml
+      conformance: conformance/digital-asset-conformance.yml
+      agent_card: a2a/digital-asset-a2a.yml
+      agent_skill: skills/_index.yml
+    x-apievangelist-runtime-spec:
+      url: https://api.utilities.digitalasset.com/api/utilities/v0/openapi
+      note: >-
+        The running service serves its own OpenAPI. It adds three health operations (root,
+        isLive, isReady) that the docs-published copy omits, and declares only the
+        http://localhost:8080 server. Harvested to
+        openapi/digital-asset-utilities-runtime-openapi.yml.
+- target: $.servers
+  update:
+  - url: https://api.utilities.digitalasset.com
+    description: MainNet
+    x-environment: production
+  - url: https://api.utilities.digitalasset-staging.com
+    description: TestNet
+    x-environment: test
+  - url: https://api.utilities.digitalasset-dev.com
+    description: DevNet
+    x-environment: development
+  - url: http://localhost:8080
+    description: Local
+    x-environment: local
+- target: $.components.schemas.Error
+  update:
+    x-apievangelist-note: >-
+      Custom error envelope. Not RFC 9457 Problem Details — no operation declares
+      application/problem+json. The `error` field carries an opaque code with no published
+      registry of possible values.
+- target: $.paths['/api/utilities/v0/registry/transfer/v0/proof'].post
+  update:
+    x-apievangelist-capability: proof-of-transfer
+    x-apievangelist-note: >-
+      Independent verification of a privacy-enabled Canton transfer by updateId — the
+      capability that lets a block explorer or counterparty confirm a transfer it cannot see.
+- target: $.paths['/api/utilities/v0/openapi'].get
+  update:
+    x-apievangelist-note: >-
+      Self-describing endpoint. Returns this service's own OpenAPI document; confirmed live
+      (HTTP 200) on all three published environments.

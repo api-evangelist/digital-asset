@@ -1,0 +1,93 @@
+generated: '2026-08-04'
+method: derived
+source: >-
+  openapi/*.yml, https://www.digitalasset.com/trust-center,
+  https://docs.digitalasset.com/registry/apis/token-standard,
+  https://docs.digitalasset.com/.well-known/agent-card.json
+standards:
+- id: openapi-3.0
+  conforms: true
+  evidence: "All five published specs declare openapi: 3.0.0 and parse cleanly."
+- id: cip-56-canton-token-standard
+  conforms: true
+  evidence: >-
+    Four dedicated off-ledger APIs implement the Canton Token Standard (CIP-56) —
+    token-metadata v1, transfer-instruction v1, allocation v1 and allocation-instruction v1.
+    getRegistryInfo returns a `supportedApis` map declaring which standard versions the
+    registry supports. Documented at
+    https://docs.digitalasset.com/registry/apis/token-standard.
+- id: cip-103-dapp-api
+  conforms: partial
+  evidence: >-
+    The Canton Network dApp SDK implements CIP-103; that SDK is published by the
+    canton-network org rather than digital-asset, so it is recorded as ecosystem, not a
+    first-party Digital Asset conformance claim.
+- id: cip-104
+  conforms: true
+  evidence: >-
+    Digital Asset publishes CIP-104 guidance for Registry tokenizers configuring featured
+    parties — https://docs.digitalasset.com/registry/guides/cip-104-guidance.
+- id: a2a-agent-card
+  conforms: true
+  grade: conformant
+  evidence: >-
+    /.well-known/agent-card.json at docs.digitalasset.com returns a valid A2A card
+    (capabilities object, protocolVersion 0.3, skills array). See a2a/digital-asset-a2a.yml.
+- id: llms-txt
+  conforms: true
+  evidence: https://docs.digitalasset.com/llms.txt returns 200 and indexes the docs plus the five OpenAPI specs.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    No oauth2 securityScheme is declared in any spec and no /.well-known/oauth-authorization-server
+    is served. OIDC is used to obtain the bearer token at the participant-node layer
+    (issuerUri/audience/clientId), but Digital Asset does not operate the authorization server.
+- id: oidc-discovery
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on every probed host.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: >-
+    No operation declares application/problem+json. Two custom envelopes are used instead —
+    see errors/digital-asset-problem-types.yml.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: >-
+    /.well-known/security.txt returns 404 on every host, despite a real responsible-disclosure
+    program at https://www.digitalasset.com/responsible-disclosure.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: >-
+    Deprecation is enforced at the Daml package layer and communicated in release notes; no
+    Sunset or Deprecation HTTP headers are documented.
+- id: asyncapi
+  conforms: false
+  evidence: >-
+    No AsyncAPI document is published for Digital Asset's own API surface. The event surface
+    is the Canton ledger itself (gRPC Ledger API streams / JSON Ledger API websockets), not an
+    HTTP webhook or AsyncAPI-described channel on api.utilities.digitalasset.com.
+- id: json-api
+  conforms: false
+  evidence: Plain application/json envelopes; no JSON:API media type or document structure.
+- id: pagination
+  conforms: partial
+  evidence: "Page-token pagination (pageSize/pageToken/nextPageToken) on listInstruments only."
+- id: idempotency
+  conforms: false
+  evidence: No Idempotency-Key header or documented idempotency contract anywhere in the surface.
+compliance_program:
+  published: true
+  url: https://www.digitalasset.com/trust-center
+  certifications: [ISO/IEC 27001, SOC 2 Type II, CSA STAR Level 1 (CAIQ v4.0.2), CIS SecureSuite]
+  assessments: [Hellios FSQS, Trusight]
+  smart_contract_audits:
+    url: https://docs.digitalasset.com/registry/security/audits
+    auditor: CertiK
+  artifact: security/digital-asset-trust-center.yml
+regulatory_context:
+  sector: financial-services / capital-markets
+  note: >-
+    Canton is positioned for regulated institutional finance; the Registry ships
+    credential-based allowlists, blocklists for AML/sanctions screening, and proof-of-transfer
+    for independent verification. No specific regime certification (MiCA, PSD2, FINRA, SEC) is
+    claimed on the public surface.

@@ -1,0 +1,102 @@
+# DA Apps
+
+> A portfolio of Apps and APIs covering all your Digital Asset needs.
+
+## Docs
+
+- [Get apiutilitiesv0contractinstrument configurationall](https://docs.digitalasset.com/api-reference/operator/get-apiutilitiesv0contractinstrument-configurationall.md)
+- [Get apiutilitiesv0openapi](https://docs.digitalasset.com/api-reference/operator/get-apiutilitiesv0openapi.md)
+- [Get apiutilitiesv0operator](https://docs.digitalasset.com/api-reference/operator/get-apiutilitiesv0operator.md)
+- [Get apiutilitiesv0packageall](https://docs.digitalasset.com/api-reference/operator/get-apiutilitiesv0packageall.md)
+- [Post apiutilitiesv0contractinstrument configuration](https://docs.digitalasset.com/api-reference/operator/post-apiutilitiesv0contractinstrument-configuration.md)
+- [Get apitoken standardv0registrars registrymetadatav1info](https://docs.digitalasset.com/api-reference/public/get-apitoken-standardv0registrars-registrymetadatav1info.md): Get information about the registry. The response includes the standards supported by the registry.
+- [Get apitoken standardv0registrars registrymetadatav1instruments](https://docs.digitalasset.com/api-reference/public/get-apitoken-standardv0registrars-registrymetadatav1instruments.md): List all instruments managed by this instrument admin.
+- [Get apitoken standardv0registrars registrymetadatav1instruments 1](https://docs.digitalasset.com/api-reference/public/get-apitoken-standardv0registrars-registrymetadatav1instruments-1.md): Retrieve an instrument's metadata.
+- [Post apitoken standardv0registrars registryallocation instructionv1allocation factory](https://docs.digitalasset.com/api-reference/public/post-apitoken-standardv0registrars-registryallocation-instructionv1allocation-factory.md): Get the factory and choice context for creating allocations using the `AllocationFactory_Allocate` choice.
+- [Post apitoken standardv0registrars registryallocationsv1 choice contextscancel](https://docs.digitalasset.com/api-reference/public/post-apitoken-standardv0registrars-registryallocationsv1-choice-contextscancel.md): Get the choice context to cancel an allocation.
+- [Post apitoken standardv0registrars registryallocationsv1 choice contextsexecute transfer](https://docs.digitalasset.com/api-reference/public/post-apitoken-standardv0registrars-registryallocationsv1-choice-contextsexecute-transfer.md): Get the choice context to execute a transfer on an allocation.
+- [Post apitoken standardv0registrars registryallocationsv1 choice contextswithdraw](https://docs.digitalasset.com/api-reference/public/post-apitoken-standardv0registrars-registryallocationsv1-choice-contextswithdraw.md): Get the choice context to withdraw an allocation.
+- [Post apitoken standardv0registrars registrytransfer instructionv1 choice contextsaccept](https://docs.digitalasset.com/api-reference/public/post-apitoken-standardv0registrars-registrytransfer-instructionv1-choice-contextsaccept.md): Get the choice context to accept a transfer instruction.
+- [Post apitoken standardv0registrars registrytransfer instructionv1 choice contextsreject](https://docs.digitalasset.com/api-reference/public/post-apitoken-standardv0registrars-registrytransfer-instructionv1-choice-contextsreject.md): Get the choice context to reject a transfer instruction.
+- [Post apitoken standardv0registrars registrytransfer instructionv1 choice contextswithdraw](https://docs.digitalasset.com/api-reference/public/post-apitoken-standardv0registrars-registrytransfer-instructionv1-choice-contextswithdraw.md): Get the choice context to withdraw a transfer instruction.
+- [Post apitoken standardv0registrars registrytransfer instructionv1transfer factory](https://docs.digitalasset.com/api-reference/public/post-apitoken-standardv0registrars-registrytransfer-instructionv1transfer-factory.md): Get the factory and choice context for executing a direct transfer.
+- [Post apiutilitiesv0registryburn mint instructionv0burn mint factory](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registryburn-mint-instructionv0burn-mint-factory.md): Get the burn mint factory and choice context for burn and mint.
+- [Post apiutilitiesv0registryburnv0offer](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registryburnv0offer.md): Get the factory and choice context for creating a burn offer.
+- [Post apiutilitiesv0registryburnv0offer choice contextsaccept](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registryburnv0offer-choice-contextsaccept.md): Get the choice context to accept and execute a burn offer.
+- [Post apiutilitiesv0registryburnv0offer choice contextscancel](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registryburnv0offer-choice-contextscancel.md): Get the choice context to cancel a burn offer.
+- [Post apiutilitiesv0registryburnv0offer choice contextsreject](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registryburnv0offer-choice-contextsreject.md): Get the choice context to reject a burn offer.
+- [Post apiutilitiesv0registryburnv0request](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registryburnv0request.md): Get the factory and choice context for creating a burn request.
+- [Post apiutilitiesv0registryburnv0request choice contextsaccept](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registryburnv0request-choice-contextsaccept.md): Get the choice context to accept and execute a burn request.
+- [Post apiutilitiesv0registryburnv0request choice contextscancel](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registryburnv0request-choice-contextscancel.md): Get the choice context to cancel a burn request.
+- [Post apiutilitiesv0registryburnv0request choice contextsreject](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registryburnv0request-choice-contextsreject.md): Get the choice context to reject a burn request.
+- [Post apiutilitiesv0registrymintv0offer](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registrymintv0offer.md): Get the factory and choice context for creating a mint offer.
+- [Post apiutilitiesv0registrymintv0offer choice contextsaccept](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registrymintv0offer-choice-contextsaccept.md): Get the choice context to accept and execute a mint offer.
+- [Post apiutilitiesv0registrymintv0offer choice contextscancel](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registrymintv0offer-choice-contextscancel.md): Get the choice context to cancel a mint offer.
+- [Post apiutilitiesv0registrymintv0offer choice contextsreject](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registrymintv0offer-choice-contextsreject.md): Get the choice context to reject a mint offer.
+- [Post apiutilitiesv0registrymintv0request](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registrymintv0request.md): Get the factory and choice context for creating a mint request.
+- [Post apiutilitiesv0registrymintv0request choice contextsaccept](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registrymintv0request-choice-contextsaccept.md): Get the choice context to accept and execute a mint request.
+- [Post apiutilitiesv0registrymintv0request choice contextscancel](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registrymintv0request-choice-contextscancel.md): Get the choice context to cancel a mint request.
+- [Post apiutilitiesv0registrymintv0request choice contextsreject](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registrymintv0request-choice-contextsreject.md): Get the choice context to reject a mint request.
+- [Post apiutilitiesv0registrytransferv0proof](https://docs.digitalasset.com/api-reference/registry/post-apiutilitiesv0registrytransferv0proof.md): Verify the outcome of a transfer of Registry Utility assets on Canton.
+- [Installation](https://docs.digitalasset.com/covalidation/install.md): Kubernetes installation instructions for the Covalidation Service.
+- [Monitoring](https://docs.digitalasset.com/covalidation/monitoring.md): Monitoring and Alerting Best Practices
+- [Overview](https://docs.digitalasset.com/covalidation/overview.md): Onboarding process, architecture, security, and support.
+- [Troubleshooting](https://docs.digitalasset.com/covalidation/troubleshooting.md): Troubleshooting and FAQ for common operational issues
+- [General guidance](https://docs.digitalasset.com/registry/apis/daml-api.md)
+- [Custom burn / mint workflows](https://docs.digitalasset.com/registry/apis/daml-api/custom-burn-mint.md)
+- [Operator Backend API](https://docs.digitalasset.com/registry/apis/operator-backend-api.md)
+- [Token Standard API (CIP 56)](https://docs.digitalasset.com/registry/apis/token-standard.md)
+- [Token Standard off-ledger API](https://docs.digitalasset.com/registry/apis/token-standard/off-ledger-api.md)
+- [Allowlist](https://docs.digitalasset.com/registry/features/allowlist.md): Implement flexible, credential-based access controls to securely authorize asset participants throughout their lifecycle.
+- [Asset Recovery](https://docs.digitalasset.com/registry/features/asset-recovery.md): Enabling lifetime asset access for you and your asset holders when everything else failed
+- [Asset Lifecycle Workflows](https://docs.digitalasset.com/registry/features/asset-workflows.md): Understand how the DA Registry enables Registrars to configure instruments, manage token supply and execute compliant transfers.
+- [Blocklist](https://docs.digitalasset.com/registry/features/blocklist.md): Enforce real-time compliance, AML, and sanction policies directly within your digital asset infrastructure.
+- [Proof of Transfer](https://docs.digitalasset.com/registry/features/proof-of-transfer.md): Independent and indisputable transaction verification for privacy-enabled assets on Canton issued through the DA Registry.
+- [Quickstart](https://docs.digitalasset.com/registry/get-started/quickstart.md): In order to onboard as a Registry Provider, the prerequisites detailed below must be completed.
+- [Registry Primer](https://docs.digitalasset.com/registry/get-started/registry-primer.md): Launch, manage, and scale compliant digital assets with production-ready workflows on the Canton Network.
+- [Role Architecture & Asset Model](https://docs.digitalasset.com/registry/get-started/role-architecture.md): A comprehensive guide to the primary roles, infrastructural hierarchy, and asset modeling within the DA Registry.
+- [Allowlist](https://docs.digitalasset.com/registry/guides/allowlist.md): As a registrar / token issuer, configure and manage allow-lists for my instruments.
+- [Blocklist](https://docs.digitalasset.com/registry/guides/blocklist.md): Guide to the blocklist feature of the Registry App.
+- [Burn](https://docs.digitalasset.com/registry/guides/burn.md)
+- [CIP-104 Guidance](https://docs.digitalasset.com/registry/guides/cip-104-guidance.md): Guidance for Registry App tokenizers on how to configure featured parties.
+- [Instrument Configuration](https://docs.digitalasset.com/registry/guides/instrument-configuration.md): As a registrar / token issuer, define an asset and the rules that apply to it.
+- [Mint](https://docs.digitalasset.com/registry/guides/mint.md)
+- [Proof of Transfer](https://docs.digitalasset.com/registry/guides/proof-of-transfer.md): As a Canton Network explorer, enhance your UpdateId detail view with the Proof of Transfer functionality for DA Registry Assets
+- [Provider Configuration](https://docs.digitalasset.com/registry/guides/provider-configuration.md)
+- [Registrar Onboarding](https://docs.digitalasset.com/registry/guides/registrar-onboarding.md)
+- [Reward share agreement](https://docs.digitalasset.com/registry/guides/reward-share-agreement.md): As a featured tokenizer, setup the contractual reward share agreement with DA for my featured parties.
+- [Transfer](https://docs.digitalasset.com/registry/guides/transfer.md)
+- [Overview](https://docs.digitalasset.com/registry/overview.md): The DA Registry is the fastest way for asset issuers and tokenizers to issue, mobilize and monetize institutional-grade digital assets on Canton.
+- [DA Parties](https://docs.digitalasset.com/registry/reference/da-parties.md): Explains the role of Digital Asset parties in Registry workflows.
+- [Daml models](https://docs.digitalasset.com/registry/releases/daml-models.md): Supported versions of the Daml models for the Registry App.
+- [Release Notes](https://docs.digitalasset.com/registry/releases/release-notes.md): Release notes for Registry App releases.
+- [0.12](https://docs.digitalasset.com/registry/releases/release-notes/0.12.md)
+- [0.13](https://docs.digitalasset.com/registry/releases/release-notes/0.13.md)
+- [Versioning](https://docs.digitalasset.com/registry/releases/versioning.md): Versioning for the Registry App and backwards-compatibility guarantees.
+- [Audits](https://docs.digitalasset.com/registry/security/audits.md): Smart Contract as well as Application safety and security is paramount to us. Therefore we regularly conduct On & Off-Chain audits with reputable auditors.
+- [Monitoring](https://docs.digitalasset.com/registry/security/monitoring.md): Ensuring highly available, performant and reliable services for our clients
+- [Contact & Support](https://docs.digitalasset.com/registry/support/contact.md): Get in touch with the Digital Asset team for product inquiries or technical assistance.
+- [Frequently Asked Questions](https://docs.digitalasset.com/registry/support/faq.md): Got questions about the DA Registry? Find answers about integration, security, wallet connections, and compliance controls here.
+- [Onboarding Roles](https://docs.digitalasset.com/registry/tutorials/issuance/1-onboarding-roles.md)
+- [Credentials](https://docs.digitalasset.com/registry/tutorials/issuance/2-credentials.md)
+- [Token Issuance](https://docs.digitalasset.com/registry/tutorials/issuance/3-token-issuance.md)
+- [Token Issuance](https://docs.digitalasset.com/registry/tutorials/issuance/index.md)
+- [Token Redemption](https://docs.digitalasset.com/registry/tutorials/redemption/1-token-redemption.md)
+- [Token Redemption](https://docs.digitalasset.com/registry/tutorials/redemption/index.md)
+- [Onboarding Roles](https://docs.digitalasset.com/registry/tutorials/transfer/1-onboarding-roles.md)
+- [Credentials](https://docs.digitalasset.com/registry/tutorials/transfer/2-credentials.md)
+- [Token Transfer](https://docs.digitalasset.com/registry/tutorials/transfer/3-token-transfer.md)
+- [Token Transfer](https://docs.digitalasset.com/registry/tutorials/transfer/index.md)
+- [Overview](https://docs.digitalasset.com/usdc-xreserve/overview.md): One of the most used stablecoins in the world, the **USDC** token, is now available on the Canton Network!
+- [Release Notes](https://docs.digitalasset.com/usdc-xreserve/releases.md)
+- [Support](https://docs.digitalasset.com/usdc-xreserve/support.md)
+- [xReserve Workflows](https://docs.digitalasset.com/usdc-xreserve/workflows.md): Operational workflows for onboarding, deposits, withdrawals, pre-approval, and settings in the xReserve UI.
+- [xReserve](https://docs.digitalasset.com/xreserve.md): One of the most used stablecoins in the world, the **USDC** token, is now available on the Canton Network!
+
+## OpenAPI Specs
+
+- [utility](https://docs.digitalasset.com/registry/apis/open-api-specs/utility.yaml)
+- [transfer-instruction-v1](https://docs.digitalasset.com/registry/apis/open-api-specs/utility-token-standard/v1/transfer-instruction-v1.yaml)
+- [token-metadata-v1](https://docs.digitalasset.com/registry/apis/open-api-specs/utility-token-standard/v1/token-metadata-v1.yaml)
+- [allocation-v1](https://docs.digitalasset.com/registry/apis/open-api-specs/utility-token-standard/v1/allocation-v1.yaml)
+- [allocation-instruction-v1](https://docs.digitalasset.com/registry/apis/open-api-specs/utility-token-standard/v1/allocation-instruction-v1.yaml)

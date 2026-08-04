@@ -1,0 +1,13 @@
+generated: '2026-08-04'
+method: derived
+source: openapi/digital-asset-utilities-openapi.yml, openapi/digital-asset-utilities-runtime-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  sources:
+  - openapi/digital-asset-utilities-openapi.yml
+  - openapi/digital-asset-utilities-runtime-openapi.yml

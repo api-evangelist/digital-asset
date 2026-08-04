@@ -1,0 +1,89 @@
+generated: '2026-08-04'
+method: derived
+source: >-
+  openapi/digital-asset-utilities-openapi.yml, openapi/digital-asset-token-metadata-v1-openapi.yml,
+  openapi/digital-asset-transfer-instruction-v1-openapi.yml,
+  openapi/digital-asset-allocation-v1-openapi.yml,
+  openapi/digital-asset-allocation-instruction-v1-openapi.yml
+format: custom-json
+rfc9457: false
+rfc9457_note: >-
+  No operation declares application/problem+json. Digital Asset uses two hand-rolled JSON
+  error envelopes instead of RFC 9457 Problem Details.
+envelopes:
+- name: Error
+  spec: openapi/digital-asset-utilities-openapi.yml
+  media_type: application/json
+  description: >-
+    "A problem occurred with processing the request. For instance: syntactically invalid JSON
+    body, missing required fields, etc."
+  required: [error, error_description]
+  fields:
+  - {name: error, type: string, description: "An error code, e.g. invalid_token"}
+  - {name: error_description, type: string}
+- name: ErrorResponse
+  spec: >-
+    openapi/digital-asset-token-metadata-v1-openapi.yml,
+    openapi/digital-asset-transfer-instruction-v1-openapi.yml,
+    openapi/digital-asset-allocation-v1-openapi.yml,
+    openapi/digital-asset-allocation-instruction-v1-openapi.yml
+  media_type: application/json
+  required: [error]
+  fields:
+  - {name: error, type: string}
+problems:
+- status: 400
+  title: Bad request
+  envelope: ErrorResponse
+  description_in_spec: null
+  occurrences: 22
+  note: >-
+    Declared on every Token Standard operation and every Utilities registry operation, but
+    with no description and no response content declared in the spec.
+- status: 404
+  title: Instrument configuration not found
+  envelope: Error
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getInstrumentConfiguration
+  occurrences: 1
+- status: 404
+  title: Not found
+  envelope: ErrorResponse
+  description_in_spec: null
+  occurrences: 22
+  note: Declared without description or content on the remaining operations.
+- status: 500
+  title: Operator party is not available
+  envelope: Error
+  occurrences: 4
+  source_operation: >-
+    openapi/digital-asset-utilities-openapi.yml#getOperator,
+    openapi/digital-asset-utilities-openapi.yml#getAllPackages,
+    openapi/digital-asset-utilities-openapi.yml#getAllInstrumentConfigurations,
+    openapi/digital-asset-utilities-openapi.yml#getInstrumentConfiguration
+- status: 500
+  title: OpenApi specification is not available
+  envelope: Error
+  occurrences: 1
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getOpenApiSpec
+- status: 500
+  title: Internal server error
+  envelope: ErrorResponse
+  description_in_spec: null
+  occurrences: 21
+- status: 503
+  title: Service unavailable
+  envelope: none
+  occurrences: 2
+  source_operation: >-
+    openapi/digital-asset-utilities-runtime-openapi.yml#isLive,
+    openapi/digital-asset-utilities-runtime-openapi.yml#isReady
+  note: Kubernetes-style liveness/readiness probes, present only in the runtime-served spec.
+gaps:
+- >-
+  44 of 47 declared 4xx responses and 44 of 46 declared 5xx responses carry neither a
+  description nor a response schema. An agent cannot tell what a 400 means on any Token
+  Standard operation from the contract alone.
+- >-
+  No enumerated error-code registry is published. The Error envelope documents that `error`
+  carries "an error code, e.g. invalid_token" but no list of codes exists in the docs or spec.
+- No RFC 9457 application/problem+json media type anywhere in the surface.

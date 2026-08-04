@@ -1,0 +1,56 @@
+generated: '2026-08-04'
+method: probed
+source: https://docs.digitalasset.com/.well-known/agent-card.json
+discovery:
+  path: /.well-known/agent-card.json
+  canonical: true
+  host: docs.digitalasset.com
+hosts_probed:
+  - {host: digitalasset.com, path: /.well-known/agent-card.json, status: 404}
+  - {host: www.digitalasset.com, path: /.well-known/agent-card.json, status: 404}
+  - {host: docs.digitalasset.com, path: /.well-known/agent-card.json, status: 200}
+  - {host: docs.digitalasset.com, path: /.well-known/agent.json, status: 404}
+  - {host: api.utilities.digitalasset.com, path: /.well-known/agent-card.json, status: 404}
+  - {host: api.utilities.digitalasset-staging.com, path: /.well-known/agent-card.json, status: 404}
+  - {host: api.utilities.digitalasset-dev.com, path: /.well-known/agent-card.json, status: 404}
+  - {host: canton.network, path: /.well-known/agent-card.json, status: 404}
+conformance:
+  spec: A2A 1.0.0
+  grade: conformant
+  protocol_version: '0.3'
+  preferred_transport: HTTP+JSON
+  hard_checks:
+    capabilities_is_object: true
+    protocol_version_present: true
+    skills_is_array: true
+  deviations:
+    - supportedInterfaces-instead-of-additionalInterfaces
+    - protocolVersion-not-semver  # "0.3" rather than "0.3.0"
+    - skills-carry-empty-tags-array
+card:
+  name: DA Apps
+  description: A portfolio of Apps and APIs covering all your Digital Asset needs.
+  url: https://docs.digitalasset.com/
+  version: 1.0.0
+  provider_organization: DA Apps
+  documentation_url: https://docs.digitalasset.com/
+  capabilities:
+    streaming: false
+    push_notifications: false
+  default_input_modes: [text/plain]
+  default_output_modes: [text/plain]
+  skills: 1
+  skill_ids: [digitalasset]
+  file: digital-asset-agent-card.json
+notes:
+  - The card is served from the documentation host (docs.digitalasset.com), not the
+    corporate site or the Utilities API host.
+  - Its single skill points at a provider-published Agent Skill markdown file at
+    https://docs.digitalasset.com/.well-known/agent-skills/digitalasset/skill.md,
+    harvested verbatim to skills/digital-asset-registry.md.
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://docs.digitalasset.com/.well-known/agent-card.json
+  http_status: 200
+  content_type: application/json
+  bytes: 1106

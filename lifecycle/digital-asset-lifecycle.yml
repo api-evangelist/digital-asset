@@ -1,0 +1,69 @@
+generated: '2026-08-04'
+method: searched
+source: https://docs.digitalasset.com/registry/releases/versioning
+versioning:
+  scheme: uri-path (API) + X.Y semantic-ish (Registry App)
+  current_registry_app: '0.13'
+  current_utilities_api_spec: 2.1.0
+  api_path_versions: [/api/utilities/v0, /api/token-standard/v0 with v1 sub-APIs]
+  policy: >-
+    "Registry App versions are numbered using an X.Y format. Each minor release adopts a new
+    set of Daml models. These are compatible upgrades of the models released in the previous
+    minor release. The major version is incremented when there are breaking changes that
+    require an extensive contract migration."
+  docs: https://docs.digitalasset.com/registry/releases/versioning
+  cadence: at most one release per month
+deprecation:
+  policy_url: https://docs.digitalasset.com/registry/releases/versioning
+  sunset_header: false
+  rfc8594: false
+  support_window: >-
+    "At any given time, we strive to support the two minor versions before the current
+    release." With the rollout of 0.12, support for 0.9 is dropped — transactions submitted
+    with 0.9 Daml packages are expected to fail, while 0.10 and 0.11 continue to work.
+  communication: >-
+    "Deprecation of the old version, as well as the target upgrade path for integrations, is
+    communicated as part of the release notes."
+  mechanism: >-
+    Deprecation is enforced at the Daml package/model layer (contract vetting on the validator
+    node), not through HTTP Deprecation/Sunset response headers.
+rollout:
+  environments: [DevNet, TestNet, MainNet]
+  strategy: staggered
+  interval: one week between environments
+  order: DevNet -> TestNet -> MainNet
+  adoption: >-
+    "In order to adopt a new release, it is sufficient for the newly introduced Daml packages
+    to be uploaded and vetted by the operator of your validator node."
+  integration_guide: Provided with each release's release notes.
+sla:
+  url: https://docs.digitalasset.com/registry/security/monitoring
+  uptime_target: null
+  note: >-
+    Digital Asset publishes a monitoring/availability posture page and states that support
+    tickets are "routed directly to our engineering support queues to ensure rapid resolution
+    in accordance with your service-level agreements (SLAs)" — SLAs are contractual per client,
+    not published publicly with a numeric target.
+  support_portal: https://digitalasset.atlassian.net/servicedesk/customer/portals
+status_page: null
+status_page_probes:
+- {url: https://status.digitalasset.com, result: DNS does not resolve}
+- {url: https://status.canton.network, result: DNS does not resolve}
+status_page_note: >-
+  No public status page was found for either digitalasset.com or the Canton Network. For a
+  provider running MainNet/TestNet/DevNet tokenization infrastructure this is a real
+  operational-transparency gap — no StatusPage pointer is emitted.
+deprecated_operations: []
+deprecated_operations_note: "No operation in any of the five OpenAPI specs carries `deprecated: true`."
+decommissioned:
+- item: Collateral tile / Collateral app
+  release: '0.13'
+  note: "Decommissioned following a series of successful pilot trades."
+- item: Paid credential creation in the UI
+  release: '0.13'
+- item: Featured app activity markers created by Registry Daml workflows
+  release: '0.12'
+  replacement: batched app marker automation operated by Digital Asset (opt-in delegation)
+cross_links:
+  changelog: changelog/digital-asset-changelog.yml
+  conventions: conventions/digital-asset-conventions.yml

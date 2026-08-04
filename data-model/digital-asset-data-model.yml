@@ -1,0 +1,151 @@
+generated: '2026-08-04'
+method: derived
+source: >-
+  openapi/digital-asset-utilities-openapi.yml, openapi/digital-asset-token-metadata-v1-openapi.yml,
+  openapi/digital-asset-transfer-instruction-v1-openapi.yml, openapi/digital-asset-allocation-v1-openapi.yml,
+  openapi/digital-asset-allocation-instruction-v1-openapi.yml
+note: >-
+  Derived from OpenAPI components.schemas $ref links and id-reference fields. The durable
+  entities on this platform are Daml contracts on the Canton ledger; the HTTP schemas below
+  are the off-ledger projections of them.
+identifiers:
+  party_id:
+    form: "<name>::<fingerprint>"
+    example_shape: "registrar::1220<64-hex-char fingerprint>"
+    used_by: [operator, provider, registrar, holder, sender, receiver, admin, registrarParty]
+  contract_id:
+    field: contractId
+    schema: ContractMeta
+    note: Canton contract identifier; holdingContractIds / inputHoldingCids are arrays of these.
+  template_id:
+    field: templateId
+    schema: ContractMeta
+  update_id:
+    field: updateId
+    used_by: [verifyTransferProof]
+    note: Canton ledger update identifier; the anchor for proof-of-transfer verification.
+  instrument_id:
+    schema: InstrumentId
+    fields: [admin, id]
+  instrument_identifier:
+    schema: InstrumentIdentifier
+    fields: [source, id, scheme]
+    note: External identifier (e.g. ISIN, CUSIP) with its issuing scheme.
+entities:
+- name: Operator
+  schema: GetOperatorResponse
+  fields: [partyId]
+  domain: registry
+- name: PackageDescriptor
+  schema: PackageDescriptor
+  fields: [name, id]
+  domain: registry
+  note: A vetted Daml package (DAR) available on the node.
+- name: InstrumentConfiguration
+  schema: InstrumentConfiguration
+  fields: [contract, payload]
+  domain: registry
+- name: InstrumentConfigurationPayload
+  schema: InstrumentConfigurationPayload
+  fields: [operator, provider, registrar, defaultIdentifier, additionalIdentifiers, issuerRequirements, holderRequirements]
+  domain: registry
+- name: Instrument
+  schema: Instrument
+  fields: [id, name, symbol, totalSupply, totalSupplyAsOf, decimals, supportedApis]
+  domain: token-standard
+- name: PartyCredentialRequirement
+  schema: PartyCredentialRequirement
+  fields: [issuer, requiredClaims]
+  domain: compliance
+- name: CredentialClaim
+  schema: CredentialClaim
+  fields: [property, value]
+  domain: compliance
+- name: ContractMeta
+  schema: ContractMeta
+  fields: [createdAt, contractId, templateId, synchronizerId, domainId]
+  domain: ledger
+- name: DisclosedContract
+  schema: DisclosedContract
+  fields: [templateId, contractId, createdEventBlob, synchronizerId, debugPackageName, debugPayload, debugCreatedAt]
+  domain: ledger
+  note: The explicit-contract-disclosure payload an app submits alongside a Daml command.
+- name: ChoiceContext
+  schema: ChoiceContext
+  fields: [choiceContextData, disclosedContracts]
+  domain: ledger
+- name: FactoryWithChoiceContext
+  schema: FactoryWithChoiceContext
+  fields: [factoryId, choiceContext]
+  domain: ledger
+- name: TransferObject
+  schema: TransferObject
+  fields: [sender, receiver, amount, instrumentId, requestedAt, executeBefore, inputHoldingCids, meta]
+  domain: transfers
+- name: TransferMeta
+  schema: TransferMeta
+  fields: [values]
+  domain: transfers
+- name: TransferProofStatus
+  schema: TransferProofStatus
+  domain: transfers
+- name: MintOutput
+  schema: MintOutput
+  fields: [owner, amount]
+  domain: supply
+- name: SupportedApis
+  schema: SupportedApis
+  domain: token-standard
+  note: Map of Canton Token Standard API names to the versions this registry supports.
+- name: Error
+  schema: Error
+  fields: [error, error_description]
+  domain: errors
+relationships:
+- {from: InstrumentConfiguration, to: ContractMeta, kind: has_one, via: contract}
+- {from: InstrumentConfiguration, to: InstrumentConfigurationPayload, kind: has_one, via: payload}
+- {from: InstrumentConfigurationPayload, to: InstrumentIdentifier, kind: has_one, via: defaultIdentifier}
+- {from: InstrumentConfigurationPayload, to: InstrumentIdentifier, kind: has_many, via: additionalIdentifiers}
+- {from: InstrumentConfigurationPayload, to: PartyCredentialRequirement, kind: has_many, via: issuerRequirements}
+- {from: InstrumentConfigurationPayload, to: PartyCredentialRequirement, kind: has_many, via: holderRequirements}
+- {from: InstrumentConfigurationPayload, to: Operator, kind: belongs_to, via: operator}
+- {from: InstrumentConfigurationPayload, to: Party, kind: belongs_to, via: provider}
+- {from: InstrumentConfigurationPayload, to: Party, kind: belongs_to, via: registrar}
+- {from: PartyCredentialRequirement, to: CredentialClaim, kind: has_many, via: requiredClaims}
+- {from: DisclosedContract, to: ContractMeta, kind: has_one, via: allOf-composition}
+- {from: ChoiceContext, to: DisclosedContract, kind: has_many, via: disclosedContracts}
+- {from: FactoryWithChoiceContext, to: ChoiceContext, kind: has_one, via: choiceContext}
+- {from: TransferFactoryWithChoiceContext, to: ChoiceContext, kind: has_one, via: choiceContext}
+- {from: TransferObject, to: InstrumentId, kind: belongs_to, via: instrumentId}
+- {from: TransferObject, to: TransferMeta, kind: has_one, via: meta}
+- {from: TransferObject, to: Holding, kind: has_many, via: inputHoldingCids}
+- {from: VerifyTransferProofRequest, to: TransferObject, kind: has_one, via: transfer}
+- {from: VerifyTransferProofResponse, to: TransferProofStatus, kind: has_one, via: status}
+- {from: GetBurnMintFactoryRequest, to: InstrumentId, kind: belongs_to, via: instrumentId}
+- {from: GetBurnMintFactoryRequest, to: MintOutput, kind: has_many, via: outputs}
+- {from: GetBurnMintFactoryRequest, to: Holding, kind: has_many, via: inputHoldingCids}
+- {from: RequestBurnRequest, to: InstrumentId, kind: belongs_to, via: instrumentId}
+- {from: RequestBurnRequest, to: Holding, kind: has_many, via: holdingContractIds}
+- {from: OfferBurnRequest, to: InstrumentId, kind: belongs_to, via: instrumentId}
+- {from: RequestMintRequest, to: InstrumentId, kind: belongs_to, via: instrumentId}
+- {from: OfferMintRequest, to: InstrumentId, kind: belongs_to, via: instrumentId}
+- {from: GetInstrumentConfigurationRequest, to: InstrumentIdentifier, kind: has_one, via: instrumentIdentifier}
+- {from: GetRegistryInfoResponse, to: SupportedApis, kind: has_one, via: supportedApis}
+- {from: Instrument, to: SupportedApis, kind: has_one, via: supportedApis}
+- {from: ListInstrumentsResponse, to: Instrument, kind: has_many, via: instruments}
+- {from: GetAllPackagesResponse, to: PackageDescriptor, kind: has_many, via: packages}
+- {from: GetAllInstrumentConfigurationsResponse, to: InstrumentConfiguration, kind: has_many, via: instrumentConfigurations}
+ledger_entities_referenced_not_in_http_schema:
+  note: >-
+    These are Daml templates and choices named in the release notes and Registry docs. They
+    are the real on-ledger entities the HTTP surface produces choice contexts for, but they
+    have no OpenAPI schema, so they are listed as references rather than derived entities.
+  templates: [Holding, TransferPreapproval, AllocationFactory, TransferRule, TransferOffer, DvpLegAllocation,
+    MintOffer, MintRequest, BurnOffer, BurnRequest, ExecutedTransfer, RejectedTransfer,
+    RegistrarService, DelegatedBatchedMarkersProxy]
+  choices: [TransferFactory_Transfer, TransferInstruction_Accept, TransferRule_ExecuteAllocation,
+    TransferRule_TwoStepTransfer, TransferRule_DirectTransfer, AllocationFactory_Allocate,
+    AllocationFactory_ExecuteTransfer, AllocationFactory_RequestBurn, AllocationFactory_OfferBurn,
+    AllocationFactory_RequestMint, AllocationFactory_OfferMint, BurnMintFactory_BurnMint,
+    MintOffer_Accept, MintRequest_Accept, BurnOffer_Accept, BurnRequest_Accept,
+    MintOffer_Cancel, MintRequest_Cancel, BurnOffer_Cancel, BurnRequest_Cancel]

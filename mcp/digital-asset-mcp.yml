@@ -1,0 +1,241 @@
+generated: '2026-08-04'
+method: derived
+status: candidate
+source: openapi/digital-asset-utilities-openapi.yml and the four Canton Token Standard specs
+search_result: >-
+  No official hosted or remote MCP server was found for Digital Asset. Probed: the docs corpus
+  (0 matches for "mcp" or "model context protocol" across llms.txt and llms-full.txt), the
+  github.com/digital-asset organization repository listing, and web search. The A2A agent card
+  at docs.digitalasset.com advertises an Agent Skill, not an MCP endpoint — Digital Asset's
+  agent strategy today is skill-and-docs, not tool-server.
+server:
+  name: digital-asset
+  transport: http
+  url: null
+  note: Candidate only. No endpoint exists; do not treat this as a callable server.
+pointer_policy: >-
+  NO `type: MCPServer` pointer is wired into apis.yml for this provider. Digital Asset does
+  not operate an MCP server, and the MCPServer type is what the ergonomics `mcp_server_present`
+  check (4 pts) and the agent-readiness `mcp_server` dimension (12 pts) read. Wiring it from a
+  derived candidate list would credit Digital Asset with 16 points of agent surface it does not
+  publish. This file stands as an unpointered design input — the shape an MCP server over the
+  Utilities and Token Standard APIs would take if Digital Asset chose to ship one.
+tools_note: >-
+  One candidate tool per real operationId across the five published specs. Each tool inherits
+  its input contract from the referenced operation's parameters and requestBody — nothing here
+  is invented. The runtime-served spec's health endpoints (root, isLive, isReady) are excluded.
+tools:
+- name: get_allocation_factory
+  description: Get the factory and choice context for creating allocations using the `AllocationFactory_Allocate`
+    choice.
+  source_operation: openapi/digital-asset-allocation-instruction-v1-openapi.yml#getAllocationFactory
+  http_method: POST
+  path: /api/token-standard/v0/registrars/{registrarParty}/registry/allocation-instruction/v1/allocation-factory
+  category: public
+- name: get_allocation_transfer_context
+  description: Get the choice context to execute a transfer on an allocation.
+  source_operation: openapi/digital-asset-allocation-v1-openapi.yml#getAllocationTransferContext
+  http_method: POST
+  path: /api/token-standard/v0/registrars/{registrarParty}/registry/allocations/v1/{allocationId}/choice-contexts/execute-transfer
+  category: public
+- name: get_allocation_withdraw_context
+  description: Get the choice context to withdraw an allocation.
+  source_operation: openapi/digital-asset-allocation-v1-openapi.yml#getAllocationWithdrawContext
+  http_method: POST
+  path: /api/token-standard/v0/registrars/{registrarParty}/registry/allocations/v1/{allocationId}/choice-contexts/withdraw
+  category: public
+- name: get_allocation_cancel_context
+  description: Get the choice context to cancel an allocation.
+  source_operation: openapi/digital-asset-allocation-v1-openapi.yml#getAllocationCancelContext
+  http_method: POST
+  path: /api/token-standard/v0/registrars/{registrarParty}/registry/allocations/v1/{allocationId}/choice-contexts/cancel
+  category: public
+- name: get_registry_info
+  description: Get information about the registry. The response includes the standards supported by the
+    registry.
+  source_operation: openapi/digital-asset-token-metadata-v1-openapi.yml#getRegistryInfo
+  http_method: GET
+  path: /api/token-standard/v0/registrars/{registrarParty}/registry/metadata/v1/info
+  category: public
+- name: list_instruments
+  description: List all instruments managed by this instrument admin.
+  source_operation: openapi/digital-asset-token-metadata-v1-openapi.yml#listInstruments
+  http_method: GET
+  path: /api/token-standard/v0/registrars/{registrarParty}/registry/metadata/v1/instruments
+  category: public
+- name: get_instrument
+  description: Retrieve an instrument's metadata.
+  source_operation: openapi/digital-asset-token-metadata-v1-openapi.yml#getInstrument
+  http_method: GET
+  path: /api/token-standard/v0/registrars/{registrarParty}/registry/metadata/v1/instruments/{instrumentId}
+  category: public
+- name: get_transfer_factory
+  description: Get the factory and choice context for executing a direct transfer.
+  source_operation: openapi/digital-asset-transfer-instruction-v1-openapi.yml#getTransferFactory
+  http_method: POST
+  path: /api/token-standard/v0/registrars/{registrarParty}/registry/transfer-instruction/v1/transfer-factory
+  category: public
+- name: get_transfer_instruction_accept_context
+  description: Get the choice context to accept a transfer instruction.
+  source_operation: openapi/digital-asset-transfer-instruction-v1-openapi.yml#getTransferInstructionAcceptContext
+  http_method: POST
+  path: /api/token-standard/v0/registrars/{registrarParty}/registry/transfer-instruction/v1/{transferInstructionId}/choice-contexts/accept
+  category: public
+- name: get_transfer_instruction_reject_context
+  description: Get the choice context to reject a transfer instruction.
+  source_operation: openapi/digital-asset-transfer-instruction-v1-openapi.yml#getTransferInstructionRejectContext
+  http_method: POST
+  path: /api/token-standard/v0/registrars/{registrarParty}/registry/transfer-instruction/v1/{transferInstructionId}/choice-contexts/reject
+  category: public
+- name: get_transfer_instruction_withdraw_context
+  description: Get the choice context to withdraw a transfer instruction.
+  source_operation: openapi/digital-asset-transfer-instruction-v1-openapi.yml#getTransferInstructionWithdrawContext
+  http_method: POST
+  path: /api/token-standard/v0/registrars/{registrarParty}/registry/transfer-instruction/v1/{transferInstructionId}/choice-contexts/withdraw
+  category: public
+- name: get_open_api_spec
+  description: (no description published in the spec)
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getOpenApiSpec
+  http_method: GET
+  path: /api/utilities/v0/openapi
+  category: operator
+- name: get_operator
+  description: (no description published in the spec)
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getOperator
+  http_method: GET
+  path: /api/utilities/v0/operator
+  category: operator
+- name: get_all_packages
+  description: (no description published in the spec)
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getAllPackages
+  http_method: GET
+  path: /api/utilities/v0/package/all
+  category: operator
+- name: get_all_instrument_configurations
+  description: (no description published in the spec)
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getAllInstrumentConfigurations
+  http_method: GET
+  path: /api/utilities/v0/contract/instrument-configuration/all
+  category: operator
+- name: get_instrument_configuration
+  description: (no description published in the spec)
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getInstrumentConfiguration
+  http_method: POST
+  path: /api/utilities/v0/contract/instrument-configuration
+  category: operator
+- name: get_mint_offer_create_context
+  description: Get the factory and choice context for creating a mint offer.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getMintOfferCreateContext
+  http_method: POST
+  path: /api/utilities/v0/registry/mint/v0/offer
+  category: registry
+- name: get_mint_request_create_context
+  description: Get the factory and choice context for creating a mint request.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getMintRequestCreateContext
+  http_method: POST
+  path: /api/utilities/v0/registry/mint/v0/request
+  category: registry
+- name: get_burn_offer_create_context
+  description: Get the factory and choice context for creating a burn offer.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getBurnOfferCreateContext
+  http_method: POST
+  path: /api/utilities/v0/registry/burn/v0/offer
+  category: registry
+- name: get_burn_request_create_context
+  description: Get the factory and choice context for creating a burn request.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getBurnRequestCreateContext
+  http_method: POST
+  path: /api/utilities/v0/registry/burn/v0/request
+  category: registry
+- name: get_mint_offer_accept_context
+  description: Get the choice context to accept and execute a mint offer.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getMintOfferAcceptContext
+  http_method: POST
+  path: /api/utilities/v0/registry/mint/v0/offer/{mintOfferId}/choice-contexts/accept
+  category: registry
+- name: get_mint_offer_reject_context
+  description: Get the choice context to reject a mint offer.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getMintOfferRejectContext
+  http_method: POST
+  path: /api/utilities/v0/registry/mint/v0/offer/{mintOfferId}/choice-contexts/reject
+  category: registry
+- name: get_mint_offer_cancel_context
+  description: Get the choice context to cancel a mint offer.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getMintOfferCancelContext
+  http_method: POST
+  path: /api/utilities/v0/registry/mint/v0/offer/{mintOfferId}/choice-contexts/cancel
+  category: registry
+- name: get_mint_request_accept_context
+  description: Get the choice context to accept and execute a mint request.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getMintRequestAcceptContext
+  http_method: POST
+  path: /api/utilities/v0/registry/mint/v0/request/{mintRequestId}/choice-contexts/accept
+  category: registry
+- name: get_mint_request_reject_context
+  description: Get the choice context to reject a mint request.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getMintRequestRejectContext
+  http_method: POST
+  path: /api/utilities/v0/registry/mint/v0/request/{mintRequestId}/choice-contexts/reject
+  category: registry
+- name: get_mint_request_cancel_context
+  description: Get the choice context to cancel a mint request.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getMintRequestCancelContext
+  http_method: POST
+  path: /api/utilities/v0/registry/mint/v0/request/{mintRequestId}/choice-contexts/cancel
+  category: registry
+- name: get_burn_offer_accept_context
+  description: Get the choice context to accept and execute a burn offer.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getBurnOfferAcceptContext
+  http_method: POST
+  path: /api/utilities/v0/registry/burn/v0/offer/{burnOfferId}/choice-contexts/accept
+  category: registry
+- name: get_burn_offer_reject_context
+  description: Get the choice context to reject a burn offer.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getBurnOfferRejectContext
+  http_method: POST
+  path: /api/utilities/v0/registry/burn/v0/offer/{burnOfferId}/choice-contexts/reject
+  category: registry
+- name: get_burn_offer_cancel_context
+  description: Get the choice context to cancel a burn offer.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getBurnOfferCancelContext
+  http_method: POST
+  path: /api/utilities/v0/registry/burn/v0/offer/{burnOfferId}/choice-contexts/cancel
+  category: registry
+- name: get_burn_request_accept_context
+  description: Get the choice context to accept and execute a burn request.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getBurnRequestAcceptContext
+  http_method: POST
+  path: /api/utilities/v0/registry/burn/v0/request/{burnRequestId}/choice-contexts/accept
+  category: registry
+- name: get_burn_request_reject_context
+  description: Get the choice context to reject a burn request.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getBurnRequestRejectContext
+  http_method: POST
+  path: /api/utilities/v0/registry/burn/v0/request/{burnRequestId}/choice-contexts/reject
+  category: registry
+- name: get_burn_request_cancel_context
+  description: Get the choice context to cancel a burn request.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getBurnRequestCancelContext
+  http_method: POST
+  path: /api/utilities/v0/registry/burn/v0/request/{burnRequestId}/choice-contexts/cancel
+  category: registry
+- name: get_burn_mint_factory
+  description: Get the burn mint factory and choice context for burn and mint.
+  source_operation: openapi/digital-asset-utilities-openapi.yml#getBurnMintFactory
+  http_method: POST
+  path: /api/utilities/v0/registry/burn-mint-instruction/v0/burn-mint-factory
+  category: registry
+- name: verify_transfer_proof
+  description: 'Verify the outcome of a transfer of Registry Utility assets on Canton.  Given an UpdateID
+    and a Transfer Object, the service looks up the corresponding ledger transaction and verifies the
+    transfer details against the on-chain events.  The response status indicates the transfer outcome:
+    - `Success`: The transfer was executed in the referenced transaction - `Pending`: The transfer instruction
+    has been created but not yet settled - `Failure`: The transfer instruction was rejected or withdrawn
+    by one of the parties  If none of the above conditions are met, if the provided transfer details do
+    not match the on-chain data, or if the original TransferInstruction contract cannot be retrieved,
+    a `400` is returned. No further diagnostic information is included in the error response to prevent
+    unintended disclosure of sensitive ledger data.'
+  source_operation: openapi/digital-asset-utilities-openapi.yml#verifyTransferProof
+  http_method: POST
+  path: /api/utilities/v0/registry/transfer/v0/proof
+  category: registry

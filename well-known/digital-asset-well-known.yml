@@ -1,0 +1,92 @@
+generated: '2026-08-04'
+method: searched
+source: live probe of every apis.yml host and every OpenAPI servers[] host
+hosts:
+  - host: https://docs.digitalasset.com
+    documents:
+      - path: /.well-known/agent-card.json      # A2A agent card
+        status: 200
+        content_type: application/json
+        file: ../a2a/digital-asset-agent-card.json
+      - path: /.well-known/agent-skills/digitalasset/skill.md   # linked from the agent card
+        status: 200
+        content_type: text/markdown
+        file: ../skills/digital-asset-registry.md
+      - path: /llms.txt
+        status: 200
+        content_type: text/plain
+        file: ../llms/digital-asset-llms.txt
+      - path: /llms-full.txt
+        status: 200
+        note: fetched for reference only; never committed (see .gitignore)
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://api.utilities.digitalasset.com
+    documents:
+      - path: /api/utilities/v0/openapi        # the service serves its own OpenAPI
+        status: 200
+        file: ../openapi/digital-asset-utilities-runtime-openapi.yml
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /openapi.json
+        status: 404
+      - path: /swagger.json
+        status: 404
+      - path: /docs
+        status: 404
+  - host: https://api.utilities.digitalasset-staging.com
+    documents:
+      - path: /api/utilities/v0/openapi
+        status: 200
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+  - host: https://api.utilities.digitalasset-dev.com
+    documents:
+      - path: /api/utilities/v0/openapi
+        status: 200
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+  - host: https://www.digitalasset.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+summary:
+  security_txt: false
+  openid_configuration: false
+  oauth_authorization_server: false
+  api_catalog: false
+  agent_card: true
+  llms_txt: true
+notes: >-
+  No RFC 9116 /.well-known/security.txt is published on any host, even though Digital Asset
+  runs a real responsible-disclosure program at https://www.digitalasset.com/responsible-disclosure
+  with a security@digitalasset.com contact and a PGP key. Publishing a security.txt that
+  points at that page is the single cheapest discoverability fix available to them.
+x-evidence:
+  fetched: '2026-08-04'
