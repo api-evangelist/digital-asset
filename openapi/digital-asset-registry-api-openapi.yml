@@ -1,0 +1,1033 @@
+openapi: 3.2.0
+info:
+  title: Digital Asset Registry API
+  version: 2.1.0
+  description: 'Operations tagged registry across 2 of this provider''s published API definitions: digital-asset-utilities-openapi.yml, digital-asset-utilities-runtime-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.utilities.digitalasset.com
+  description: MainNet
+- url: https://api.utilities.digitalasset-staging.com
+  description: TestNet
+- url: https://api.utilities.digitalasset-dev.com
+  description: DevNet
+- url: http://localhost:8080
+  description: Local
+tags:
+- name: registry
+paths:
+  /api/utilities/v0/registry/mint/v0/offer:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getMintOfferCreateContext
+      x-jvm-package: registry
+      description: 'Get the factory and choice context for creating a mint offer.
+
+        '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OfferMintRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FactoryWithChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/mint/v0/request:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getMintRequestCreateContext
+      x-jvm-package: registry
+      description: 'Get the factory and choice context for creating a mint request.
+
+        '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestMintRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FactoryWithChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/burn/v0/offer:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getBurnOfferCreateContext
+      x-jvm-package: registry
+      description: 'Get the factory and choice context for creating a burn offer.
+
+        '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OfferBurnRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FactoryWithChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/burn/v0/request:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getBurnRequestCreateContext
+      x-jvm-package: registry
+      description: 'Get the factory and choice context for creating a burn request.
+
+        '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestBurnRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FactoryWithChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/mint/v0/offer/{mintOfferId}/choice-contexts/accept:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getMintOfferAcceptContext
+      x-jvm-package: registry
+      description: 'Get the choice context to accept and execute a mint offer.
+
+        '
+      parameters:
+      - name: mintOfferId
+        description: The contract ID of the mint offer to accept.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/mint/v0/offer/{mintOfferId}/choice-contexts/reject:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getMintOfferRejectContext
+      x-jvm-package: registry
+      description: 'Get the choice context to reject a mint offer.
+
+        '
+      parameters:
+      - name: mintOfferId
+        description: The contract ID of the mint offer to reject.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/mint/v0/offer/{mintOfferId}/choice-contexts/cancel:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getMintOfferCancelContext
+      x-jvm-package: registry
+      description: 'Get the choice context to cancel a mint offer.
+
+        '
+      parameters:
+      - name: mintOfferId
+        description: The contract ID of the mint offer to cancel.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/mint/v0/request/{mintRequestId}/choice-contexts/accept:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getMintRequestAcceptContext
+      x-jvm-package: registry
+      description: 'Get the choice context to accept and execute a mint request.
+
+        '
+      parameters:
+      - name: mintRequestId
+        description: The contract ID of the mint request to accept.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/mint/v0/request/{mintRequestId}/choice-contexts/reject:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getMintRequestRejectContext
+      x-jvm-package: registry
+      description: 'Get the choice context to reject a mint request.
+
+        '
+      parameters:
+      - name: mintRequestId
+        description: The contract ID of the mint request to reject.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/mint/v0/request/{mintRequestId}/choice-contexts/cancel:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getMintRequestCancelContext
+      x-jvm-package: registry
+      description: 'Get the choice context to cancel a mint request.
+
+        '
+      parameters:
+      - name: mintRequestId
+        description: The contract ID of the mint request to cancel.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/burn/v0/offer/{burnOfferId}/choice-contexts/accept:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getBurnOfferAcceptContext
+      x-jvm-package: registry
+      description: 'Get the choice context to accept and execute a burn offer.
+
+        '
+      parameters:
+      - name: burnOfferId
+        description: The contract ID of the burn offer to accept.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/burn/v0/offer/{burnOfferId}/choice-contexts/reject:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getBurnOfferRejectContext
+      x-jvm-package: registry
+      description: 'Get the choice context to reject a burn offer.
+
+        '
+      parameters:
+      - name: burnOfferId
+        description: The contract ID of the burn offer to reject.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/burn/v0/offer/{burnOfferId}/choice-contexts/cancel:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getBurnOfferCancelContext
+      x-jvm-package: registry
+      description: 'Get the choice context to cancel a burn offer.
+
+        '
+      parameters:
+      - name: burnOfferId
+        description: The contract ID of the burn offer to cancel.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/burn/v0/request/{burnRequestId}/choice-contexts/accept:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getBurnRequestAcceptContext
+      x-jvm-package: registry
+      description: 'Get the choice context to accept and execute a burn request.
+
+        '
+      parameters:
+      - name: burnRequestId
+        description: The contract ID of the burn request to accept.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/burn/v0/request/{burnRequestId}/choice-contexts/reject:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getBurnRequestRejectContext
+      x-jvm-package: registry
+      description: 'Get the choice context to reject a burn request.
+
+        '
+      parameters:
+      - name: burnRequestId
+        description: The contract ID of the burn request to reject.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/burn/v0/request/{burnRequestId}/choice-contexts/cancel:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getBurnRequestCancelContext
+      x-jvm-package: registry
+      description: 'Get the choice context to cancel a burn request.
+
+        '
+      parameters:
+      - name: burnRequestId
+        description: The contract ID of the burn request to cancel.
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/burn-mint-instruction/v0/burn-mint-factory:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: getBurnMintFactory
+      x-jvm-package: registry
+      description: 'Get the burn mint factory and choice context for burn and mint.
+
+        '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetBurnMintFactoryRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FactoryWithChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/utilities/v0/registry/transfer/v0/proof:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - registry
+      operationId: verifyTransferProof
+      x-jvm-package: registry
+      description: 'Verify the outcome of a transfer of Registry Utility assets on Canton.
+
+
+        Given an UpdateID and a Transfer Object, the service looks up the corresponding
+
+        ledger transaction and verifies the transfer details against the on-chain events.
+
+
+        The response status indicates the transfer outcome:
+
+        - `Success`: The transfer was executed in the referenced transaction
+
+        - `Pending`: The transfer instruction has been created but not yet settled
+
+        - `Failure`: The transfer instruction was rejected or withdrawn by one of the parties
+
+
+        If none of the above conditions are met, if the provided transfer details do not match
+
+        the on-chain data, or if the original TransferInstruction contract cannot be retrieved,
+
+        a `400` is returned. No further diagnostic information is included in
+
+        the error response to prevent unintended disclosure of sensitive ledger data.
+
+        '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifyTransferProofRequest'
+      responses:
+        '200':
+          description: 'Transfer proof verified. The `status` field indicates the transfer outcome
+
+            (`Success`, `Pending`, or `Failure`). See the endpoint description for details.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerifyTransferProofResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '500':
+          $ref: '#/components/responses/500'
+components:
+  schemas:
+    TransferMeta:
+      description: Additional metadata associated with the transfer.
+      type: object
+      required:
+      - values
+      properties:
+        values:
+          description: Arbitrary key-value metadata attached to the transfer.
+          type: object
+          additionalProperties:
+            type: string
+    FactoryWithChoiceContext:
+      description: 'A factory contract together with the choice context required to exercise the choice
+
+        provided by the factory. Typically used to implement the generic initiation of on-ledger workflows
+
+        via a Daml interface.
+
+
+        Clients SHOULD avoid reusing the same `FactoryWithChoiceContext` for exercising multiple choices,
+
+        as the choice context MAY be specific to the choice being exercised.
+
+        '
+      type: object
+      required:
+      - factoryId
+      - choiceContext
+      properties:
+        factoryId:
+          description: The contract ID of the contract of the factory which can be used to create instruction.
+          type: string
+        choiceContext:
+          $ref: '#/components/schemas/ChoiceContext'
+    VerifyTransferProofResponse:
+      description: The outcome of verifying a transfer proof.
+      type: object
+      required:
+      - status
+      properties:
+        status:
+          $ref: '#/components/schemas/TransferProofStatus'
+    RequestBurnRequest:
+      description: The request to get the factory and choice context for creating a burn request.
+      type: object
+      required:
+      - holder
+      - holdingContractIds
+      - instrumentId
+      properties:
+        holder:
+          description: The party whose holding will be burned.
+          type: string
+        holdingContractIds:
+          description: Contract ids of Holdings to be used for the burn.
+          type: array
+          items:
+            type: string
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+    RequestMintRequest:
+      description: The request to get the factory and choice context for creating a mint request.
+      type: object
+      required:
+      - holder
+      - instrumentId
+      properties:
+        holder:
+          description: The party for whom the holding will be minted.
+          type: string
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+    ChoiceContext:
+      description: 'The context required to exercise a choice on a contract via an interface.
+
+        Used to retrieve additional reference date that is passed in via disclosed contracts,
+
+        which are in turn referred to via their contract ID in the `choiceContextData`.
+
+        '
+      type: object
+      required:
+      - choiceContextData
+      - disclosedContracts
+      properties:
+        choiceContextData:
+          description: The additional data to use when exercising the choice.
+          type: object
+        disclosedContracts:
+          description: 'The contracts that are required to be disclosed to the participant node for exercising
+
+            the choice.
+
+            '
+          type: array
+          items:
+            $ref: '#/components/schemas/DisclosedContract'
+    GetBurnMintFactoryRequest:
+      description: The request to get the factory and choice context for burn and mint.
+      type: object
+      required:
+      - instrumentId
+      - inputHoldingCids
+      - outputs
+      properties:
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+        inputHoldingCids:
+          description: Contract ids of Holdings to be used for the burn.
+          type: array
+          items:
+            type: string
+        outputs:
+          description: The list of specification of a holding to be minted.
+          type: array
+          items:
+            $ref: '#/components/schemas/MintOutput'
+    TransferObject:
+      description: The transfer payload containing transaction details known only to the sender and receiver.
+      type: object
+      required:
+      - sender
+      - receiver
+      - amount
+      - instrumentId
+      - requestedAt
+      - executeBefore
+      - inputHoldingCids
+      - meta
+      properties:
+        sender:
+          description: The party ID of the transfer sender.
+          type: string
+        receiver:
+          description: The party ID of the transfer receiver.
+          type: string
+        amount:
+          description: The transfer amount as a decimal string.
+          type: string
+          example: '1.0000000000'
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+        requestedAt:
+          description: The timestamp when the transfer was requested.
+          type: string
+          format: date-time
+        executeBefore:
+          description: The deadline by which the transfer must be executed.
+          type: string
+          format: date-time
+        inputHoldingCids:
+          description: Contract IDs of the holdings used as inputs for the transfer.
+          type: array
+          items:
+            type: string
+        meta:
+          $ref: '#/components/schemas/TransferMeta'
+    OfferBurnRequest:
+      description: The request to get the factory and choice context for creating a burn offer.
+      type: object
+      required:
+      - holder
+      - instrumentId
+      properties:
+        holder:
+          description: The party whose holding will be burned.
+          type: string
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+    OfferMintRequest:
+      description: The request to get the factory and choice context for creating a mint offer.
+      type: object
+      required:
+      - holder
+      - instrumentId
+      properties:
+        holder:
+          description: The party for whom the holding will be minted.
+          type: string
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+    MintOutput:
+      description: The output to be minted.
+      type: object
+      required:
+      - owner
+      - amount
+      properties:
+        owner:
+          description: The party for whom the holding will be minted.
+          type: string
+        amount:
+          description: The amount to be minted.
+          type: string
+    VerifyTransferProofRequest:
+      description: Request to verify the outcome of a transfer of Registry Utility assets on Canton.
+      type: object
+      required:
+      - updateId
+      - transfer
+      properties:
+        updateId:
+          description: 'For the two-step transfer workflow, specifies the most recent UpdateId.
+
+            If the transfer has completed its second step (accept, reject, or withdraw),
+
+            use the UpdateId associated with that action. Otherwise, use the UpdateId from the initial transfer offer.
+
+            '
+          type: string
+        transfer:
+          $ref: '#/components/schemas/TransferObject'
+    InstrumentId:
+      description: The identifier of the instrument.
+      type: object
+      required:
+      - admin
+      - id
+      properties:
+        admin:
+          description: The party administering the instrument.
+          type: string
+        id:
+          description: The unique identifier of the instrument.
+          type: string
+    TransferProofStatus:
+      description: 'The status of the transfer proof verification:
+
+        - `Success`: The proof is verified and the transfer was successfully concluded
+
+        - `Failure`: The proof is verified, but the transfer did not successfully conclude.
+
+        - `Pending`: The transaction is still in progress (e.g., a transfer offer has been sent but not yet accepted in a two-step flow).
+
+        '
+      type: string
+      enum:
+      - Success
+      - Failure
+      - Pending
+    ContractMeta:
+      type: object
+      required:
+      - contractId
+      - templateId
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        contractId:
+          type: string
+        templateId:
+          type: string
+        synchronizerId:
+          type: string
+          description: Preferred synchronizer identifier for disclosed contracts and contract metadata.
+        domainId:
+          type: string
+          deprecated: true
+          description: Deprecated alias of synchronizerId kept for backward compatibility.
+    DisclosedContract:
+      allOf:
+      - $ref: '#/components/schemas/ContractMeta'
+      - type: object
+        required:
+        - createdEventBlob
+        properties:
+          createdEventBlob:
+            type: string
+            description: The base64 encoded created event blob
+    Error:
+      type: object
+      description: 'A problem occurred with processing the request. For instance: syntactically invalid JSON body, missing required fields, etc.'
+      required:
+      - error
+      - error_description
+      properties:
+        error:
+          description: An error code, e.g. invalid_token
+          type: string
+          default: unknown_error
+        error_description:
+          description: A description of the error
+          type: string
+          default: Something went wrong
+  responses:
+    '500':
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    '404':
+      description: not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    '400':
+      description: bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+x-refined-from:
+- digital-asset-utilities-openapi.yml
+- digital-asset-utilities-runtime-openapi.yml

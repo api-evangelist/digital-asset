@@ -1,0 +1,700 @@
+{
+  "item": [
+    {
+      "id": "c5360a6d-ac56-438d-a26e-17c6c8dc2639",
+      "name": "operator",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eda270fd-4c44-4b45-82f5-3b30c855f6c7",
+          "name": "get Open Api Spec",
+          "request": {
+            "name": "get Open Api Spec",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "openapi"
+              ],
+              "host": [
+                "{{api-utilities-v0-openapi-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9870f685-65e2-4d2c-853c-172c4d1bac97",
+              "name": "Returns the OpenApi specification",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "openapi"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-openapi-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7668d7d4-e53d-483b-a649-acb2ae4b5037",
+              "name": "OpenApi specification is not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "openapi"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-openapi-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e6ca763f-dd1d-497b-aa13-aad9cc347a9d",
+          "name": "get Operator",
+          "request": {
+            "name": "get Operator",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "operator"
+              ],
+              "host": [
+                "{{api-utilities-v0-operator-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d357b529-a130-4c8c-a7fe-eb3a6c75ef3a",
+              "name": "Returns the operator party",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "operator"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-operator-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"partyId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7bf72af4-cdf3-4f0c-8f1a-974c03624d8b",
+              "name": "Operator party is not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "operator"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-operator-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a853acb0-140c-45c1-b949-1e7a86c96b57",
+          "name": "get All Packages",
+          "request": {
+            "name": "get All Packages",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "package",
+                "all"
+              ],
+              "host": [
+                "{{api-utilities-v0-package-all-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96e21c30-caf1-4dbb-87cc-6e6e473572e4",
+              "name": "Returns package information that are in use",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "package",
+                    "all"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-package-all-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"packages\": [\n    {\n      \"name\": \"string\",\n      \"id\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"id\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f57093f2-ccaa-4e2e-a3bd-6b54f0082c97",
+              "name": "Operator party is not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "package",
+                    "all"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-package-all-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc244f11-3558-47ef-a214-572eab5bdbf6",
+          "name": "get All Instrument Configurations",
+          "request": {
+            "name": "get All Instrument Configurations",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "contract",
+                "instrument-configuration",
+                "all"
+              ],
+              "host": [
+                "{{api-utilities-v0-contract-instrument-configuration-all-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "81a34c43-fa19-434a-b9c6-c9414994c548",
+              "name": "Returns all instrument configurations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "contract",
+                    "instrument-configuration",
+                    "all"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-contract-instrument-configuration-all-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"instrumentConfigurations\": [\n    {\n      \"contract\": {\n        \"contractId\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"2019-10-29T02:07:05.953Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      },\n      \"payload\": {\n        \"operator\": \"string\",\n        \"provider\": \"string\",\n        \"registrar\": \"string\",\n        \"defaultIdentifier\": {\n          \"source\": \"string\",\n          \"id\": \"string\",\n          \"scheme\": \"string\"\n        },\n        \"additionalIdentifiers\": [\n          {\n            \"source\": \"string\",\n            \"id\": \"string\",\n            \"scheme\": \"string\"\n          },\n          {\n            \"source\": \"string\",\n            \"id\": \"string\",\n            \"scheme\": \"string\"\n          }\n        ],\n        \"issuerRequirements\": [\n          {\n            \"issuer\": \"string\",\n            \"requiredClaims\": \"string\"\n          },\n          {\n            \"issuer\": \"string\",\n            \"requiredClaims\": \"string\"\n          }\n        ],\n        \"holderRequirements\": [\n          {\n            \"issuer\": \"string\",\n            \"requiredClaims\": \"string\"\n          },\n          {\n            \"issuer\": \"string\",\n            \"requiredClaims\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"contract\": {\n        \"contractId\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"1999-10-17T01:17:15.657Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      },\n      \"payload\": {\n        \"operator\": \"string\",\n        \"provider\": \"string\",\n        \"registrar\": \"string\",\n        \"defaultIdentifier\": {\n          \"source\": \"string\",\n          \"id\": \"string\",\n          \"scheme\": \"string\"\n        },\n        \"additionalIdentifiers\": [\n          {\n            \"source\": \"string\",\n            \"id\": \"string\",\n            \"scheme\": \"string\"\n          },\n          {\n            \"source\": \"string\",\n            \"id\": \"string\",\n            \"scheme\": \"string\"\n          }\n        ],\n        \"issuerRequirements\": [\n          {\n            \"issuer\": \"string\",\n            \"requiredClaims\": \"string\"\n          },\n          {\n            \"issuer\": \"string\",\n            \"requiredClaims\": \"string\"\n          }\n        ],\n        \"holderRequirements\": [\n          {\n            \"issuer\": \"string\",\n            \"requiredClaims\": \"string\"\n          },\n          {\n            \"issuer\": \"string\",\n            \"requiredClaims\": \"string\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "16072b99-dbe8-4e98-914f-a80f0f54d307",
+              "name": "Operator party is not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "contract",
+                    "instrument-configuration",
+                    "all"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-contract-instrument-configuration-all-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "efd4e383-9bbc-4cd3-aa04-404ba21c57da",
+          "name": "get Instrument Configuration",
+          "request": {
+            "name": "get Instrument Configuration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "contract",
+                "instrument-configuration"
+              ],
+              "host": [
+                "{{api-utilities-v0-contract-instrument-configuration-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"registrar\": \"<string>\",\n  \"instrumentIdentifier\": {\n    \"source\": \"<string>\",\n    \"id\": \"<string>\",\n    \"scheme\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b45090c3-9f61-44b9-b278-d98e646ee064",
+              "name": "Returns the instrument configuration",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "contract",
+                    "instrument-configuration"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-contract-instrument-configuration-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"registrar\": \"<string>\",\n  \"instrumentIdentifier\": {\n    \"source\": \"<string>\",\n    \"id\": \"<string>\",\n    \"scheme\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contract\": {\n    \"contractId\": \"string\",\n    \"templateId\": \"string\",\n    \"createdAt\": \"1977-03-02T19:55:16.713Z\",\n    \"synchronizerId\": \"string\",\n    \"domainId\": \"string\"\n  },\n  \"payload\": {\n    \"operator\": \"string\",\n    \"provider\": \"string\",\n    \"registrar\": \"string\",\n    \"defaultIdentifier\": {\n      \"source\": \"<string>\",\n      \"id\": \"<string>\",\n      \"scheme\": \"<string>\"\n    },\n    \"additionalIdentifiers\": [\n      {\n        \"source\": \"<string>\",\n        \"id\": \"<string>\",\n        \"scheme\": \"<string>\"\n      },\n      {\n        \"source\": \"<string>\",\n        \"id\": \"<string>\",\n        \"scheme\": \"<string>\"\n      }\n    ],\n    \"issuerRequirements\": [\n      {\n        \"issuer\": \"string\",\n        \"requiredClaims\": \"string\"\n      },\n      {\n        \"issuer\": \"string\",\n        \"requiredClaims\": \"string\"\n      }\n    ],\n    \"holderRequirements\": [\n      {\n        \"issuer\": \"string\",\n        \"requiredClaims\": \"string\"\n      },\n      {\n        \"issuer\": \"string\",\n        \"requiredClaims\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3a1e7cd4-3444-4187-ac08-8a389a5ef0a2",
+              "name": "Instrument configuration not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "contract",
+                    "instrument-configuration"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-contract-instrument-configuration-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"registrar\": \"<string>\",\n  \"instrumentIdentifier\": {\n    \"source\": \"<string>\",\n    \"id\": \"<string>\",\n    \"scheme\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4feb0d1a-2a5d-4c20-8e80-b6db93cd1742",
+              "name": "Operator party is not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "contract",
+                    "instrument-configuration"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-contract-instrument-configuration-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"registrar\": \"<string>\",\n  \"instrumentIdentifier\": {\n    \"source\": \"<string>\",\n    \"id\": \"<string>\",\n    \"scheme\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "baseUrl"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-openapi-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-operator-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-package-all-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-contract-instrument-configuration-all-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-contract-instrument-configuration-Url"
+    }
+  ],
+  "info": {
+    "_postman_id": "988ce04d-efc1-404b-9b13-f46a03686776",
+    "name": "Digital Asset Operator API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Operations tagged operator across 2 of this provider's published API definitions: digital-asset-utilities-openapi.yml, digital-asset-utilities-runtime-openapi.yml. Each path carries the servers of the definition it was published in.",
+      "type": "text/plain"
+    }
+  }
+}

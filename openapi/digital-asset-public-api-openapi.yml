@@ -1,0 +1,830 @@
+openapi: 3.2.0
+info:
+  title: Digital Asset Public API
+  version: 1.0.0
+  description: 'Operations tagged public across 4 of this provider''s published API definitions: digital-asset-allocation-instruction-v1-openapi.yml, digital-asset-allocation-v1-openapi.yml, digital-asset-token-metadata-v1-openapi.yml, digital-asset-transfer-instruction-v1-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.utilities.digitalasset.com
+  description: MainNet
+- url: https://api.utilities.digitalasset-staging.com
+  description: TestNet
+- url: https://api.utilities.digitalasset-dev.com
+  description: DevNet
+- url: http://localhost:8080
+  description: Local
+tags:
+- name: public
+paths:
+  /api/token-standard/v0/registrars/{registrarParty}/registry/allocation-instruction/v1/allocation-factory:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - public
+      operationId: getAllocationFactory
+      x-jvm-package: allocation_instruction
+      description: 'Get the factory and choice context for creating allocations using the `AllocationFactory_Allocate` choice.
+
+        '
+      parameters:
+      - name: registrarParty
+        description: The registrar party.
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetFactoryRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FactoryWithChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/token-standard/v0/registrars/{registrarParty}/registry/allocations/v1/{allocationId}/choice-contexts/execute-transfer:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - public
+      operationId: getAllocationTransferContext
+      x-jvm-package: allocation
+      description: 'Get the choice context to execute a transfer on an allocation.
+
+        '
+      parameters:
+      - name: allocationId
+        description: The contract ID of the allocation whose transfer the caller wants to execute.
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: registrarParty
+        description: The registrar party.
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetChoiceContextRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+  /api/token-standard/v0/registrars/{registrarParty}/registry/allocations/v1/{allocationId}/choice-contexts/withdraw:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - public
+      operationId: getAllocationWithdrawContext
+      x-jvm-package: allocation
+      description: 'Get the choice context to withdraw an allocation.
+
+        '
+      parameters:
+      - name: allocationId
+        description: The contract ID of the allocation to withdraw.
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: registrarParty
+        description: The registrar party.
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetChoiceContextRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+  /api/token-standard/v0/registrars/{registrarParty}/registry/allocations/v1/{allocationId}/choice-contexts/cancel:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - public
+      operationId: getAllocationCancelContext
+      x-jvm-package: allocation
+      description: 'Get the choice context to cancel an allocation.
+
+        '
+      parameters:
+      - name: allocationId
+        description: The contract ID of the allocation to cancel.
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: registrarParty
+        description: The registrar party.
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetChoiceContextRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+  /api/token-standard/v0/registrars/{registrarParty}/registry/metadata/v1/info:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    get:
+      tags:
+      - public
+      operationId: getRegistryInfo
+      x-jvm-package: metadata
+      description: 'Get information about the registry.
+
+        The response includes the standards supported by the registry.
+
+        '
+      parameters:
+      - name: registrarParty
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The registrar party.
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRegistryInfoResponse'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/token-standard/v0/registrars/{registrarParty}/registry/metadata/v1/instruments:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    get:
+      tags:
+      - public
+      operationId: listInstruments
+      x-jvm-package: metadata
+      description: List all instruments managed by this instrument admin.
+      parameters:
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 25
+        description: Number of instruments per page.
+      - name: pageToken
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The `nextPageToken` received from the response for the previous page.
+      - name: registrarParty
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The registrar party.
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListInstrumentsResponse'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/token-standard/v0/registrars/{registrarParty}/registry/metadata/v1/instruments/{instrumentId}:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    get:
+      tags:
+      - public
+      operationId: getInstrument
+      x-jvm-package: metadata
+      description: Retrieve an instrument's metadata.
+      parameters:
+      - name: registrarParty
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The registrar party.
+      - name: instrumentId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Instrument'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /api/token-standard/v0/registrars/{registrarParty}/registry/transfer-instruction/v1/transfer-factory:
+    servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - public
+      operationId: getTransferFactory
+      x-jvm-package: transfer_instruction
+      description: 'Get the factory and choice context for executing a direct transfer.
+
+        '
+      parameters:
+      - name: registrarParty
+        description: The registrar party.
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetFactoryRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransferFactoryWithChoiceContext'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  ? /api/token-standard/v0/registrars/{registrarParty}/registry/transfer-instruction/v1/{transferInstructionId}/choice-contexts/accept
+  : servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - public
+      operationId: getTransferInstructionAcceptContext
+      x-jvm-package: transfer_instruction
+      description: 'Get the choice context to accept a transfer instruction.
+
+        '
+      parameters:
+      - name: transferInstructionId
+        description: The contract ID of the transfer instruction to accept.
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: registrarParty
+        description: The registrar party.
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetChoiceContextRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext_2'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  ? /api/token-standard/v0/registrars/{registrarParty}/registry/transfer-instruction/v1/{transferInstructionId}/choice-contexts/reject
+  : servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - public
+      operationId: getTransferInstructionRejectContext
+      x-jvm-package: transfer_instruction
+      description: 'Get the choice context to reject a transfer instruction.
+
+        '
+      parameters:
+      - name: transferInstructionId
+        description: The contract ID of the transfer instruction to reject.
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: registrarParty
+        description: The registrar party.
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetChoiceContextRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext_2'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  ? /api/token-standard/v0/registrars/{registrarParty}/registry/transfer-instruction/v1/{transferInstructionId}/choice-contexts/withdraw
+  : servers:
+    - url: https://api.utilities.digitalasset.com
+      description: MainNet
+    - url: https://api.utilities.digitalasset-staging.com
+      description: TestNet
+    - url: https://api.utilities.digitalasset-dev.com
+      description: DevNet
+    - url: http://localhost:8080
+      description: Local
+    post:
+      tags:
+      - public
+      operationId: getTransferInstructionWithdrawContext
+      x-jvm-package: transfer_instruction
+      description: 'Get the choice context to withdraw a transfer instruction.
+
+        '
+      parameters:
+      - name: transferInstructionId
+        description: The contract ID of the transfer instruction to withdraw.
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: registrarParty
+        description: The registrar party.
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetChoiceContextRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChoiceContext_2'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+components:
+  schemas:
+    TransferFactoryWithChoiceContext:
+      description: 'The transfer factory contract together with the choice context required to exercise the choice
+
+        provided by the factory. Typically used to implement the generic initiation of on-ledger workflows
+
+        via a Daml interface.
+
+
+        Clients SHOULD avoid reusing the same `FactoryWithChoiceContext` for exercising multiple choices,
+
+        as the choice context MAY be specific to the choice being exercised.
+
+        '
+      type: object
+      properties:
+        factoryId:
+          description: The contract ID of the contract implementing the factory interface.
+          type: string
+        transferKind:
+          description: "The kind of transfer workflow that will be used:\n* `offer`: offer a transfer to the receiver and only transfer if they accept\n* `direct`: transfer directly to the receiver without asking them for approval.\n  Only chosen if the receiver has pre-approved direct transfers.\n* `self`: a self-transfer where the sender and receiver are the same party.\n  No approval is required, and the transfer is typically immediate.\n"
+          type: string
+          enum:
+          - self
+          - direct
+          - offer
+        choiceContext:
+          $ref: '#/components/schemas/ChoiceContext_2'
+      required:
+      - factoryId
+      - choiceContext
+      - transferKind
+    ChoiceContext_2:
+      description: 'The context required to exercise a choice on a contract via an interface.
+
+        Used to retrieve additional reference data that is passed in via disclosed contracts,
+
+        which are in turn referred to via their contract ID in the `choiceContextData`.
+
+        '
+      type: object
+      properties:
+        choiceContextData:
+          description: The additional data to use when exercising the choice.
+          type: object
+        disclosedContracts:
+          description: 'The contracts that are required to be disclosed to the participant node for exercising
+
+            the choice.
+
+            '
+          type: array
+          items:
+            $ref: '#/components/schemas/DisclosedContract'
+      required:
+      - choiceContextData
+      - disclosedContracts
+    ListInstrumentsResponse:
+      type: object
+      properties:
+        instruments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Instrument'
+        nextPageToken:
+          type: string
+          description: The token for the next page of results, to be used as the lastInstrumentId for the next page.
+      required:
+      - instruments
+    GetRegistryInfoResponse:
+      type: object
+      properties:
+        adminId:
+          description: The Daml party representing the registry app
+          type: string
+        supportedApis:
+          description: The token standard APIs supported by the registry. Note that this only includes the registry-wide APIs. Use the instrument lookup endpoints to see which APIs are supported for a given instrument
+          $ref: '#/components/schemas/SupportedApis'
+      required:
+      - adminId
+      - supportedApis
+    Instrument:
+      type: object
+      properties:
+        id:
+          description: The unique identifier assigned by the admin to the instrument.
+          type: string
+        name:
+          description: The display name for the instrument recommended by the instrument admin. This is not necessarily unique.
+          type: string
+        symbol:
+          description: The symbol for the instrument recommended by the instrument admin. This is not necessarily unique.
+          type: string
+        totalSupply:
+          description: Decimal encoded current total supply of the instrument.
+          type: string
+        totalSupplyAsOf:
+          description: The timestamp when the total supply was last computed.
+          type: string
+          format: date-time
+        decimals:
+          description: 'The number of decimal places used by the instrument.
+
+
+            Must be a number between 0 and 10, as the Daml interfaces represent holding amounts as
+
+            `Decimal` values, which use 10 decimal places and are precise for 38 digits.
+
+            Setting this to 0 means that the instrument can only be held in whole units.
+
+
+            This number SHOULD be used for display purposes in a wallet to decide how many
+
+            decimal places to show and accept when displaying or entering amounts.
+
+            '
+          type: integer
+          format: int8
+          default: 10
+        supportedApis:
+          $ref: '#/components/schemas/SupportedApis'
+      required:
+      - id
+      - name
+      - symbol
+      - decimals
+      - supportedApis
+    DisclosedContract:
+      type: object
+      properties:
+        templateId:
+          type: string
+        contractId:
+          type: string
+        createdEventBlob:
+          type: string
+        synchronizerId:
+          description: 'The synchronizer to which the contract is currently assigned.
+
+            If the contract is in the process of being reassigned, then a "409" response is returned.
+
+            '
+          type: string
+        debugPackageName:
+          description: 'The name of the Daml package that was used to create the contract.
+
+            Use this data only if you trust the provider, as it might not match the data in the
+
+            `createdEventBlob`.
+
+            '
+          type: string
+        debugPayload:
+          description: 'The contract arguments that were used to create the contract.
+
+            Use this data only if you trust the provider, as it might not match the data in the
+
+            `createdEventBlob`.
+
+            '
+          type: object
+        debugCreatedAt:
+          description: 'The ledger effective time at which the contract was created.
+
+            Use this data only if you trust the provider, as it might not match the data in the
+
+            `createdEventBlob`.
+
+            '
+          type: string
+          format: date-time
+      required:
+      - templateId
+      - contractId
+      - createdEventBlob
+      - synchronizerId
+    GetFactoryRequest:
+      type: object
+      properties:
+        choiceArguments:
+          type: object
+          description: 'The arguments that are intended to be passed to the choice provided by the factory.
+
+            To avoid repeating the Daml type definitions, they are specified as JSON objects.
+
+            However the concrete format is given by how the choice arguments are encoded using the Daml JSON API
+
+            (with the `extraArgs.context` and `extraArgs.meta` fields set to the empty object).
+
+
+            The choice arguments are provided so that the registry can also provide choice-argument
+
+            specific contracts, e.g., the configuration for a specific instrument-id.
+
+            '
+        excludeDebugFields:
+          description: If set to true, the response will not include debug fields.
+          default: false
+          type: boolean
+      required:
+      - choiceArguments
+    ChoiceContext:
+      description: 'The context required to exercise a choice on a contract via an interface.
+
+        Used to retrieve additional reference date that is passed in via disclosed contracts,
+
+        which are in turn referred to via their contract ID in the `choiceContextData`.
+
+        '
+      type: object
+      properties:
+        choiceContextData:
+          description: The additional data to use when exercising the choice.
+          type: object
+        disclosedContracts:
+          description: 'The contracts that are required to be disclosed to the participant node for exercising
+
+            the choice.
+
+            '
+          type: array
+          items:
+            $ref: '#/components/schemas/DisclosedContract'
+      required:
+      - choiceContextData
+      - disclosedContracts
+    GetChoiceContextRequest:
+      description: 'A request to get the context for executing a choice on a contract.
+
+        '
+      type: object
+      properties:
+        meta:
+          description: 'Metadata that will be passed to the choice, and should be incorporated
+
+            into the choice context. Provided for extensibility.
+
+            '
+          type: object
+          additionalProperties:
+            type: string
+    ErrorResponse:
+      type: object
+      required:
+      - error
+      properties:
+        error:
+          type: string
+    SupportedApis:
+      description: 'Map from token standard API name to the minor version of the API supported, e.g.,
+
+        splice-api-token-metadata-v1 -> 1 where the `1` corresponds to the minor version.
+
+        '
+      type: object
+      additionalProperties:
+        type: integer
+        format: int32
+    FactoryWithChoiceContext:
+      description: 'A factory contract together with the choice context required to exercise the choice
+
+        provided by the factory. Typically used to implement the generic initiation of on-ledger workflows
+
+        via a Daml interface.
+
+
+        Clients SHOULD avoid reusing the same `FactoryWithChoiceContext` for exercising multiple choices,
+
+        as the choice context MAY be specific to the choice being exercised.
+
+        '
+      type: object
+      properties:
+        factoryId:
+          description: The contract ID of the contract implementing the factory interface.
+          type: string
+        choiceContext:
+          $ref: '#/components/schemas/ChoiceContext'
+      required:
+      - factoryId
+      - choiceContext
+  responses:
+    '400':
+      description: bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '404':
+      description: not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '500':
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+x-refined-from:
+- digital-asset-allocation-instruction-v1-openapi.yml
+- digital-asset-allocation-v1-openapi.yml
+- digital-asset-token-metadata-v1-openapi.yml
+- digital-asset-transfer-instruction-v1-openapi.yml

@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Digital Asset Operator API",
+    "version": "2.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "operator",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getOpenApiSpec",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/openapi"
+          }
+        },
+        {
+          "info": {
+            "name": "getOperator",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/operator"
+          }
+        },
+        {
+          "info": {
+            "name": "getAllPackages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/package/all"
+          }
+        },
+        {
+          "info": {
+            "name": "getAllInstrumentConfigurations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/contract/instrument-configuration/all"
+          }
+        },
+        {
+          "info": {
+            "name": "getInstrumentConfiguration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/contract/instrument-configuration",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

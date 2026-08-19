@@ -1,0 +1,4693 @@
+{
+  "item": [
+    {
+      "id": "7988f26f-5d1b-4c2d-b707-dc29009f3a84",
+      "name": "registry",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1d92240b-c7a3-429d-8256-de1beb0e72a8",
+          "name": "get Mint Offer Create Context",
+          "request": {
+            "name": "get Mint Offer Create Context",
+            "description": {
+              "content": "Get the factory and choice context for creating a mint offer.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "mint",
+                "v0",
+                "offer"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-mint-v0-offer-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3f9e9e9b-b141-4c86-b70c-9fbff5f716d0",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"factoryId\": \"string\",\n  \"choiceContext\": {\n    \"choiceContextData\": {},\n    \"disclosedContracts\": [\n      {\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"2004-07-27T04:28:48.569Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      },\n      {\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"1946-11-27T05:44:41.288Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0771234a-8580-449f-bb6b-e43d35552a75",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "52114037-338f-4682-8d9c-c04182702711",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09ec311c-5395-4330-91ec-5fb889220605",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "341a8f12-6a9b-436d-b8a3-380ac6be2a81",
+          "name": "get Mint Request Create Context",
+          "request": {
+            "name": "get Mint Request Create Context",
+            "description": {
+              "content": "Get the factory and choice context for creating a mint request.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "mint",
+                "v0",
+                "request"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-mint-v0-request-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "336437d3-11da-44ee-bea5-24b1336c5f7d",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"factoryId\": \"string\",\n  \"choiceContext\": {\n    \"choiceContextData\": {},\n    \"disclosedContracts\": [\n      {\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"1994-07-11T02:55:30.986Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      },\n      {\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"2011-03-28T01:43:45.585Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8ac10ff8-73e5-478e-afae-b9fbad0d2bd2",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa17d64d-80f5-439f-99e5-f3c9991edcca",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "99d1e30e-6c61-4d23-b566-9866399bf0d1",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b84f8690-4cbd-486f-aff4-3b33f4baab40",
+          "name": "get Burn Offer Create Context",
+          "request": {
+            "name": "get Burn Offer Create Context",
+            "description": {
+              "content": "Get the factory and choice context for creating a burn offer.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "burn",
+                "v0",
+                "offer"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-burn-v0-offer-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "753f79d6-c94d-4dcf-a0d2-240ed9d4949b",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"factoryId\": \"string\",\n  \"choiceContext\": {\n    \"choiceContextData\": {},\n    \"disclosedContracts\": [\n      {\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"1994-07-11T02:55:30.986Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      },\n      {\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"2011-03-28T01:43:45.585Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da97d486-2132-4675-aa58-0fa232b99946",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bfc36ecb-2624-4ecd-99f5-9ff1d2bf6fe6",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e03b633-9320-4597-a463-905989825d27",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c97e73f-d575-448b-a09b-cf8078e570a4",
+          "name": "get Burn Request Create Context",
+          "request": {
+            "name": "get Burn Request Create Context",
+            "description": {
+              "content": "Get the factory and choice context for creating a burn request.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "burn",
+                "v0",
+                "request"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-burn-v0-request-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"holder\": \"<string>\",\n  \"holdingContractIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b0d2fde3-4c5d-40a3-a52e-2beee67a2c81",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"holdingContractIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"factoryId\": \"string\",\n  \"choiceContext\": {\n    \"choiceContextData\": {},\n    \"disclosedContracts\": [\n      {\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"1994-07-11T02:55:30.986Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      },\n      {\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"2011-03-28T01:43:45.585Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09090018-54d7-44b5-a510-cc280a762c93",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"holdingContractIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89b99cbd-f633-42b2-8acb-83ac1ad208b3",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"holdingContractIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a803844-dc70-43c7-9043-80cc0d680347",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"holder\": \"<string>\",\n  \"holdingContractIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0088f380-93cb-4720-afdd-9fdbc0684d71",
+          "name": "get Mint Offer Accept Context",
+          "request": {
+            "name": "get Mint Offer Accept Context",
+            "description": {
+              "content": "Get the choice context to accept and execute a mint offer.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "mint",
+                "v0",
+                "offer",
+                ":mintOfferId",
+                "choice-contexts",
+                "accept"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-accept-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mintOfferId",
+                  "description": "(Required) The contract ID of the mint offer to accept."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5cd8c3f2-cb56-4524-a475-a947a011602e",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b4a770bf-d6e7-4802-a269-d82b662a6c8f",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e84d12c2-d7eb-4094-ae9d-d0fe1d29bd38",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d3cd0cd7-3e33-4cc6-a251-dae56a7a019e",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "89e21ac4-72f7-4380-8325-5d876031fa65",
+          "name": "get Mint Offer Reject Context",
+          "request": {
+            "name": "get Mint Offer Reject Context",
+            "description": {
+              "content": "Get the choice context to reject a mint offer.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "mint",
+                "v0",
+                "offer",
+                ":mintOfferId",
+                "choice-contexts",
+                "reject"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-reject-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mintOfferId",
+                  "description": "(Required) The contract ID of the mint offer to reject."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "506a210b-d340-492d-b5de-554b2d48edc1",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5d20d8d8-17cd-4c67-9ef5-5b5c71b60bc4",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43574af4-5e14-4e8b-9ab0-80161ce53744",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67a5a012-4086-4ebe-a458-132232afd7f1",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a85d011a-1a72-4207-81c3-06f57b8ff0e7",
+          "name": "get Mint Offer Cancel Context",
+          "request": {
+            "name": "get Mint Offer Cancel Context",
+            "description": {
+              "content": "Get the choice context to cancel a mint offer.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "mint",
+                "v0",
+                "offer",
+                ":mintOfferId",
+                "choice-contexts",
+                "cancel"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-cancel-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mintOfferId",
+                  "description": "(Required) The contract ID of the mint offer to cancel."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b0d44b19-d5d9-4b06-a931-06a42e8222e7",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0dbcd0fa-d4c9-4987-ba06-690957fb934e",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "53912826-a080-4b6d-b768-03dc8e0e6783",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "42a8b459-e80a-4a3c-8139-d571884d254b",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "offer",
+                    ":mintOfferId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintOfferId",
+                      "description": "(Required) The contract ID of the mint offer to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02df7457-83ab-4f4c-8009-4ed2406c3915",
+          "name": "get Mint Request Accept Context",
+          "request": {
+            "name": "get Mint Request Accept Context",
+            "description": {
+              "content": "Get the choice context to accept and execute a mint request.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "mint",
+                "v0",
+                "request",
+                ":mintRequestId",
+                "choice-contexts",
+                "accept"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-accept-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mintRequestId",
+                  "description": "(Required) The contract ID of the mint request to accept."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7357a204-73ff-410a-b988-3cd81c8822d7",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "877e6633-e3d0-4ed8-a484-f364ca9a7998",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7f0641c4-5372-4db9-b392-d6a97418df09",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "05879303-eb88-4b38-b85a-2d36c9fb8aba",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b86a3d73-6c9a-4bc6-9586-bd3cd75bebb0",
+          "name": "get Mint Request Reject Context",
+          "request": {
+            "name": "get Mint Request Reject Context",
+            "description": {
+              "content": "Get the choice context to reject a mint request.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "mint",
+                "v0",
+                "request",
+                ":mintRequestId",
+                "choice-contexts",
+                "reject"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-reject-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mintRequestId",
+                  "description": "(Required) The contract ID of the mint request to reject."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bad8bc2c-5498-4101-afbf-50a4988afacd",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "669a8bb8-5c85-4323-9897-4fb9ec7c6d90",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a36099f9-a25e-432e-9d46-8095fd7776bc",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c9384ce6-fe29-4fc1-a2b1-ab203c7ae0af",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "051a66ae-9bae-4d48-aeb8-a2f6c9c9b4eb",
+          "name": "get Mint Request Cancel Context",
+          "request": {
+            "name": "get Mint Request Cancel Context",
+            "description": {
+              "content": "Get the choice context to cancel a mint request.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "mint",
+                "v0",
+                "request",
+                ":mintRequestId",
+                "choice-contexts",
+                "cancel"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-cancel-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mintRequestId",
+                  "description": "(Required) The contract ID of the mint request to cancel."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96a0fd86-65ac-4570-a02a-19e084f1d637",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e84f880-a2cc-4447-8491-5748063ad8f2",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72e35e73-5bd5-42f3-8c50-c03cc3181fce",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "93a48de2-2a62-48ad-b75e-042463d57076",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "mint",
+                    "v0",
+                    "request",
+                    ":mintRequestId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mintRequestId",
+                      "description": "(Required) The contract ID of the mint request to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c99ffb7-a1ce-41a2-bd6b-313d366b191d",
+          "name": "get Burn Offer Accept Context",
+          "request": {
+            "name": "get Burn Offer Accept Context",
+            "description": {
+              "content": "Get the choice context to accept and execute a burn offer.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "burn",
+                "v0",
+                "offer",
+                ":burnOfferId",
+                "choice-contexts",
+                "accept"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-accept-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "burnOfferId",
+                  "description": "(Required) The contract ID of the burn offer to accept."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ec92a6e-a526-4c38-af8e-00d2582862e1",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ea14243-ca09-4efb-a28e-6e1f3402bca9",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82a108f2-1350-4d04-bfaf-d0d58bc4fe13",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "887e184b-b792-4362-914a-18645e35998e",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18315d59-73d1-42e6-9ad2-baf58c114af5",
+          "name": "get Burn Offer Reject Context",
+          "request": {
+            "name": "get Burn Offer Reject Context",
+            "description": {
+              "content": "Get the choice context to reject a burn offer.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "burn",
+                "v0",
+                "offer",
+                ":burnOfferId",
+                "choice-contexts",
+                "reject"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-reject-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "burnOfferId",
+                  "description": "(Required) The contract ID of the burn offer to reject."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2efdad4-a449-4516-8e45-53891975262b",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "daa6ae7a-a196-4b82-844d-f7b8592e5412",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0d6a9bc-3818-450a-bbc1-4bee8eab39ce",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "394983c0-443f-405a-af47-aa79195413f8",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "64effcde-d611-46d0-adb8-14b7c5e08796",
+          "name": "get Burn Offer Cancel Context",
+          "request": {
+            "name": "get Burn Offer Cancel Context",
+            "description": {
+              "content": "Get the choice context to cancel a burn offer.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "burn",
+                "v0",
+                "offer",
+                ":burnOfferId",
+                "choice-contexts",
+                "cancel"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-cancel-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "burnOfferId",
+                  "description": "(Required) The contract ID of the burn offer to cancel."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "864d36fd-d017-48d6-ba0c-3d004e37a093",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0365c52f-bdb4-4f9c-ae8e-58d0961b4baa",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "742bbecc-ab21-41a0-95e9-a0958b2f2215",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "501c05a1-b2c8-40e6-806e-44a1f0ff58cf",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "offer",
+                    ":burnOfferId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnOfferId",
+                      "description": "(Required) The contract ID of the burn offer to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e6e3fbc0-2a22-4b27-838f-f251b6882d61",
+          "name": "get Burn Request Accept Context",
+          "request": {
+            "name": "get Burn Request Accept Context",
+            "description": {
+              "content": "Get the choice context to accept and execute a burn request.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "burn",
+                "v0",
+                "request",
+                ":burnRequestId",
+                "choice-contexts",
+                "accept"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-accept-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "burnRequestId",
+                  "description": "(Required) The contract ID of the burn request to accept."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ac556a9-dfbf-4d17-85be-c579ea0e34af",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08234231-6d14-4e6c-b711-2ddb936b5cbc",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "90384ec5-971d-40b2-b52d-05423960ac50",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dda18428-86ff-4e7c-9f27-306ab216663c",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to accept."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a127288f-d3b6-4032-ae3d-6b2e30bc854d",
+          "name": "get Burn Request Reject Context",
+          "request": {
+            "name": "get Burn Request Reject Context",
+            "description": {
+              "content": "Get the choice context to reject a burn request.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "burn",
+                "v0",
+                "request",
+                ":burnRequestId",
+                "choice-contexts",
+                "reject"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-reject-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "burnRequestId",
+                  "description": "(Required) The contract ID of the burn request to reject."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9528ff38-9aed-4b38-b456-2b3f3c3dc67d",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b16fb80f-5b61-4b66-84b2-7fd4cee3c945",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "644dfe63-1a4c-4bfc-afb0-099d0c84ad45",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79358acd-4aa9-49d3-910a-3de06631e5ef",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to reject."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6b15131-f097-4acb-893f-d9216d5f9004",
+          "name": "get Burn Request Cancel Context",
+          "request": {
+            "name": "get Burn Request Cancel Context",
+            "description": {
+              "content": "Get the choice context to cancel a burn request.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "burn",
+                "v0",
+                "request",
+                ":burnRequestId",
+                "choice-contexts",
+                "cancel"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-cancel-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "burnRequestId",
+                  "description": "(Required) The contract ID of the burn request to cancel."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "59e1a033-308c-4ccb-9694-f4b1cdd3d115",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1979-10-28T15:25:07.743Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    },\n    {\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"templateId\": \"string\",\n      \"createdAt\": \"1996-12-29T13:28:40.589Z\",\n      \"synchronizerId\": \"string\",\n      \"domainId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04627322-04a5-4f3a-9c44-a581bf2319ec",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2bfa4a9e-03d2-4bf1-a604-291b41aecd16",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "655c9ded-82b3-40e6-9cd7-25fff0cce7ee",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn",
+                    "v0",
+                    "request",
+                    ":burnRequestId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "burnRequestId",
+                      "description": "(Required) The contract ID of the burn request to cancel."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "00fe8457-2643-4ab1-8309-dab2ed134b15",
+          "name": "get Burn Mint Factory",
+          "request": {
+            "name": "get Burn Mint Factory",
+            "description": {
+              "content": "Get the burn mint factory and choice context for burn and mint.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "burn-mint-instruction",
+                "v0",
+                "burn-mint-factory"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-burn-mint-instruction-v0-burn-mint-factory-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  \"inputHoldingCids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"outputs\": [\n    {\n      \"owner\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"owner\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "72187cbf-e6c0-4601-9d43-2df0114d010e",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn-mint-instruction",
+                    "v0",
+                    "burn-mint-factory"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-mint-instruction-v0-burn-mint-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  \"inputHoldingCids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"outputs\": [\n    {\n      \"owner\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"owner\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"factoryId\": \"string\",\n  \"choiceContext\": {\n    \"choiceContextData\": {},\n    \"disclosedContracts\": [\n      {\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"1994-07-11T02:55:30.986Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      },\n      {\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"templateId\": \"string\",\n        \"createdAt\": \"2011-03-28T01:43:45.585Z\",\n        \"synchronizerId\": \"string\",\n        \"domainId\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "063b7c57-89c1-45ef-aa1d-8031c6794746",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn-mint-instruction",
+                    "v0",
+                    "burn-mint-factory"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-mint-instruction-v0-burn-mint-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  \"inputHoldingCids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"outputs\": [\n    {\n      \"owner\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"owner\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ef5a8f0-cf47-42e1-b647-5ddd42879c5c",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn-mint-instruction",
+                    "v0",
+                    "burn-mint-factory"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-mint-instruction-v0-burn-mint-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  \"inputHoldingCids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"outputs\": [\n    {\n      \"owner\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"owner\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1662ed10-aa3b-4967-8295-0590a5ebe44f",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "burn-mint-instruction",
+                    "v0",
+                    "burn-mint-factory"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-burn-mint-instruction-v0-burn-mint-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instrumentId\": {\n    \"admin\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  \"inputHoldingCids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"outputs\": [\n    {\n      \"owner\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"owner\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41ef83e7-bf46-425c-91f3-dde01a4ef54f",
+          "name": "verify Transfer Proof",
+          "request": {
+            "name": "verify Transfer Proof",
+            "description": {
+              "content": "Verify the outcome of a transfer of Registry Utility assets on Canton.\n\nGiven an UpdateID and a Transfer Object, the service looks up the corresponding\nledger transaction and verifies the transfer details against the on-chain events.\n\nThe response status indicates the transfer outcome:\n- `Success`: The transfer was executed in the referenced transaction\n- `Pending`: The transfer instruction has been created but not yet settled\n- `Failure`: The transfer instruction was rejected or withdrawn by one of the parties\n\nIf none of the above conditions are met, if the provided transfer details do not match\nthe on-chain data, or if the original TransferInstruction contract cannot be retrieved,\na `400` is returned. No further diagnostic information is included in\nthe error response to prevent unintended disclosure of sensitive ledger data.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "utilities",
+                "v0",
+                "registry",
+                "transfer",
+                "v0",
+                "proof"
+              ],
+              "host": [
+                "{{api-utilities-v0-registry-transfer-v0-proof-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"updateId\": \"<string>\",\n  \"transfer\": {\n    \"sender\": \"<string>\",\n    \"receiver\": \"<string>\",\n    \"amount\": \"<string>\",\n    \"instrumentId\": {\n      \"admin\": \"<string>\",\n      \"id\": \"<string>\"\n    },\n    \"requestedAt\": \"<dateTime>\",\n    \"executeBefore\": \"<dateTime>\",\n    \"inputHoldingCids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"meta\": {\n      \"values\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      }\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f33927d4-66d7-4d48-8498-4b8cf78974b5",
+              "name": "Transfer proof verified. The `status` field indicates the transfer outcome\n(`Success`, `Pending`, or `Failure`). See the endpoint description for details.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "transfer",
+                    "v0",
+                    "proof"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-transfer-v0-proof-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"updateId\": \"<string>\",\n  \"transfer\": {\n    \"sender\": \"<string>\",\n    \"receiver\": \"<string>\",\n    \"amount\": \"1.0000000000\",\n    \"instrumentId\": {\n      \"admin\": \"<string>\",\n      \"id\": \"<string>\"\n    },\n    \"requestedAt\": \"<dateTime>\",\n    \"executeBefore\": \"<dateTime>\",\n    \"inputHoldingCids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"meta\": {\n      \"values\": {\n        \"key_0\": \"<string>\"\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"Pending\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b1cd196-01d3-442d-9f64-54fdb25d05a1",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "transfer",
+                    "v0",
+                    "proof"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-transfer-v0-proof-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"updateId\": \"<string>\",\n  \"transfer\": {\n    \"sender\": \"<string>\",\n    \"receiver\": \"<string>\",\n    \"amount\": \"1.0000000000\",\n    \"instrumentId\": {\n      \"admin\": \"<string>\",\n      \"id\": \"<string>\"\n    },\n    \"requestedAt\": \"<dateTime>\",\n    \"executeBefore\": \"<dateTime>\",\n    \"inputHoldingCids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"meta\": {\n      \"values\": {\n        \"key_0\": \"<string>\"\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "641524fb-5e9d-49cf-bd66-a518b893eb79",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "utilities",
+                    "v0",
+                    "registry",
+                    "transfer",
+                    "v0",
+                    "proof"
+                  ],
+                  "host": [
+                    "{{api-utilities-v0-registry-transfer-v0-proof-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"updateId\": \"<string>\",\n  \"transfer\": {\n    \"sender\": \"<string>\",\n    \"receiver\": \"<string>\",\n    \"amount\": \"1.0000000000\",\n    \"instrumentId\": {\n      \"admin\": \"<string>\",\n      \"id\": \"<string>\"\n    },\n    \"requestedAt\": \"<dateTime>\",\n    \"executeBefore\": \"<dateTime>\",\n    \"inputHoldingCids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"meta\": {\n      \"values\": {\n        \"key_0\": \"<string>\"\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unknown_error\",\n  \"error_description\": \"Something went wrong\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "baseUrl"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-mint-v0-offer-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-mint-v0-request-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-burn-v0-offer-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-burn-v0-request-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-accept-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-reject-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-mint-v0-offer-mintOfferId-choice-contexts-cancel-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-accept-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-reject-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-mint-v0-request-mintRequestId-choice-contexts-cancel-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-accept-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-reject-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-burn-v0-offer-burnOfferId-choice-contexts-cancel-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-accept-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-reject-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-burn-v0-request-burnRequestId-choice-contexts-cancel-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-burn-mint-instruction-v0-burn-mint-factory-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-utilities-v0-registry-transfer-v0-proof-Url"
+    }
+  ],
+  "info": {
+    "_postman_id": "afa8ff8a-5f5f-41d5-bb2c-b9a8867bc5e1",
+    "name": "Digital Asset Registry API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Operations tagged registry across 2 of this provider's published API definitions: digital-asset-utilities-openapi.yml, digital-asset-utilities-runtime-openapi.yml. Each path carries the servers of the definition it was published in.",
+      "type": "text/plain"
+    }
+  }
+}

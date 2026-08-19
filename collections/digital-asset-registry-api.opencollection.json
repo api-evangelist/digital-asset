@@ -1,0 +1,336 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Digital Asset Registry API",
+    "version": "2.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "registry",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getMintOfferCreateContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/mint/v0/offer",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the factory and choice context for creating a mint offer.\n"
+        },
+        {
+          "info": {
+            "name": "getMintRequestCreateContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/mint/v0/request",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the factory and choice context for creating a mint request.\n"
+        },
+        {
+          "info": {
+            "name": "getBurnOfferCreateContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/burn/v0/offer",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the factory and choice context for creating a burn offer.\n"
+        },
+        {
+          "info": {
+            "name": "getBurnRequestCreateContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/burn/v0/request",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the factory and choice context for creating a burn request.\n"
+        },
+        {
+          "info": {
+            "name": "getMintOfferAcceptContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/mint/v0/offer/:mintOfferId/choice-contexts/accept",
+            "params": [
+              {
+                "name": "mintOfferId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the mint offer to accept."
+              }
+            ]
+          },
+          "docs": "Get the choice context to accept and execute a mint offer.\n"
+        },
+        {
+          "info": {
+            "name": "getMintOfferRejectContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/mint/v0/offer/:mintOfferId/choice-contexts/reject",
+            "params": [
+              {
+                "name": "mintOfferId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the mint offer to reject."
+              }
+            ]
+          },
+          "docs": "Get the choice context to reject a mint offer.\n"
+        },
+        {
+          "info": {
+            "name": "getMintOfferCancelContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/mint/v0/offer/:mintOfferId/choice-contexts/cancel",
+            "params": [
+              {
+                "name": "mintOfferId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the mint offer to cancel."
+              }
+            ]
+          },
+          "docs": "Get the choice context to cancel a mint offer.\n"
+        },
+        {
+          "info": {
+            "name": "getMintRequestAcceptContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/mint/v0/request/:mintRequestId/choice-contexts/accept",
+            "params": [
+              {
+                "name": "mintRequestId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the mint request to accept."
+              }
+            ]
+          },
+          "docs": "Get the choice context to accept and execute a mint request.\n"
+        },
+        {
+          "info": {
+            "name": "getMintRequestRejectContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/mint/v0/request/:mintRequestId/choice-contexts/reject",
+            "params": [
+              {
+                "name": "mintRequestId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the mint request to reject."
+              }
+            ]
+          },
+          "docs": "Get the choice context to reject a mint request.\n"
+        },
+        {
+          "info": {
+            "name": "getMintRequestCancelContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/mint/v0/request/:mintRequestId/choice-contexts/cancel",
+            "params": [
+              {
+                "name": "mintRequestId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the mint request to cancel."
+              }
+            ]
+          },
+          "docs": "Get the choice context to cancel a mint request.\n"
+        },
+        {
+          "info": {
+            "name": "getBurnOfferAcceptContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/burn/v0/offer/:burnOfferId/choice-contexts/accept",
+            "params": [
+              {
+                "name": "burnOfferId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the burn offer to accept."
+              }
+            ]
+          },
+          "docs": "Get the choice context to accept and execute a burn offer.\n"
+        },
+        {
+          "info": {
+            "name": "getBurnOfferRejectContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/burn/v0/offer/:burnOfferId/choice-contexts/reject",
+            "params": [
+              {
+                "name": "burnOfferId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the burn offer to reject."
+              }
+            ]
+          },
+          "docs": "Get the choice context to reject a burn offer.\n"
+        },
+        {
+          "info": {
+            "name": "getBurnOfferCancelContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/burn/v0/offer/:burnOfferId/choice-contexts/cancel",
+            "params": [
+              {
+                "name": "burnOfferId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the burn offer to cancel."
+              }
+            ]
+          },
+          "docs": "Get the choice context to cancel a burn offer.\n"
+        },
+        {
+          "info": {
+            "name": "getBurnRequestAcceptContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/burn/v0/request/:burnRequestId/choice-contexts/accept",
+            "params": [
+              {
+                "name": "burnRequestId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the burn request to accept."
+              }
+            ]
+          },
+          "docs": "Get the choice context to accept and execute a burn request.\n"
+        },
+        {
+          "info": {
+            "name": "getBurnRequestRejectContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/burn/v0/request/:burnRequestId/choice-contexts/reject",
+            "params": [
+              {
+                "name": "burnRequestId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the burn request to reject."
+              }
+            ]
+          },
+          "docs": "Get the choice context to reject a burn request.\n"
+        },
+        {
+          "info": {
+            "name": "getBurnRequestCancelContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/burn/v0/request/:burnRequestId/choice-contexts/cancel",
+            "params": [
+              {
+                "name": "burnRequestId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the burn request to cancel."
+              }
+            ]
+          },
+          "docs": "Get the choice context to cancel a burn request.\n"
+        },
+        {
+          "info": {
+            "name": "getBurnMintFactory",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/burn-mint-instruction/v0/burn-mint-factory",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the burn mint factory and choice context for burn and mint.\n"
+        },
+        {
+          "info": {
+            "name": "verifyTransferProof",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/utilities/v0/registry/transfer/v0/proof",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Verify the outcome of a transfer of Registry Utility assets on Canton.\n\nGiven an UpdateID and a Transfer Object, the service looks up the corresponding\nledger transaction and verifies the transfer details against the on-chain events.\n\nThe response status indicates the transfer outcome:\n- `Success`: The transfer was executed in the referenced transaction\n- `Pending`: The transfer instruction has been created but not yet settled\n- `Failure`: The transfer instruction was rejected or withdrawn by on"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

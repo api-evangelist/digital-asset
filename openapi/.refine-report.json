@@ -1,0 +1,26 @@
+{
+  "provider": "digital-asset",
+  "sources": [
+    "digital-asset-common-api-openapi.yml",
+    "digital-asset-operator-api-openapi.yml",
+    "digital-asset-public-api-openapi.yml",
+    "digital-asset-registry-api-openapi.yml"
+  ],
+  "outputs": [
+    "digital-asset-common-api-openapi.yml",
+    "digital-asset-operator-api-openapi.yml",
+    "digital-asset-public-api-openapi.yml",
+    "digital-asset-registry-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "digital-asset-common-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "digital-asset-operator-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "digital-asset-public-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "digital-asset-registry-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": []
+}

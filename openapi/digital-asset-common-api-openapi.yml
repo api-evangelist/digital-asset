@@ -1,0 +1,46 @@
+openapi: 3.2.0
+info:
+  title: Utilities Common API
+  description: Exposes technical information and contract data of the Utility App
+  version: 2.1.0
+servers:
+- url: http://localhost:8080
+tags:
+- name: common
+paths:
+  /:
+    get:
+      tags:
+      - common
+      operationId: root
+      x-jvm-package: health
+      responses:
+        '200':
+          description: ok
+  /readyz:
+    get:
+      tags:
+      - common
+      operationId: isReady
+      x-jvm-package: health
+      responses:
+        '200':
+          description: ok
+        '503':
+          description: service unavailable
+  /livez:
+    get:
+      tags:
+      - common
+      operationId: isLive
+      x-jvm-package: health
+      responses:
+        '200':
+          description: ok
+        '503':
+          description: service unavailable
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer

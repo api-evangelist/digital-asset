@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Utilities Common API",
+    "version": "2.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "common",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "root",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/"
+          }
+        },
+        {
+          "info": {
+            "name": "isReady",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/readyz"
+          }
+        },
+        {
+          "info": {
+            "name": "isLive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/livez"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

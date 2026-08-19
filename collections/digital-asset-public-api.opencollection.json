@@ -1,0 +1,312 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Digital Asset Public API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "public",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getAllocationFactory",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/token-standard/v0/registrars/:registrarParty/registry/allocation-instruction/v1/allocation-factory",
+            "params": [
+              {
+                "name": "registrarParty",
+                "value": "",
+                "type": "path",
+                "description": "The registrar party."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the factory and choice context for creating allocations using the `AllocationFactory_Allocate` choice.\n"
+        },
+        {
+          "info": {
+            "name": "getAllocationTransferContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/token-standard/v0/registrars/:registrarParty/registry/allocations/v1/:allocationId/choice-contexts/execute-transfer",
+            "params": [
+              {
+                "name": "allocationId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the allocation whose transfer the caller wants to execute."
+              },
+              {
+                "name": "registrarParty",
+                "value": "",
+                "type": "path",
+                "description": "The registrar party."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the choice context to execute a transfer on an allocation.\n"
+        },
+        {
+          "info": {
+            "name": "getAllocationWithdrawContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/token-standard/v0/registrars/:registrarParty/registry/allocations/v1/:allocationId/choice-contexts/withdraw",
+            "params": [
+              {
+                "name": "allocationId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the allocation to withdraw."
+              },
+              {
+                "name": "registrarParty",
+                "value": "",
+                "type": "path",
+                "description": "The registrar party."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the choice context to withdraw an allocation.\n"
+        },
+        {
+          "info": {
+            "name": "getAllocationCancelContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/token-standard/v0/registrars/:registrarParty/registry/allocations/v1/:allocationId/choice-contexts/cancel",
+            "params": [
+              {
+                "name": "allocationId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the allocation to cancel."
+              },
+              {
+                "name": "registrarParty",
+                "value": "",
+                "type": "path",
+                "description": "The registrar party."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the choice context to cancel an allocation.\n"
+        },
+        {
+          "info": {
+            "name": "getRegistryInfo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.utilities.digitalasset.com/api/token-standard/v0/registrars/:registrarParty/registry/metadata/v1/info",
+            "params": [
+              {
+                "name": "registrarParty",
+                "value": "",
+                "type": "path",
+                "description": "The registrar party."
+              }
+            ]
+          },
+          "docs": "Get information about the registry.\nThe response includes the standards supported by the registry.\n"
+        },
+        {
+          "info": {
+            "name": "listInstruments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.utilities.digitalasset.com/api/token-standard/v0/registrars/:registrarParty/registry/metadata/v1/instruments",
+            "params": [
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of instruments per page."
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query",
+                "description": "The `nextPageToken` received from the response for the previous page."
+              },
+              {
+                "name": "registrarParty",
+                "value": "",
+                "type": "path",
+                "description": "The registrar party."
+              }
+            ]
+          },
+          "docs": "List all instruments managed by this instrument admin."
+        },
+        {
+          "info": {
+            "name": "getInstrument",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.utilities.digitalasset.com/api/token-standard/v0/registrars/:registrarParty/registry/metadata/v1/instruments/:instrumentId",
+            "params": [
+              {
+                "name": "registrarParty",
+                "value": "",
+                "type": "path",
+                "description": "The registrar party."
+              },
+              {
+                "name": "instrumentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an instrument's metadata."
+        },
+        {
+          "info": {
+            "name": "getTransferFactory",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/token-standard/v0/registrars/:registrarParty/registry/transfer-instruction/v1/transfer-factory",
+            "params": [
+              {
+                "name": "registrarParty",
+                "value": "",
+                "type": "path",
+                "description": "The registrar party."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the factory and choice context for executing a direct transfer.\n"
+        },
+        {
+          "info": {
+            "name": "getTransferInstructionAcceptContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/token-standard/v0/registrars/:registrarParty/registry/transfer-instruction/v1/:transferInstructionId/choice-contexts/accept",
+            "params": [
+              {
+                "name": "transferInstructionId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the transfer instruction to accept."
+              },
+              {
+                "name": "registrarParty",
+                "value": "",
+                "type": "path",
+                "description": "The registrar party."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the choice context to accept a transfer instruction.\n"
+        },
+        {
+          "info": {
+            "name": "getTransferInstructionRejectContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/token-standard/v0/registrars/:registrarParty/registry/transfer-instruction/v1/:transferInstructionId/choice-contexts/reject",
+            "params": [
+              {
+                "name": "transferInstructionId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the transfer instruction to reject."
+              },
+              {
+                "name": "registrarParty",
+                "value": "",
+                "type": "path",
+                "description": "The registrar party."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the choice context to reject a transfer instruction.\n"
+        },
+        {
+          "info": {
+            "name": "getTransferInstructionWithdrawContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.utilities.digitalasset.com/api/token-standard/v0/registrars/:registrarParty/registry/transfer-instruction/v1/:transferInstructionId/choice-contexts/withdraw",
+            "params": [
+              {
+                "name": "transferInstructionId",
+                "value": "",
+                "type": "path",
+                "description": "The contract ID of the transfer instruction to withdraw."
+              },
+              {
+                "name": "registrarParty",
+                "value": "",
+                "type": "path",
+                "description": "The registrar party."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the choice context to withdraw a transfer instruction.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

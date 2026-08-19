@@ -2,28 +2,24 @@ generated: '2026-08-04'
 method: derived
 status: candidate
 source: openapi/digital-asset-utilities-openapi.yml and the four Canton Token Standard specs
-search_result: >-
-  No official hosted or remote MCP server was found for Digital Asset. Probed: the docs corpus
-  (0 matches for "mcp" or "model context protocol" across llms.txt and llms-full.txt), the
-  github.com/digital-asset organization repository listing, and web search. The A2A agent card
-  at docs.digitalasset.com advertises an Agent Skill, not an MCP endpoint — Digital Asset's
-  agent strategy today is skill-and-docs, not tool-server.
+search_result: 'No official hosted or remote MCP server was found for Digital Asset. Probed: the docs
+  corpus (0 matches for "mcp" or "model context protocol" across llms.txt and llms-full.txt), the github.com/digital-asset
+  organization repository listing, and web search. The A2A agent card at docs.digitalasset.com advertises
+  an Agent Skill, not an MCP endpoint — Digital Asset''s agent strategy today is skill-and-docs, not tool-server.'
 server:
   name: digital-asset
   transport: http
   url: null
   note: Candidate only. No endpoint exists; do not treat this as a callable server.
-pointer_policy: >-
-  NO `type: MCPServer` pointer is wired into apis.yml for this provider. Digital Asset does
-  not operate an MCP server, and the MCPServer type is what the ergonomics `mcp_server_present`
-  check (4 pts) and the agent-readiness `mcp_server` dimension (12 pts) read. Wiring it from a
-  derived candidate list would credit Digital Asset with 16 points of agent surface it does not
-  publish. This file stands as an unpointered design input — the shape an MCP server over the
-  Utilities and Token Standard APIs would take if Digital Asset chose to ship one.
-tools_note: >-
-  One candidate tool per real operationId across the five published specs. Each tool inherits
-  its input contract from the referenced operation's parameters and requestBody — nothing here
-  is invented. The runtime-served spec's health endpoints (root, isLive, isReady) are excluded.
+pointer_policy: 'NO `type: MCPServer` pointer is wired into apis.yml for this provider. Digital Asset
+  does not operate an MCP server, and the MCPServer type is what the ergonomics `mcp_server_present` check
+  (4 pts) and the agent-readiness `mcp_server` dimension (12 pts) read. Wiring it from a derived candidate
+  list would credit Digital Asset with 16 points of agent surface it does not publish. This file stands
+  as an unpointered design input — the shape an MCP server over the Utilities and Token Standard APIs
+  would take if Digital Asset chose to ship one.'
+tools_note: One candidate tool per real operationId across the five published specs. Each tool inherits
+  its input contract from the referenced operation's parameters and requestBody — nothing here is invented.
+  The runtime-served spec's health endpoints (root, isLive, isReady) are excluded.
 tools:
 - name: get_allocation_factory
   description: Get the factory and choice context for creating allocations using the `AllocationFactory_Allocate`
@@ -239,3 +235,9 @@ tools:
   http_method: POST
   path: /api/utilities/v0/registry/transfer/v0/proof
   category: registry
+deployment:
+  mode: none
+  verified: derived
+  tools: 34
+  checked: '2026-08-12'
+  source: catalog MCP census

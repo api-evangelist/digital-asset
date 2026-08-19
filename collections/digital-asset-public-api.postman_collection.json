@@ -1,0 +1,3237 @@
+{
+  "item": [
+    {
+      "id": "fe7b2ebf-dfc4-4b4a-930b-347137eedacf",
+      "name": "public",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "906715fc-6b9e-447a-a9ae-658e48a87015",
+          "name": "get Allocation Factory",
+          "request": {
+            "name": "get Allocation Factory",
+            "description": {
+              "content": "Get the factory and choice context for creating allocations using the `AllocationFactory_Allocate` choice.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "token-standard",
+                "v0",
+                "registrars",
+                ":registrarParty",
+                "registry",
+                "allocation-instruction",
+                "v1",
+                "allocation-factory"
+              ],
+              "host": [
+                "{{api-token-standard-v0-registrars-registrarParty-registry-allocation-instruction-v1-allocation-factory-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrarParty",
+                  "description": "(Required) The registrar party."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"choiceArguments\": \"<object>\",\n  \"excludeDebugFields\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "81f22d9c-f83f-4f10-bd09-2241ffd91ff7",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocation-instruction",
+                    "v1",
+                    "allocation-factory"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocation-instruction-v1-allocation-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"choiceArguments\": \"<object>\",\n  \"excludeDebugFields\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"factoryId\": \"string\",\n  \"choiceContext\": {\n    \"choiceContextData\": {},\n    \"disclosedContracts\": [\n      {\n        \"templateId\": \"string\",\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"synchronizerId\": \"string\",\n        \"debugPackageName\": \"string\",\n        \"debugPayload\": {},\n        \"debugCreatedAt\": \"1969-07-01T17:53:05.997Z\"\n      },\n      {\n        \"templateId\": \"string\",\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"synchronizerId\": \"string\",\n        \"debugPackageName\": \"string\",\n        \"debugPayload\": {},\n        \"debugCreatedAt\": \"2026-08-02T08:06:11.467Z\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07bcfbb2-014c-4e25-911e-d08c5d80f892",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocation-instruction",
+                    "v1",
+                    "allocation-factory"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocation-instruction-v1-allocation-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"choiceArguments\": \"<object>\",\n  \"excludeDebugFields\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a008ac92-5566-41f2-bc4f-125361e42e61",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocation-instruction",
+                    "v1",
+                    "allocation-factory"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocation-instruction-v1-allocation-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"choiceArguments\": \"<object>\",\n  \"excludeDebugFields\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "60784c90-97b7-412d-8750-be165703294a",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocation-instruction",
+                    "v1",
+                    "allocation-factory"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocation-instruction-v1-allocation-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"choiceArguments\": \"<object>\",\n  \"excludeDebugFields\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a06e8e8-2cd8-47bc-9da0-d6630f182672",
+          "name": "get Allocation Transfer Context",
+          "request": {
+            "name": "get Allocation Transfer Context",
+            "description": {
+              "content": "Get the choice context to execute a transfer on an allocation.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "token-standard",
+                "v0",
+                "registrars",
+                ":registrarParty",
+                "registry",
+                "allocations",
+                "v1",
+                ":allocationId",
+                "choice-contexts",
+                "execute-transfer"
+              ],
+              "host": [
+                "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-execute-transfer-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "allocationId",
+                  "description": "(Required) The contract ID of the allocation whose transfer the caller wants to execute."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrarParty",
+                  "description": "(Required) The registrar party."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f6c1f877-c6c5-44dd-ac6f-071fd66e58d1",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocations",
+                    "v1",
+                    ":allocationId",
+                    "choice-contexts",
+                    "execute-transfer"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-execute-transfer-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "allocationId",
+                      "description": "(Required) The contract ID of the allocation whose transfer the caller wants to execute."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"1965-09-19T13:13:59.542Z\"\n    },\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"1972-11-23T22:44:13.974Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "94d8001d-b7c6-4f7e-b2f2-7433badb3f4a",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocations",
+                    "v1",
+                    ":allocationId",
+                    "choice-contexts",
+                    "execute-transfer"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-execute-transfer-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "allocationId",
+                      "description": "(Required) The contract ID of the allocation whose transfer the caller wants to execute."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8db766cc-2c55-4ac0-9073-c3bbf362f0bd",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocations",
+                    "v1",
+                    ":allocationId",
+                    "choice-contexts",
+                    "execute-transfer"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-execute-transfer-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "allocationId",
+                      "description": "(Required) The contract ID of the allocation whose transfer the caller wants to execute."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22b7ad13-55eb-4f85-bef5-918992eefb25",
+          "name": "get Allocation Withdraw Context",
+          "request": {
+            "name": "get Allocation Withdraw Context",
+            "description": {
+              "content": "Get the choice context to withdraw an allocation.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "token-standard",
+                "v0",
+                "registrars",
+                ":registrarParty",
+                "registry",
+                "allocations",
+                "v1",
+                ":allocationId",
+                "choice-contexts",
+                "withdraw"
+              ],
+              "host": [
+                "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-withdraw-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "allocationId",
+                  "description": "(Required) The contract ID of the allocation to withdraw."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrarParty",
+                  "description": "(Required) The registrar party."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4af4beca-96f1-4489-8a0c-beaa367b8deb",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocations",
+                    "v1",
+                    ":allocationId",
+                    "choice-contexts",
+                    "withdraw"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-withdraw-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "allocationId",
+                      "description": "(Required) The contract ID of the allocation to withdraw."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"1965-09-19T13:13:59.542Z\"\n    },\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"1972-11-23T22:44:13.974Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6b5d82f8-d52b-4d89-9d48-f13d2c23def8",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocations",
+                    "v1",
+                    ":allocationId",
+                    "choice-contexts",
+                    "withdraw"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-withdraw-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "allocationId",
+                      "description": "(Required) The contract ID of the allocation to withdraw."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b32dc33b-ece8-40e7-a949-80449135b4c4",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocations",
+                    "v1",
+                    ":allocationId",
+                    "choice-contexts",
+                    "withdraw"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-withdraw-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "allocationId",
+                      "description": "(Required) The contract ID of the allocation to withdraw."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db3a9bda-ebc4-4bf0-9a1c-e0a27a71b576",
+          "name": "get Allocation Cancel Context",
+          "request": {
+            "name": "get Allocation Cancel Context",
+            "description": {
+              "content": "Get the choice context to cancel an allocation.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "token-standard",
+                "v0",
+                "registrars",
+                ":registrarParty",
+                "registry",
+                "allocations",
+                "v1",
+                ":allocationId",
+                "choice-contexts",
+                "cancel"
+              ],
+              "host": [
+                "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-cancel-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "allocationId",
+                  "description": "(Required) The contract ID of the allocation to cancel."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrarParty",
+                  "description": "(Required) The registrar party."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cad917f8-4054-45f6-9d8d-1b3418809892",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocations",
+                    "v1",
+                    ":allocationId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "allocationId",
+                      "description": "(Required) The contract ID of the allocation to cancel."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"1965-09-19T13:13:59.542Z\"\n    },\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"1972-11-23T22:44:13.974Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "77dd287b-3ef9-47a0-b91b-dc298471c99a",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocations",
+                    "v1",
+                    ":allocationId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "allocationId",
+                      "description": "(Required) The contract ID of the allocation to cancel."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "41c194a9-fbb2-40a8-9628-d20870f1ec84",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "allocations",
+                    "v1",
+                    ":allocationId",
+                    "choice-contexts",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-cancel-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "allocationId",
+                      "description": "(Required) The contract ID of the allocation to cancel."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a39cc4eb-51c6-4370-a757-4417976e0e75",
+          "name": "get Registry Info",
+          "request": {
+            "name": "get Registry Info",
+            "description": {
+              "content": "Get information about the registry.\nThe response includes the standards supported by the registry.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "token-standard",
+                "v0",
+                "registrars",
+                ":registrarParty",
+                "registry",
+                "metadata",
+                "v1",
+                "info"
+              ],
+              "host": [
+                "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-info-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrarParty",
+                  "description": "(Required) The registrar party."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3d6122b-e889-4ae4-b312-4c86af1cf500",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "metadata",
+                    "v1",
+                    "info"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-info-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"adminId\": \"string\",\n  \"supportedApis\": {\n    \"key_0\": 5724\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b94cf47e-edcb-4c50-814a-5dbc6e21edb3",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "metadata",
+                    "v1",
+                    "info"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-info-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c24da244-a1aa-4391-ade5-50a5ad403e02",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "metadata",
+                    "v1",
+                    "info"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-info-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7fc97bc-c86e-4fa5-baf5-0c9ee9c5bd35",
+          "name": "list Instruments",
+          "request": {
+            "name": "list Instruments",
+            "description": {
+              "content": "List all instruments managed by this instrument admin.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "token-standard",
+                "v0",
+                "registrars",
+                ":registrarParty",
+                "registry",
+                "metadata",
+                "v1",
+                "instruments"
+              ],
+              "host": [
+                "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-instruments-Url}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "25",
+                  "description": "Number of instruments per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>",
+                  "description": "The `nextPageToken` received from the response for the previous page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrarParty",
+                  "description": "(Required) The registrar party."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b64763c1-affb-45d5-8559-7d2c367726e0",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "metadata",
+                    "v1",
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-instruments-Url}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"instruments\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"symbol\": \"string\",\n      \"decimals\": 10,\n      \"supportedApis\": {\n        \"key_0\": 2194,\n        \"key_1\": 4893,\n        \"key_2\": 991\n      },\n      \"totalSupply\": \"string\",\n      \"totalSupplyAsOf\": \"1991-06-01T00:49:56.244Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"symbol\": \"string\",\n      \"decimals\": 10,\n      \"supportedApis\": {\n        \"key_0\": 4269\n      },\n      \"totalSupply\": \"string\",\n      \"totalSupplyAsOf\": \"1975-08-27T10:22:07.991Z\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad949f3f-daa7-4a5f-abd1-6b3149d85ae5",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "metadata",
+                    "v1",
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-instruments-Url}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1f5d5d5-dcf5-4aef-a003-0ef4641f10e3",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "metadata",
+                    "v1",
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-instruments-Url}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e6e5346-04dd-448c-a7fa-9c4862096a0a",
+          "name": "get Instrument",
+          "request": {
+            "name": "get Instrument",
+            "description": {
+              "content": "Retrieve an instrument's metadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "token-standard",
+                "v0",
+                "registrars",
+                ":registrarParty",
+                "registry",
+                "metadata",
+                "v1",
+                "instruments",
+                ":instrumentId"
+              ],
+              "host": [
+                "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-instruments-instrumentId-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrarParty",
+                  "description": "(Required) The registrar party."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instrumentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4a727153-6c85-4eff-9e4b-4e3994441ea3",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "metadata",
+                    "v1",
+                    "instruments",
+                    ":instrumentId"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-instruments-instrumentId-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instrumentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"symbol\": \"string\",\n  \"decimals\": 10,\n  \"supportedApis\": {\n    \"key_0\": 4055\n  },\n  \"totalSupply\": \"string\",\n  \"totalSupplyAsOf\": \"1954-11-29T01:38:24.519Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4bcf62db-b46e-4f00-a36e-8bc3c72530fc",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "metadata",
+                    "v1",
+                    "instruments",
+                    ":instrumentId"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-instruments-instrumentId-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instrumentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d83a1a9-a443-49b1-9a99-ff84992e8815",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "metadata",
+                    "v1",
+                    "instruments",
+                    ":instrumentId"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-instruments-instrumentId-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instrumentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6737668c-801d-47cc-bacd-351247f5ce86",
+          "name": "get Transfer Factory",
+          "request": {
+            "name": "get Transfer Factory",
+            "description": {
+              "content": "Get the factory and choice context for executing a direct transfer.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "token-standard",
+                "v0",
+                "registrars",
+                ":registrarParty",
+                "registry",
+                "transfer-instruction",
+                "v1",
+                "transfer-factory"
+              ],
+              "host": [
+                "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transfer-factory-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrarParty",
+                  "description": "(Required) The registrar party."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"choiceArguments\": \"<object>\",\n  \"excludeDebugFields\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b96597e9-70db-4299-b4dd-00871b988350",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    "transfer-factory"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transfer-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"choiceArguments\": \"<object>\",\n  \"excludeDebugFields\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"factoryId\": \"string\",\n  \"choiceContext\": {\n    \"choiceContextData\": {},\n    \"disclosedContracts\": [\n      {\n        \"templateId\": \"string\",\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"synchronizerId\": \"string\",\n        \"debugPackageName\": \"string\",\n        \"debugPayload\": {},\n        \"debugCreatedAt\": \"1974-06-24T01:34:10.960Z\"\n      },\n      {\n        \"templateId\": \"string\",\n        \"contractId\": \"string\",\n        \"createdEventBlob\": \"string\",\n        \"synchronizerId\": \"string\",\n        \"debugPackageName\": \"string\",\n        \"debugPayload\": {},\n        \"debugCreatedAt\": \"2010-11-10T14:30:43.579Z\"\n      }\n    ]\n  },\n  \"transferKind\": \"offer\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "799ae057-c8c5-403f-b2a1-40bfe782bf4a",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    "transfer-factory"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transfer-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"choiceArguments\": \"<object>\",\n  \"excludeDebugFields\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "484fc606-bf88-43dc-a23c-cdc51f964f56",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    "transfer-factory"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transfer-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"choiceArguments\": \"<object>\",\n  \"excludeDebugFields\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0d82a3a9-27b9-481b-abaf-86480bbc39e1",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    "transfer-factory"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transfer-factory-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"choiceArguments\": \"<object>\",\n  \"excludeDebugFields\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1728752d-a899-42e6-b1b4-8bb7b37b0450",
+          "name": "get Transfer Instruction Accept Context",
+          "request": {
+            "name": "get Transfer Instruction Accept Context",
+            "description": {
+              "content": "Get the choice context to accept a transfer instruction.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "token-standard",
+                "v0",
+                "registrars",
+                ":registrarParty",
+                "registry",
+                "transfer-instruction",
+                "v1",
+                ":transferInstructionId",
+                "choice-contexts",
+                "accept"
+              ],
+              "host": [
+                "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-accept-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transferInstructionId",
+                  "description": "(Required) The contract ID of the transfer instruction to accept."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrarParty",
+                  "description": "(Required) The registrar party."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "17711cc7-910a-4786-8cae-c0a063ea7d6e",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to accept."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"1977-07-03T10:05:10.865Z\"\n    },\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"2025-07-25T02:27:05.356Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c42f5723-39d3-42bb-b128-f32301af76f9",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to accept."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e72ed4b0-225b-4bff-87a2-a696d8f56717",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to accept."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5a81abc7-3da9-490d-9d68-e26807294933",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "accept"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-accept-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to accept."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f10cbf1a-094a-43c9-808d-98aff381e3c1",
+          "name": "get Transfer Instruction Reject Context",
+          "request": {
+            "name": "get Transfer Instruction Reject Context",
+            "description": {
+              "content": "Get the choice context to reject a transfer instruction.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "token-standard",
+                "v0",
+                "registrars",
+                ":registrarParty",
+                "registry",
+                "transfer-instruction",
+                "v1",
+                ":transferInstructionId",
+                "choice-contexts",
+                "reject"
+              ],
+              "host": [
+                "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-reject-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transferInstructionId",
+                  "description": "(Required) The contract ID of the transfer instruction to reject."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrarParty",
+                  "description": "(Required) The registrar party."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ecb89671-d52c-4ac7-b79b-0d25cf36d805",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to reject."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"1977-07-03T10:05:10.865Z\"\n    },\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"2025-07-25T02:27:05.356Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37203e40-3f7f-4cb0-8ec4-bae5d62c77d6",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to reject."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "78b48b18-1ca0-4c37-8f70-523d41c2fe63",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to reject."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7b2537af-d859-4cae-afbc-861efeec64f4",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "reject"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-reject-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to reject."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "833abe78-6e51-4e1c-b341-20e16c7e03ee",
+          "name": "get Transfer Instruction Withdraw Context",
+          "request": {
+            "name": "get Transfer Instruction Withdraw Context",
+            "description": {
+              "content": "Get the choice context to withdraw a transfer instruction.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "token-standard",
+                "v0",
+                "registrars",
+                ":registrarParty",
+                "registry",
+                "transfer-instruction",
+                "v1",
+                ":transferInstructionId",
+                "choice-contexts",
+                "withdraw"
+              ],
+              "host": [
+                "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-withdraw-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transferInstructionId",
+                  "description": "(Required) The contract ID of the transfer instruction to withdraw."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrarParty",
+                  "description": "(Required) The registrar party."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3cc22b4d-7a57-4155-b745-a2a56cdb9ecd",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "withdraw"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-withdraw-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to withdraw."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choiceContextData\": {},\n  \"disclosedContracts\": [\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"1977-07-03T10:05:10.865Z\"\n    },\n    {\n      \"templateId\": \"string\",\n      \"contractId\": \"string\",\n      \"createdEventBlob\": \"string\",\n      \"synchronizerId\": \"string\",\n      \"debugPackageName\": \"string\",\n      \"debugPayload\": {},\n      \"debugCreatedAt\": \"2025-07-25T02:27:05.356Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bb891a32-48b8-46dc-829f-465d98b30a45",
+              "name": "bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "withdraw"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-withdraw-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to withdraw."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3eb297f-cd57-4992-88dc-92ad72b42427",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "withdraw"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-withdraw-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to withdraw."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "863a6d76-c762-4192-b2cf-d4d636a830c6",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "token-standard",
+                    "v0",
+                    "registrars",
+                    ":registrarParty",
+                    "registry",
+                    "transfer-instruction",
+                    "v1",
+                    ":transferInstructionId",
+                    "choice-contexts",
+                    "withdraw"
+                  ],
+                  "host": [
+                    "{{api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-withdraw-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transferInstructionId",
+                      "description": "(Required) The contract ID of the transfer instruction to withdraw."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrarParty",
+                      "description": "(Required) The registrar party."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"meta\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "baseUrl"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-token-standard-v0-registrars-registrarParty-registry-allocation-instruction-v1-allocation-factory-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-execute-transfer-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-withdraw-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-token-standard-v0-registrars-registrarParty-registry-allocations-v1-allocationId-choice-contexts-cancel-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-info-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-instruments-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-token-standard-v0-registrars-registrarParty-registry-metadata-v1-instruments-instrumentId-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transfer-factory-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-accept-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-reject-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://api.utilities.digitalasset.com",
+      "key": "api-token-standard-v0-registrars-registrarParty-registry-transfer-instruction-v1-transferInstructionId-choice-contexts-withdraw-Url"
+    }
+  ],
+  "info": {
+    "_postman_id": "a44f1504-9526-45ab-a34f-1031d367f3e2",
+    "name": "Digital Asset Public API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Operations tagged public across 4 of this provider's published API definitions: digital-asset-allocation-instruction-v1-openapi.yml, digital-asset-allocation-v1-openapi.yml, digital-asset-token-metadata-v1-openapi.yml, digital-asset-transfer-instruction-v1-openapi.yml. Each path carries the servers of the definition it was published in.",
+      "type": "text/plain"
+    }
+  }
+}
