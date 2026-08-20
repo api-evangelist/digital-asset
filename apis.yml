@@ -24,6 +24,17 @@ tags:
 - Blockchain
 - Tokenization
 - Digital Assets
+- Financial-Services
+- Distributed Ledger
+- Smart Contracts
+- Capital Markets
+- Canton Network
+- Daml
+- Stablecoins
+tags_raw:
+- Blockchain
+- Tokenization
+- Digital Assets
 - Financial Services
 - Distributed Ledger
 - Smart Contracts
@@ -43,6 +54,8 @@ apis:
   humanURL: https://docs.digitalasset.com/registry/apis/operator-backend-api
   baseURL: https://api.utilities.digitalasset.com
   tags:
+  - Common
+  tags_raw:
   - common
   properties:
   - type: OpenAPI
@@ -59,6 +72,8 @@ apis:
   humanURL: https://docs.digitalasset.com/registry/apis/operator-backend-api
   baseURL: https://api.utilities.digitalasset.com
   tags:
+  - Operator
+  tags_raw:
   - operator
   properties:
   - type: OpenAPI
@@ -75,6 +90,8 @@ apis:
   humanURL: https://docs.digitalasset.com/registry/apis/operator-backend-api
   baseURL: https://api.utilities.digitalasset.com
   tags:
+  - Public
+  tags_raw:
   - public
   properties:
   - type: OpenAPI
@@ -91,6 +108,8 @@ apis:
   humanURL: https://docs.digitalasset.com/registry/apis/operator-backend-api
   baseURL: https://api.utilities.digitalasset.com
   tags:
+  - Registry
+  tags_raw:
   - registry
   properties:
   - type: OpenAPI
