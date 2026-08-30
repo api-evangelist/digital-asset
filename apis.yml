@@ -65,7 +65,7 @@ apis:
   humanURL: https://docs.digitalasset.com/registry/apis/operator-backend-api
   baseURL: https://api.utilities.digitalasset.com
   tags:
-  - Common
+  - common
   tags_raw:
   - common
   properties:
@@ -83,7 +83,7 @@ apis:
   humanURL: https://docs.digitalasset.com/registry/apis/operator-backend-api
   baseURL: https://api.utilities.digitalasset.com
   tags:
-  - Operator
+  - operator
   tags_raw:
   - operator
   properties:
