@@ -1,26 +1,44 @@
 {
   "provider": "digital-asset",
   "sources": [
-    "digital-asset-common-api-openapi.yml",
-    "digital-asset-operator-api-openapi.yml",
-    "digital-asset-public-api-openapi.yml",
-    "digital-asset-registry-api-openapi.yml"
+    "_original/digital-asset-allocation-instruction-v1-openapi.yml",
+    "_original/digital-asset-allocation-v1-openapi.yml",
+    "_original/digital-asset-token-metadata-v1-openapi.yml",
+    "_original/digital-asset-transfer-instruction-v1-openapi.yml",
+    "_original/digital-asset-utilities-runtime-openapi.yml"
   ],
   "outputs": [
+    "digital-asset-public-api-openapi.yml",
     "digital-asset-common-api-openapi.yml",
     "digital-asset-operator-api-openapi.yml",
-    "digital-asset-public-api-openapi.yml",
     "digital-asset-registry-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
-    "digital-asset-common-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
-    "digital-asset-operator-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
-    "digital-asset-public-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
-    "digital-asset-registry-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "1 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (5 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "digital-asset-allocation-instruction-v1-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "digital-asset-allocation-instruction-v1-openapi.yml: declared missing tag: public",
+    "digital-asset-allocation-v1-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "digital-asset-allocation-v1-openapi.yml: declared missing tag: public",
+    "digital-asset-token-metadata-v1-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "digital-asset-token-metadata-v1-openapi.yml: declared missing tag: public",
+    "digital-asset-transfer-instruction-v1-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "digital-asset-transfer-instruction-v1-openapi.yml: declared missing tag: public",
+    "digital-asset-utilities-runtime-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "digital-asset-utilities-runtime-openapi.yml: declared missing tag: common",
+    "digital-asset-utilities-runtime-openapi.yml: declared missing tag: operator",
+    "digital-asset-utilities-runtime-openapi.yml: declared missing tag: registry",
+    "tag 'public' spans 4 source specs (digital-asset-allocation-instruction-v1-openapi.yml, digital-asset-allocation-v1-openapi.yml, digital-asset-token-metadata-v1-openapi.yml, digital-asset-transfer-instruction-v1-openapi.yml): per-path servers applied",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "_original/digital-asset-utilities-openapi.yml: archived document superseded by a larger archived document",
+    "digital-asset-common-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "digital-asset-operator-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "digital-asset-public-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "digital-asset-registry-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

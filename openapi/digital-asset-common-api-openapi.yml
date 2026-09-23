@@ -6,21 +6,23 @@ info:
 servers:
 - url: http://localhost:8080
 tags:
-- name: common
+- name: Common
 paths:
   /:
     get:
       tags:
-      - common
+      - Common
       operationId: root
       x-jvm-package: health
       responses:
         '200':
           description: ok
+      summary: Root
+      x-summary-source: derived
   /readyz:
     get:
       tags:
-      - common
+      - Common
       operationId: isReady
       x-jvm-package: health
       responses:
@@ -28,10 +30,12 @@ paths:
           description: ok
         '503':
           description: service unavailable
+      summary: Is ready
+      x-summary-source: derived
   /livez:
     get:
       tags:
-      - common
+      - Common
       operationId: isLive
       x-jvm-package: health
       responses:
@@ -39,6 +43,8 @@ paths:
           description: ok
         '503':
           description: service unavailable
+      summary: Is live
+      x-summary-source: derived
 components:
   securitySchemes:
     BearerAuth:

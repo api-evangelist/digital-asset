@@ -1,33 +1,17 @@
 openapi: 3.2.0
 info:
-  title: Digital Asset Operator API
+  title: Utilities Operator API
+  description: Exposes technical information and contract data of the Utility App
   version: 2.1.0
-  description: 'Operations tagged operator across 2 of this provider''s published API definitions: digital-asset-utilities-openapi.yml, digital-asset-utilities-runtime-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
-- url: https://api.utilities.digitalasset.com
-  description: MainNet
-- url: https://api.utilities.digitalasset-staging.com
-  description: TestNet
-- url: https://api.utilities.digitalasset-dev.com
-  description: DevNet
 - url: http://localhost:8080
-  description: Local
 tags:
-- name: operator
+- name: Operator
 paths:
   /api/utilities/v0/openapi:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     get:
       tags:
-      - operator
+      - Operator
       operationId: getOpenApiSpec
       x-jvm-package: utility
       responses:
@@ -44,19 +28,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      summary: Get open api spec
+      x-summary-source: derived
   /api/utilities/v0/operator:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     get:
       tags:
-      - operator
+      - Operator
       operationId: getOperator
       x-jvm-package: utility
       responses:
@@ -72,19 +49,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      summary: Get operator
+      x-summary-source: derived
   /api/utilities/v0/package/all:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     get:
       tags:
-      - operator
+      - Operator
       operationId: getAllPackages
       x-jvm-package: utility
       responses:
@@ -100,19 +70,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      summary: Get all packages
+      x-summary-source: derived
   /api/utilities/v0/contract/instrument-configuration/all:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     get:
       tags:
-      - operator
+      - Operator
       operationId: getAllInstrumentConfigurations
       x-jvm-package: utility
       responses:
@@ -128,19 +91,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      summary: Get all instrument configurations
+      x-summary-source: derived
   /api/utilities/v0/contract/instrument-configuration:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - operator
+      - Operator
       operationId: getInstrumentConfiguration
       x-jvm-package: utility
       requestBody:
@@ -168,50 +124,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      summary: Get instrument configuration
+      x-summary-source: derived
 components:
   schemas:
-    GetInstrumentConfigurationRequest:
-      type: object
-      required:
-      - registrar
-      - instrumentIdentifier
-      properties:
-        registrar:
-          type: string
-          description: The registrar party id
-        instrumentIdentifier:
-          $ref: '#/components/schemas/InstrumentIdentifier'
-    GetAllPackagesResponse:
-      type: object
-      required:
-      - packages
-      properties:
-        packages:
-          type: array
-          items:
-            $ref: '#/components/schemas/PackageDescriptor'
-    GetAllInstrumentConfigurationsResponse:
-      type: object
-      required:
-      - instrumentConfigurations
-      properties:
-        instrumentConfigurations:
-          type: array
-          description: All instrument configurations
-          items:
-            $ref: '#/components/schemas/InstrumentConfiguration'
-    CredentialClaim:
-      type: object
-      required:
-      - property
-      - value
-      properties:
-        property:
-          type: string
-          description: The property of the claim
-        value:
-          type: string
-          description: The value of the claim
     PartyCredentialRequirement:
       type: object
       required:
@@ -226,6 +142,60 @@ components:
           description: Required (property, value) pairs that the holder has to have claims for as a subject
           items:
             $ref: '#/components/schemas/CredentialClaim'
+    GetInstrumentConfigurationResponse:
+      $ref: '#/components/schemas/InstrumentConfiguration'
+    GetOperatorResponse:
+      type: object
+      required:
+      - partyId
+      properties:
+        partyId:
+          type: string
+          description: The operator party id
+    InstrumentConfiguration:
+      type: object
+      required:
+      - contract
+      - payload
+      properties:
+        contract:
+          $ref: '#/components/schemas/ContractMeta'
+        payload:
+          $ref: '#/components/schemas/InstrumentConfigurationPayload'
+    CredentialClaim:
+      type: object
+      required:
+      - property
+      - value
+      properties:
+        property:
+          type: string
+          description: The property of the claim
+        value:
+          type: string
+          description: The value of the claim
+    PackageDescriptor:
+      type: object
+      description: Contains the package ids for a given package name
+      required:
+      - name
+      - id
+      properties:
+        name:
+          description: Name of the package
+          type: string
+        id:
+          description: Package ID
+          type: string
+    GetAllPackagesResponse:
+      type: object
+      required:
+      - packages
+      properties:
+        packages:
+          type: array
+          items:
+            $ref: '#/components/schemas/PackageDescriptor'
     ContractMeta:
       type: object
       required:
@@ -246,26 +216,32 @@ components:
           type: string
           deprecated: true
           description: Deprecated alias of synchronizerId kept for backward compatibility.
-    InstrumentConfiguration:
+    GetInstrumentConfigurationRequest:
       type: object
       required:
-      - contract
-      - payload
+      - registrar
+      - instrumentIdentifier
       properties:
-        contract:
-          $ref: '#/components/schemas/ContractMeta'
-        payload:
-          $ref: '#/components/schemas/InstrumentConfigurationPayload'
-    GetOperatorResponse:
-      type: object
-      required:
-      - partyId
-      properties:
-        partyId:
+        registrar:
           type: string
-          description: The operator party id
-    GetInstrumentConfigurationResponse:
-      $ref: '#/components/schemas/InstrumentConfiguration'
+          description: The registrar party id
+        instrumentIdentifier:
+          $ref: '#/components/schemas/InstrumentIdentifier'
+    Error:
+      type: object
+      description: 'A problem occurred with processing the request. For instance: syntactically invalid JSON body, missing required fields, etc.'
+      required:
+      - error
+      - error_description
+      properties:
+        error:
+          description: An error code, e.g. invalid_token
+          type: string
+          default: unknown_error
+        error_description:
+          description: A description of the error
+          type: string
+          default: Something went wrong
     InstrumentConfigurationPayload:
       type: object
       required:
@@ -303,21 +279,16 @@ components:
           description: Credential requirements to transfer/lock/unlock a given asset
           items:
             $ref: '#/components/schemas/PartyCredentialRequirement'
-    Error:
+    GetAllInstrumentConfigurationsResponse:
       type: object
-      description: 'A problem occurred with processing the request. For instance: syntactically invalid JSON body, missing required fields, etc.'
       required:
-      - error
-      - error_description
+      - instrumentConfigurations
       properties:
-        error:
-          description: An error code, e.g. invalid_token
-          type: string
-          default: unknown_error
-        error_description:
-          description: A description of the error
-          type: string
-          default: Something went wrong
+        instrumentConfigurations:
+          type: array
+          description: All instrument configurations
+          items:
+            $ref: '#/components/schemas/InstrumentConfiguration'
     InstrumentIdentifier:
       type: object
       required:
@@ -334,23 +305,7 @@ components:
         scheme:
           description: The scheme or standard used for the identifier.
           type: string
-    PackageDescriptor:
-      type: object
-      description: Contains the package ids for a given package name
-      required:
-      - name
-      - id
-      properties:
-        name:
-          description: Name of the package
-          type: string
-        id:
-          description: Package ID
-          type: string
   securitySchemes:
     BearerAuth:
       type: http
       scheme: bearer
-x-refined-from:
-- digital-asset-utilities-openapi.yml
-- digital-asset-utilities-runtime-openapi.yml

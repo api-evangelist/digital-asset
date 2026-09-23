@@ -1,38 +1,20 @@
 openapi: 3.2.0
 info:
-  title: Digital Asset Registry API
+  title: Utilities Registry API
+  description: Exposes technical information and contract data of the Utility App
   version: 2.1.0
-  description: 'Operations tagged registry across 2 of this provider''s published API definitions: digital-asset-utilities-openapi.yml, digital-asset-utilities-runtime-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
-- url: https://api.utilities.digitalasset.com
-  description: MainNet
-- url: https://api.utilities.digitalasset-staging.com
-  description: TestNet
-- url: https://api.utilities.digitalasset-dev.com
-  description: DevNet
 - url: http://localhost:8080
-  description: Local
 tags:
-- name: registry
+- name: Registry
 paths:
   /api/utilities/v0/registry/mint/v0/offer:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getMintOfferCreateContext
       x-jvm-package: registry
-      description: 'Get the factory and choice context for creating a mint offer.
-
-        '
+      description: Get the factory and choice context for creating a mint offer.
       requestBody:
         required: true
         content:
@@ -52,24 +34,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get mint offer create context
+      x-summary-source: derived
   /api/utilities/v0/registry/mint/v0/request:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getMintRequestCreateContext
       x-jvm-package: registry
-      description: 'Get the factory and choice context for creating a mint request.
-
-        '
+      description: Get the factory and choice context for creating a mint request.
       requestBody:
         required: true
         content:
@@ -89,24 +62,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get mint request create context
+      x-summary-source: derived
   /api/utilities/v0/registry/burn/v0/offer:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getBurnOfferCreateContext
       x-jvm-package: registry
-      description: 'Get the factory and choice context for creating a burn offer.
-
-        '
+      description: Get the factory and choice context for creating a burn offer.
       requestBody:
         required: true
         content:
@@ -126,24 +90,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get burn offer create context
+      x-summary-source: derived
   /api/utilities/v0/registry/burn/v0/request:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getBurnRequestCreateContext
       x-jvm-package: registry
-      description: 'Get the factory and choice context for creating a burn request.
-
-        '
+      description: Get the factory and choice context for creating a burn request.
       requestBody:
         required: true
         content:
@@ -163,24 +118,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get burn request create context
+      x-summary-source: derived
   /api/utilities/v0/registry/mint/v0/offer/{mintOfferId}/choice-contexts/accept:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getMintOfferAcceptContext
       x-jvm-package: registry
-      description: 'Get the choice context to accept and execute a mint offer.
-
-        '
+      description: Get the choice context to accept and execute a mint offer.
       parameters:
       - name: mintOfferId
         description: The contract ID of the mint offer to accept.
@@ -201,24 +147,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get mint offer accept context
+      x-summary-source: derived
   /api/utilities/v0/registry/mint/v0/offer/{mintOfferId}/choice-contexts/reject:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getMintOfferRejectContext
       x-jvm-package: registry
-      description: 'Get the choice context to reject a mint offer.
-
-        '
+      description: Get the choice context to reject a mint offer.
       parameters:
       - name: mintOfferId
         description: The contract ID of the mint offer to reject.
@@ -239,24 +176,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get mint offer reject context
+      x-summary-source: derived
   /api/utilities/v0/registry/mint/v0/offer/{mintOfferId}/choice-contexts/cancel:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getMintOfferCancelContext
       x-jvm-package: registry
-      description: 'Get the choice context to cancel a mint offer.
-
-        '
+      description: Get the choice context to cancel a mint offer.
       parameters:
       - name: mintOfferId
         description: The contract ID of the mint offer to cancel.
@@ -277,24 +205,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get mint offer cancel context
+      x-summary-source: derived
   /api/utilities/v0/registry/mint/v0/request/{mintRequestId}/choice-contexts/accept:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getMintRequestAcceptContext
       x-jvm-package: registry
-      description: 'Get the choice context to accept and execute a mint request.
-
-        '
+      description: Get the choice context to accept and execute a mint request.
       parameters:
       - name: mintRequestId
         description: The contract ID of the mint request to accept.
@@ -315,24 +234,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get mint request accept context
+      x-summary-source: derived
   /api/utilities/v0/registry/mint/v0/request/{mintRequestId}/choice-contexts/reject:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getMintRequestRejectContext
       x-jvm-package: registry
-      description: 'Get the choice context to reject a mint request.
-
-        '
+      description: Get the choice context to reject a mint request.
       parameters:
       - name: mintRequestId
         description: The contract ID of the mint request to reject.
@@ -353,24 +263,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get mint request reject context
+      x-summary-source: derived
   /api/utilities/v0/registry/mint/v0/request/{mintRequestId}/choice-contexts/cancel:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getMintRequestCancelContext
       x-jvm-package: registry
-      description: 'Get the choice context to cancel a mint request.
-
-        '
+      description: Get the choice context to cancel a mint request.
       parameters:
       - name: mintRequestId
         description: The contract ID of the mint request to cancel.
@@ -391,24 +292,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get mint request cancel context
+      x-summary-source: derived
   /api/utilities/v0/registry/burn/v0/offer/{burnOfferId}/choice-contexts/accept:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getBurnOfferAcceptContext
       x-jvm-package: registry
-      description: 'Get the choice context to accept and execute a burn offer.
-
-        '
+      description: Get the choice context to accept and execute a burn offer.
       parameters:
       - name: burnOfferId
         description: The contract ID of the burn offer to accept.
@@ -429,24 +321,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get burn offer accept context
+      x-summary-source: derived
   /api/utilities/v0/registry/burn/v0/offer/{burnOfferId}/choice-contexts/reject:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getBurnOfferRejectContext
       x-jvm-package: registry
-      description: 'Get the choice context to reject a burn offer.
-
-        '
+      description: Get the choice context to reject a burn offer.
       parameters:
       - name: burnOfferId
         description: The contract ID of the burn offer to reject.
@@ -467,24 +350,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get burn offer reject context
+      x-summary-source: derived
   /api/utilities/v0/registry/burn/v0/offer/{burnOfferId}/choice-contexts/cancel:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getBurnOfferCancelContext
       x-jvm-package: registry
-      description: 'Get the choice context to cancel a burn offer.
-
-        '
+      description: Get the choice context to cancel a burn offer.
       parameters:
       - name: burnOfferId
         description: The contract ID of the burn offer to cancel.
@@ -505,24 +379,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get burn offer cancel context
+      x-summary-source: derived
   /api/utilities/v0/registry/burn/v0/request/{burnRequestId}/choice-contexts/accept:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getBurnRequestAcceptContext
       x-jvm-package: registry
-      description: 'Get the choice context to accept and execute a burn request.
-
-        '
+      description: Get the choice context to accept and execute a burn request.
       parameters:
       - name: burnRequestId
         description: The contract ID of the burn request to accept.
@@ -543,24 +408,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get burn request accept context
+      x-summary-source: derived
   /api/utilities/v0/registry/burn/v0/request/{burnRequestId}/choice-contexts/reject:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getBurnRequestRejectContext
       x-jvm-package: registry
-      description: 'Get the choice context to reject a burn request.
-
-        '
+      description: Get the choice context to reject a burn request.
       parameters:
       - name: burnRequestId
         description: The contract ID of the burn request to reject.
@@ -581,24 +437,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get burn request reject context
+      x-summary-source: derived
   /api/utilities/v0/registry/burn/v0/request/{burnRequestId}/choice-contexts/cancel:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getBurnRequestCancelContext
       x-jvm-package: registry
-      description: 'Get the choice context to cancel a burn request.
-
-        '
+      description: Get the choice context to cancel a burn request.
       parameters:
       - name: burnRequestId
         description: The contract ID of the burn request to cancel.
@@ -619,24 +466,15 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get burn request cancel context
+      x-summary-source: derived
   /api/utilities/v0/registry/burn-mint-instruction/v0/burn-mint-factory:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: getBurnMintFactory
       x-jvm-package: registry
-      description: 'Get the burn mint factory and choice context for burn and mint.
-
-        '
+      description: Get the burn mint factory and choice context for burn and mint.
       requestBody:
         required: true
         content:
@@ -656,19 +494,12 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
+      summary: Get burn mint factory
+      x-summary-source: derived
   /api/utilities/v0/registry/transfer/v0/proof:
-    servers:
-    - url: https://api.utilities.digitalasset.com
-      description: MainNet
-    - url: https://api.utilities.digitalasset-staging.com
-      description: TestNet
-    - url: https://api.utilities.digitalasset-dev.com
-      description: DevNet
-    - url: http://localhost:8080
-      description: Local
     post:
       tags:
-      - registry
+      - Registry
       operationId: verifyTransferProof
       x-jvm-package: registry
       description: 'Verify the outcome of a transfer of Registry Utility assets on Canton.
@@ -694,9 +525,7 @@ paths:
 
         a `400` is returned. No further diagnostic information is included in
 
-        the error response to prevent unintended disclosure of sensitive ledger data.
-
-        '
+        the error response to prevent unintended disclosure of sensitive ledger data.'
       requestBody:
         required: true
         content:
@@ -718,8 +547,28 @@ paths:
           $ref: '#/components/responses/400'
         '500':
           $ref: '#/components/responses/500'
+      summary: Verify transfer proof
+      x-summary-source: derived
 components:
   schemas:
+    VerifyTransferProofRequest:
+      description: Request to verify the outcome of a transfer of Registry Utility assets on Canton.
+      type: object
+      required:
+      - updateId
+      - transfer
+      properties:
+        updateId:
+          description: 'For the two-step transfer workflow, specifies the most recent UpdateId.
+
+            If the transfer has completed its second step (accept, reject, or withdraw),
+
+            use the UpdateId associated with that action. Otherwise, use the UpdateId from the initial transfer offer.
+
+            '
+          type: string
+        transfer:
+          $ref: '#/components/schemas/TransferObject'
     TransferMeta:
       description: Additional metadata associated with the transfer.
       type: object
@@ -731,112 +580,74 @@ components:
           type: object
           additionalProperties:
             type: string
-    FactoryWithChoiceContext:
-      description: 'A factory contract together with the choice context required to exercise the choice
+    TransferProofStatus:
+      description: 'The status of the transfer proof verification:
 
-        provided by the factory. Typically used to implement the generic initiation of on-ledger workflows
+        - `Success`: The proof is verified and the transfer was successfully concluded
 
-        via a Daml interface.
+        - `Failure`: The proof is verified, but the transfer did not successfully conclude.
 
-
-        Clients SHOULD avoid reusing the same `FactoryWithChoiceContext` for exercising multiple choices,
-
-        as the choice context MAY be specific to the choice being exercised.
+        - `Pending`: The transaction is still in progress (e.g., a transfer offer has been sent but not yet accepted in a two-step flow).
 
         '
+      type: string
+      enum:
+      - Success
+      - Failure
+      - Pending
+    Error:
       type: object
+      description: 'A problem occurred with processing the request. For instance: syntactically invalid JSON body, missing required fields, etc.'
       required:
-      - factoryId
-      - choiceContext
+      - error
+      - error_description
       properties:
-        factoryId:
-          description: The contract ID of the contract of the factory which can be used to create instruction.
+        error:
+          description: An error code, e.g. invalid_token
           type: string
-        choiceContext:
-          $ref: '#/components/schemas/ChoiceContext'
-    VerifyTransferProofResponse:
-      description: The outcome of verifying a transfer proof.
+          default: unknown_error
+        error_description:
+          description: A description of the error
+          type: string
+          default: Something went wrong
+    MintOutput:
+      description: The output to be minted.
       type: object
       required:
-      - status
+      - owner
+      - amount
       properties:
-        status:
-          $ref: '#/components/schemas/TransferProofStatus'
-    RequestBurnRequest:
-      description: The request to get the factory and choice context for creating a burn request.
+        owner:
+          description: The party for whom the holding will be minted.
+          type: string
+        amount:
+          description: The amount to be minted.
+          type: string
+    InstrumentId:
+      description: The identifier of the instrument.
+      type: object
+      required:
+      - admin
+      - id
+      properties:
+        admin:
+          description: The party administering the instrument.
+          type: string
+        id:
+          description: The unique identifier of the instrument.
+          type: string
+    OfferBurnRequest:
+      description: The request to get the factory and choice context for creating a burn offer.
       type: object
       required:
       - holder
-      - holdingContractIds
       - instrumentId
       properties:
         holder:
           description: The party whose holding will be burned.
           type: string
-        holdingContractIds:
-          description: Contract ids of Holdings to be used for the burn.
-          type: array
-          items:
-            type: string
         instrumentId:
           $ref: '#/components/schemas/InstrumentId'
-    RequestMintRequest:
-      description: The request to get the factory and choice context for creating a mint request.
-      type: object
-      required:
-      - holder
-      - instrumentId
-      properties:
-        holder:
-          description: The party for whom the holding will be minted.
-          type: string
-        instrumentId:
-          $ref: '#/components/schemas/InstrumentId'
-    ChoiceContext:
-      description: 'The context required to exercise a choice on a contract via an interface.
-
-        Used to retrieve additional reference date that is passed in via disclosed contracts,
-
-        which are in turn referred to via their contract ID in the `choiceContextData`.
-
-        '
-      type: object
-      required:
-      - choiceContextData
-      - disclosedContracts
-      properties:
-        choiceContextData:
-          description: The additional data to use when exercising the choice.
-          type: object
-        disclosedContracts:
-          description: 'The contracts that are required to be disclosed to the participant node for exercising
-
-            the choice.
-
-            '
-          type: array
-          items:
-            $ref: '#/components/schemas/DisclosedContract'
-    GetBurnMintFactoryRequest:
-      description: The request to get the factory and choice context for burn and mint.
-      type: object
-      required:
-      - instrumentId
-      - inputHoldingCids
-      - outputs
-      properties:
-        instrumentId:
-          $ref: '#/components/schemas/InstrumentId'
-        inputHoldingCids:
-          description: Contract ids of Holdings to be used for the burn.
-          type: array
-          items:
-            type: string
-        outputs:
-          description: The list of specification of a holding to be minted.
-          type: array
-          items:
-            $ref: '#/components/schemas/MintOutput'
     TransferObject:
       description: The transfer payload containing transaction details known only to the sender and receiver.
       type: object
@@ -877,20 +688,56 @@ components:
             type: string
         meta:
           $ref: '#/components/schemas/TransferMeta'
-    OfferBurnRequest:
-      description: The request to get the factory and choice context for creating a burn offer.
+    RequestBurnRequest:
+      description: The request to get the factory and choice context for creating a burn request.
       type: object
       required:
       - holder
+      - holdingContractIds
       - instrumentId
       properties:
         holder:
           description: The party whose holding will be burned.
           type: string
+        holdingContractIds:
+          description: Contract ids of Holdings to be used for the burn.
+          type: array
+          items:
+            type: string
         instrumentId:
           $ref: '#/components/schemas/InstrumentId'
-    OfferMintRequest:
-      description: The request to get the factory and choice context for creating a mint offer.
+    DisclosedContract:
+      allOf:
+      - $ref: '#/components/schemas/ContractMeta'
+      - type: object
+        required:
+        - createdEventBlob
+        properties:
+          createdEventBlob:
+            type: string
+            description: The base64 encoded created event blob
+    GetBurnMintFactoryRequest:
+      description: The request to get the factory and choice context for burn and mint.
+      type: object
+      required:
+      - instrumentId
+      - inputHoldingCids
+      - outputs
+      properties:
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+        inputHoldingCids:
+          description: Contract ids of Holdings to be used for the burn.
+          type: array
+          items:
+            type: string
+        outputs:
+          description: The list of specification of a holding to be minted.
+          type: array
+          items:
+            $ref: '#/components/schemas/MintOutput'
+    RequestMintRequest:
+      description: The request to get the factory and choice context for creating a mint request.
       type: object
       required:
       - holder
@@ -901,65 +748,6 @@ components:
           type: string
         instrumentId:
           $ref: '#/components/schemas/InstrumentId'
-    MintOutput:
-      description: The output to be minted.
-      type: object
-      required:
-      - owner
-      - amount
-      properties:
-        owner:
-          description: The party for whom the holding will be minted.
-          type: string
-        amount:
-          description: The amount to be minted.
-          type: string
-    VerifyTransferProofRequest:
-      description: Request to verify the outcome of a transfer of Registry Utility assets on Canton.
-      type: object
-      required:
-      - updateId
-      - transfer
-      properties:
-        updateId:
-          description: 'For the two-step transfer workflow, specifies the most recent UpdateId.
-
-            If the transfer has completed its second step (accept, reject, or withdraw),
-
-            use the UpdateId associated with that action. Otherwise, use the UpdateId from the initial transfer offer.
-
-            '
-          type: string
-        transfer:
-          $ref: '#/components/schemas/TransferObject'
-    InstrumentId:
-      description: The identifier of the instrument.
-      type: object
-      required:
-      - admin
-      - id
-      properties:
-        admin:
-          description: The party administering the instrument.
-          type: string
-        id:
-          description: The unique identifier of the instrument.
-          type: string
-    TransferProofStatus:
-      description: 'The status of the transfer proof verification:
-
-        - `Success`: The proof is verified and the transfer was successfully concluded
-
-        - `Failure`: The proof is verified, but the transfer did not successfully conclude.
-
-        - `Pending`: The transaction is still in progress (e.g., a transfer offer has been sent but not yet accepted in a two-step flow).
-
-        '
-      type: string
-      enum:
-      - Success
-      - Failure
-      - Pending
     ContractMeta:
       type: object
       required:
@@ -980,31 +768,74 @@ components:
           type: string
           deprecated: true
           description: Deprecated alias of synchronizerId kept for backward compatibility.
-    DisclosedContract:
-      allOf:
-      - $ref: '#/components/schemas/ContractMeta'
-      - type: object
-        required:
-        - createdEventBlob
-        properties:
-          createdEventBlob:
-            type: string
-            description: The base64 encoded created event blob
-    Error:
+    ChoiceContext:
+      description: 'The context required to exercise a choice on a contract via an interface.
+
+        Used to retrieve additional reference date that is passed in via disclosed contracts,
+
+        which are in turn referred to via their contract ID in the `choiceContextData`.
+
+        '
       type: object
-      description: 'A problem occurred with processing the request. For instance: syntactically invalid JSON body, missing required fields, etc.'
       required:
-      - error
-      - error_description
+      - choiceContextData
+      - disclosedContracts
       properties:
-        error:
-          description: An error code, e.g. invalid_token
+        choiceContextData:
+          description: The additional data to use when exercising the choice.
+          type: object
+        disclosedContracts:
+          description: 'The contracts that are required to be disclosed to the participant node for exercising
+
+            the choice.
+
+            '
+          type: array
+          items:
+            $ref: '#/components/schemas/DisclosedContract'
+    OfferMintRequest:
+      description: The request to get the factory and choice context for creating a mint offer.
+      type: object
+      required:
+      - holder
+      - instrumentId
+      properties:
+        holder:
+          description: The party for whom the holding will be minted.
           type: string
-          default: unknown_error
-        error_description:
-          description: A description of the error
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+    FactoryWithChoiceContext:
+      description: 'A factory contract together with the choice context required to exercise the choice
+
+        provided by the factory. Typically used to implement the generic initiation of on-ledger workflows
+
+        via a Daml interface.
+
+
+        Clients SHOULD avoid reusing the same `FactoryWithChoiceContext` for exercising multiple choices,
+
+        as the choice context MAY be specific to the choice being exercised.
+
+        '
+      type: object
+      required:
+      - factoryId
+      - choiceContext
+      properties:
+        factoryId:
+          description: The contract ID of the contract of the factory which can be used to create instruction.
           type: string
-          default: Something went wrong
+        choiceContext:
+          $ref: '#/components/schemas/ChoiceContext'
+    VerifyTransferProofResponse:
+      description: The outcome of verifying a transfer proof.
+      type: object
+      required:
+      - status
+      properties:
+        status:
+          $ref: '#/components/schemas/TransferProofStatus'
   responses:
     '500':
       description: Internal server error
@@ -1028,6 +859,3 @@ components:
     BearerAuth:
       type: http
       scheme: bearer
-x-refined-from:
-- digital-asset-utilities-openapi.yml
-- digital-asset-utilities-runtime-openapi.yml
