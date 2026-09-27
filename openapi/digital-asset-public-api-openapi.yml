@@ -527,62 +527,26 @@ paths:
     - url: http://localhost:8080
       description: Local
 components:
+  responses:
+    '500':
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '404':
+      description: not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '400':
+      description: bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   schemas:
-    FactoryWithChoiceContext:
-      description: 'A factory contract together with the choice context required to exercise the choice
-
-        provided by the factory. Typically used to implement the generic initiation of on-ledger workflows
-
-        via a Daml interface.
-
-
-        Clients SHOULD avoid reusing the same `FactoryWithChoiceContext` for exercising multiple choices,
-
-        as the choice context MAY be specific to the choice being exercised.
-
-        '
-      type: object
-      properties:
-        factoryId:
-          description: The contract ID of the contract implementing the factory interface.
-          type: string
-        choiceContext:
-          $ref: '#/components/schemas/ChoiceContext'
-      required:
-      - factoryId
-      - choiceContext
-    ErrorResponse:
-      type: object
-      required:
-      - error
-      properties:
-        error:
-          type: string
-    GetFactoryRequest:
-      type: object
-      properties:
-        choiceArguments:
-          type: object
-          description: 'The arguments that are intended to be passed to the choice provided by the factory.
-
-            To avoid repeating the Daml type definitions, they are specified as JSON objects.
-
-            However the concrete format is given by how the choice arguments are encoded using the Daml JSON API
-
-            (with the `extraArgs.context` and `extraArgs.meta` fields set to the empty object).
-
-
-            The choice arguments are provided so that the registry can also provide choice-argument
-
-            specific contracts, e.g., the configuration for a specific instrument-id.
-
-            '
-        excludeDebugFields:
-          description: If set to true, the response will not include debug fields.
-          default: false
-          type: boolean
-      required:
-      - choiceArguments
     ChoiceContext:
       description: 'The context required to exercise a choice on a contract via an interface.
 
@@ -608,6 +572,29 @@ components:
       required:
       - choiceContextData
       - disclosedContracts
+    FactoryWithChoiceContext:
+      description: 'A factory contract together with the choice context required to exercise the choice
+
+        provided by the factory. Typically used to implement the generic initiation of on-ledger workflows
+
+        via a Daml interface.
+
+
+        Clients SHOULD avoid reusing the same `FactoryWithChoiceContext` for exercising multiple choices,
+
+        as the choice context MAY be specific to the choice being exercised.
+
+        '
+      type: object
+      properties:
+        factoryId:
+          description: The contract ID of the contract implementing the factory interface.
+          type: string
+        choiceContext:
+          $ref: '#/components/schemas/ChoiceContext'
+      required:
+      - factoryId
+      - choiceContext
     DisclosedContract:
       type: object
       properties:
@@ -657,6 +644,38 @@ components:
       - contractId
       - createdEventBlob
       - synchronizerId
+    ErrorResponse:
+      type: object
+      required:
+      - error
+      properties:
+        error:
+          type: string
+    GetFactoryRequest:
+      type: object
+      properties:
+        choiceArguments:
+          type: object
+          description: 'The arguments that are intended to be passed to the choice provided by the factory.
+
+            To avoid repeating the Daml type definitions, they are specified as JSON objects.
+
+            However the concrete format is given by how the choice arguments are encoded using the Daml JSON API
+
+            (with the `extraArgs.context` and `extraArgs.meta` fields set to the empty object).
+
+
+            The choice arguments are provided so that the registry can also provide choice-argument
+
+            specific contracts, e.g., the configuration for a specific instrument-id.
+
+            '
+        excludeDebugFields:
+          description: If set to true, the response will not include debug fields.
+          default: false
+          type: boolean
+      required:
+      - choiceArguments
     GetChoiceContextRequest:
       description: 'A request to get the context for executing a choice on a contract.
 
@@ -684,18 +703,6 @@ components:
           description: The token for the next page of results, to be used as the lastInstrumentId for the next page.
       required:
       - instruments
-    GetRegistryInfoResponse:
-      type: object
-      properties:
-        adminId:
-          description: The Daml party representing the registry app
-          type: string
-        supportedApis:
-          description: The token standard APIs supported by the registry. Note that this only includes the registry-wide APIs. Use the instrument lookup endpoints to see which APIs are supported for a given instrument
-          $ref: '#/components/schemas/SupportedApis'
-      required:
-      - adminId
-      - supportedApis
     Instrument:
       type: object
       properties:
@@ -752,6 +759,18 @@ components:
       additionalProperties:
         type: integer
         format: int32
+    GetRegistryInfoResponse:
+      type: object
+      properties:
+        adminId:
+          description: The Daml party representing the registry app
+          type: string
+        supportedApis:
+          description: The token standard APIs supported by the registry. Note that this only includes the registry-wide APIs. Use the instrument lookup endpoints to see which APIs are supported for a given instrument
+          $ref: '#/components/schemas/SupportedApis'
+      required:
+      - adminId
+      - supportedApis
     TransferFactoryWithChoiceContext:
       description: 'The transfer factory contract together with the choice context required to exercise the choice
 
@@ -808,25 +827,6 @@ components:
       required:
       - choiceContextData
       - disclosedContracts
-  responses:
-    '500':
-      description: Internal server error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    '400':
-      description: bad request
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    '404':
-      description: not found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
 x-refined-from:
 - digital-asset-allocation-instruction-v1-openapi.yml
 - digital-asset-allocation-v1-openapi.yml
