@@ -551,57 +551,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    MintOutput:
-      description: The output to be minted.
-      type: object
-      required:
-      - owner
-      - amount
-      properties:
-        owner:
-          description: The party for whom the holding will be minted.
-          type: string
-        amount:
-          description: The amount to be minted.
-          type: string
-    ContractMeta:
-      type: object
-      required:
-      - contractId
-      - templateId
-      properties:
-        createdAt:
-          type: string
-          format: date-time
-        contractId:
-          type: string
-        templateId:
-          type: string
-        synchronizerId:
-          type: string
-          description: Preferred synchronizer identifier for disclosed contracts and contract metadata.
-        domainId:
-          type: string
-          deprecated: true
-          description: Deprecated alias of synchronizerId kept for backward compatibility.
-    VerifyTransferProofRequest:
-      description: Request to verify the outcome of a transfer of Registry Utility assets on Canton.
-      type: object
-      required:
-      - updateId
-      - transfer
-      properties:
-        updateId:
-          description: 'For the two-step transfer workflow, specifies the most recent UpdateId.
-
-            If the transfer has completed its second step (accept, reject, or withdraw),
-
-            use the UpdateId associated with that action. Otherwise, use the UpdateId from the initial transfer offer.
-
-            '
-          type: string
-        transfer:
-          $ref: '#/components/schemas/TransferObject'
     TransferMeta:
       description: Additional metadata associated with the transfer.
       type: object
@@ -613,61 +562,6 @@ components:
           type: object
           additionalProperties:
             type: string
-    RequestBurnRequest:
-      description: The request to get the factory and choice context for creating a burn request.
-      type: object
-      required:
-      - holder
-      - holdingContractIds
-      - instrumentId
-      properties:
-        holder:
-          description: The party whose holding will be burned.
-          type: string
-        holdingContractIds:
-          description: Contract ids of Holdings to be used for the burn.
-          type: array
-          items:
-            type: string
-        instrumentId:
-          $ref: '#/components/schemas/InstrumentId'
-    TransferProofStatus:
-      description: 'The status of the transfer proof verification:
-
-        - `Success`: The proof is verified and the transfer was successfully concluded
-
-        - `Failure`: The proof is verified, but the transfer did not successfully conclude.
-
-        - `Pending`: The transaction is still in progress (e.g., a transfer offer has been sent but not yet accepted in a two-step flow).
-
-        '
-      type: string
-      enum:
-      - Success
-      - Failure
-      - Pending
-    DisclosedContract:
-      allOf:
-      - $ref: '#/components/schemas/ContractMeta'
-      - type: object
-        required:
-        - createdEventBlob
-        properties:
-          createdEventBlob:
-            type: string
-            description: The base64 encoded created event blob
-    RequestMintRequest:
-      description: The request to get the factory and choice context for creating a mint request.
-      type: object
-      required:
-      - holder
-      - instrumentId
-      properties:
-        holder:
-          description: The party for whom the holding will be minted.
-          type: string
-        instrumentId:
-          $ref: '#/components/schemas/InstrumentId'
     GetBurnMintFactoryRequest:
       description: The request to get the factory and choice context for burn and mint.
       type: object
@@ -688,6 +582,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MintOutput'
+    DisclosedContract:
+      allOf:
+      - $ref: '#/components/schemas/ContractMeta'
+      - type: object
+        required:
+        - createdEventBlob
+        properties:
+          createdEventBlob:
+            type: string
+            description: The base64 encoded created event blob
     FactoryWithChoiceContext:
       description: 'A factory contract together with the choice context required to exercise the choice
 
@@ -726,6 +630,97 @@ components:
           description: A description of the error
           type: string
           default: Something went wrong
+    MintOutput:
+      description: The output to be minted.
+      type: object
+      required:
+      - owner
+      - amount
+      properties:
+        owner:
+          description: The party for whom the holding will be minted.
+          type: string
+        amount:
+          description: The amount to be minted.
+          type: string
+    TransferProofStatus:
+      description: 'The status of the transfer proof verification:
+
+        - `Success`: The proof is verified and the transfer was successfully concluded
+
+        - `Failure`: The proof is verified, but the transfer did not successfully conclude.
+
+        - `Pending`: The transaction is still in progress (e.g., a transfer offer has been sent but not yet accepted in a two-step flow).
+
+        '
+      type: string
+      enum:
+      - Success
+      - Failure
+      - Pending
+    ChoiceContext:
+      description: 'The context required to exercise a choice on a contract via an interface.
+
+        Used to retrieve additional reference date that is passed in via disclosed contracts,
+
+        which are in turn referred to via their contract ID in the `choiceContextData`.
+
+        '
+      type: object
+      required:
+      - choiceContextData
+      - disclosedContracts
+      properties:
+        choiceContextData:
+          description: The additional data to use when exercising the choice.
+          type: object
+        disclosedContracts:
+          description: 'The contracts that are required to be disclosed to the participant node for exercising
+
+            the choice.
+
+            '
+          type: array
+          items:
+            $ref: '#/components/schemas/DisclosedContract'
+    ContractMeta:
+      type: object
+      required:
+      - contractId
+      - templateId
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        contractId:
+          type: string
+        templateId:
+          type: string
+        synchronizerId:
+          type: string
+          description: Preferred synchronizer identifier for disclosed contracts and contract metadata.
+        domainId:
+          type: string
+          deprecated: true
+          description: Deprecated alias of synchronizerId kept for backward compatibility.
+    RequestBurnRequest:
+      description: The request to get the factory and choice context for creating a burn request.
+      type: object
+      required:
+      - holder
+      - holdingContractIds
+      - instrumentId
+      properties:
+        holder:
+          description: The party whose holding will be burned.
+          type: string
+        holdingContractIds:
+          description: Contract ids of Holdings to be used for the burn.
+          type: array
+          items:
+            type: string
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
     TransferObject:
       description: The transfer payload containing transaction details known only to the sender and receiver.
       type: object
@@ -766,6 +761,18 @@ components:
             type: string
         meta:
           $ref: '#/components/schemas/TransferMeta'
+    OfferBurnRequest:
+      description: The request to get the factory and choice context for creating a burn offer.
+      type: object
+      required:
+      - holder
+      - instrumentId
+      properties:
+        holder:
+          description: The party whose holding will be burned.
+          type: string
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
     InstrumentId:
       description: The identifier of the instrument.
       type: object
@@ -779,6 +786,44 @@ components:
         id:
           description: The unique identifier of the instrument.
           type: string
+    VerifyTransferProofRequest:
+      description: Request to verify the outcome of a transfer of Registry Utility assets on Canton.
+      type: object
+      required:
+      - updateId
+      - transfer
+      properties:
+        updateId:
+          description: 'For the two-step transfer workflow, specifies the most recent UpdateId.
+
+            If the transfer has completed its second step (accept, reject, or withdraw),
+
+            use the UpdateId associated with that action. Otherwise, use the UpdateId from the initial transfer offer.
+
+            '
+          type: string
+        transfer:
+          $ref: '#/components/schemas/TransferObject'
+    VerifyTransferProofResponse:
+      description: The outcome of verifying a transfer proof.
+      type: object
+      required:
+      - status
+      properties:
+        status:
+          $ref: '#/components/schemas/TransferProofStatus'
+    RequestMintRequest:
+      description: The request to get the factory and choice context for creating a mint request.
+      type: object
+      required:
+      - holder
+      - instrumentId
+      properties:
+        holder:
+          description: The party for whom the holding will be minted.
+          type: string
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
     OfferMintRequest:
       description: The request to get the factory and choice context for creating a mint offer.
       type: object
@@ -791,51 +836,6 @@ components:
           type: string
         instrumentId:
           $ref: '#/components/schemas/InstrumentId'
-    OfferBurnRequest:
-      description: The request to get the factory and choice context for creating a burn offer.
-      type: object
-      required:
-      - holder
-      - instrumentId
-      properties:
-        holder:
-          description: The party whose holding will be burned.
-          type: string
-        instrumentId:
-          $ref: '#/components/schemas/InstrumentId'
-    ChoiceContext:
-      description: 'The context required to exercise a choice on a contract via an interface.
-
-        Used to retrieve additional reference date that is passed in via disclosed contracts,
-
-        which are in turn referred to via their contract ID in the `choiceContextData`.
-
-        '
-      type: object
-      required:
-      - choiceContextData
-      - disclosedContracts
-      properties:
-        choiceContextData:
-          description: The additional data to use when exercising the choice.
-          type: object
-        disclosedContracts:
-          description: 'The contracts that are required to be disclosed to the participant node for exercising
-
-            the choice.
-
-            '
-          type: array
-          items:
-            $ref: '#/components/schemas/DisclosedContract'
-    VerifyTransferProofResponse:
-      description: The outcome of verifying a transfer proof.
-      type: object
-      required:
-      - status
-      properties:
-        status:
-          $ref: '#/components/schemas/TransferProofStatus'
   responses:
     '404':
       description: not found

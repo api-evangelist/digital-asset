@@ -128,8 +128,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    GetInstrumentConfigurationResponse:
-      $ref: '#/components/schemas/InstrumentConfiguration'
     InstrumentConfiguration:
       type: object
       required:
@@ -140,114 +138,6 @@ components:
           $ref: '#/components/schemas/ContractMeta'
         payload:
           $ref: '#/components/schemas/InstrumentConfigurationPayload'
-    CredentialClaim:
-      type: object
-      required:
-      - property
-      - value
-      properties:
-        property:
-          type: string
-          description: The property of the claim
-        value:
-          type: string
-          description: The value of the claim
-    GetAllPackagesResponse:
-      type: object
-      required:
-      - packages
-      properties:
-        packages:
-          type: array
-          items:
-            $ref: '#/components/schemas/PackageDescriptor'
-    GetAllInstrumentConfigurationsResponse:
-      type: object
-      required:
-      - instrumentConfigurations
-      properties:
-        instrumentConfigurations:
-          type: array
-          description: All instrument configurations
-          items:
-            $ref: '#/components/schemas/InstrumentConfiguration'
-    Error:
-      type: object
-      description: 'A problem occurred with processing the request. For instance: syntactically invalid JSON body, missing required fields, etc.'
-      required:
-      - error
-      - error_description
-      properties:
-        error:
-          description: An error code, e.g. invalid_token
-          type: string
-          default: unknown_error
-        error_description:
-          description: A description of the error
-          type: string
-          default: Something went wrong
-    PartyCredentialRequirement:
-      type: object
-      required:
-      - issuer
-      - requiredClaims
-      properties:
-        issuer:
-          type: string
-          description: Required issuer of the credential
-        requiredClaims:
-          type: string
-          description: Required (property, value) pairs that the holder has to have claims for as a subject
-          items:
-            $ref: '#/components/schemas/CredentialClaim'
-    GetOperatorResponse:
-      type: object
-      required:
-      - partyId
-      properties:
-        partyId:
-          type: string
-          description: The operator party id
-    InstrumentIdentifier:
-      type: object
-      required:
-      - source
-      - id
-      - scheme
-      properties:
-        source:
-          description: The entity that originally created or issued the identifier.
-          type: string
-        id:
-          description: The identifier for the instrument
-          type: string
-        scheme:
-          description: The scheme or standard used for the identifier.
-          type: string
-    GetInstrumentConfigurationRequest:
-      type: object
-      required:
-      - registrar
-      - instrumentIdentifier
-      properties:
-        registrar:
-          type: string
-          description: The registrar party id
-        instrumentIdentifier:
-          $ref: '#/components/schemas/InstrumentIdentifier'
-    PackageDescriptor:
-      type: object
-      description: Contains the package ids for a given package name
-      required:
-      - name
-      - id
-      properties:
-        name:
-          description: Name of the package
-          type: string
-        id:
-          description: Package ID
-          type: string
     ContractMeta:
       type: object
       required:
@@ -268,6 +158,50 @@ components:
           type: string
           deprecated: true
           description: Deprecated alias of synchronizerId kept for backward compatibility.
+    PackageDescriptor:
+      type: object
+      description: Contains the package ids for a given package name
+      required:
+      - name
+      - id
+      properties:
+        name:
+          description: Name of the package
+          type: string
+        id:
+          description: Package ID
+          type: string
+    Error:
+      type: object
+      description: 'A problem occurred with processing the request. For instance: syntactically invalid JSON body, missing required fields, etc.'
+      required:
+      - error
+      - error_description
+      properties:
+        error:
+          description: An error code, e.g. invalid_token
+          type: string
+          default: unknown_error
+        error_description:
+          description: A description of the error
+          type: string
+          default: Something went wrong
+    InstrumentIdentifier:
+      type: object
+      required:
+      - source
+      - id
+      - scheme
+      properties:
+        source:
+          description: The entity that originally created or issued the identifier.
+          type: string
+        id:
+          description: The identifier for the instrument
+          type: string
+        scheme:
+          description: The scheme or standard used for the identifier.
+          type: string
     InstrumentConfigurationPayload:
       type: object
       required:
@@ -305,6 +239,72 @@ components:
           description: Credential requirements to transfer/lock/unlock a given asset
           items:
             $ref: '#/components/schemas/PartyCredentialRequirement'
+    GetInstrumentConfigurationResponse:
+      $ref: '#/components/schemas/InstrumentConfiguration'
+    PartyCredentialRequirement:
+      type: object
+      required:
+      - issuer
+      - requiredClaims
+      properties:
+        issuer:
+          type: string
+          description: Required issuer of the credential
+        requiredClaims:
+          type: string
+          description: Required (property, value) pairs that the holder has to have claims for as a subject
+          items:
+            $ref: '#/components/schemas/CredentialClaim'
+    GetOperatorResponse:
+      type: object
+      required:
+      - partyId
+      properties:
+        partyId:
+          type: string
+          description: The operator party id
+    GetInstrumentConfigurationRequest:
+      type: object
+      required:
+      - registrar
+      - instrumentIdentifier
+      properties:
+        registrar:
+          type: string
+          description: The registrar party id
+        instrumentIdentifier:
+          $ref: '#/components/schemas/InstrumentIdentifier'
+    GetAllInstrumentConfigurationsResponse:
+      type: object
+      required:
+      - instrumentConfigurations
+      properties:
+        instrumentConfigurations:
+          type: array
+          description: All instrument configurations
+          items:
+            $ref: '#/components/schemas/InstrumentConfiguration'
+    CredentialClaim:
+      type: object
+      required:
+      - property
+      - value
+      properties:
+        property:
+          type: string
+          description: The property of the claim
+        value:
+          type: string
+          description: The value of the claim
+    GetAllPackagesResponse:
+      type: object
+      required:
+      - packages
+      properties:
+        packages:
+          type: array
+          items:
+            $ref: '#/components/schemas/PackageDescriptor'
   securitySchemes:
     BearerAuth:
       type: http
