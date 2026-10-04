@@ -551,98 +551,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    TransferMeta:
-      description: Additional metadata associated with the transfer.
-      type: object
-      required:
-      - values
-      properties:
-        values:
-          description: Arbitrary key-value metadata attached to the transfer.
-          type: object
-          additionalProperties:
-            type: string
-    GetBurnMintFactoryRequest:
-      description: The request to get the factory and choice context for burn and mint.
-      type: object
-      required:
-      - instrumentId
-      - inputHoldingCids
-      - outputs
-      properties:
-        instrumentId:
-          $ref: '#/components/schemas/InstrumentId'
-        inputHoldingCids:
-          description: Contract ids of Holdings to be used for the burn.
-          type: array
-          items:
-            type: string
-        outputs:
-          description: The list of specification of a holding to be minted.
-          type: array
-          items:
-            $ref: '#/components/schemas/MintOutput'
-    DisclosedContract:
-      allOf:
-      - $ref: '#/components/schemas/ContractMeta'
-      - type: object
-        required:
-        - createdEventBlob
-        properties:
-          createdEventBlob:
-            type: string
-            description: The base64 encoded created event blob
-    FactoryWithChoiceContext:
-      description: 'A factory contract together with the choice context required to exercise the choice
-
-        provided by the factory. Typically used to implement the generic initiation of on-ledger workflows
-
-        via a Daml interface.
-
-
-        Clients SHOULD avoid reusing the same `FactoryWithChoiceContext` for exercising multiple choices,
-
-        as the choice context MAY be specific to the choice being exercised.
-
-        '
-      type: object
-      required:
-      - factoryId
-      - choiceContext
-      properties:
-        factoryId:
-          description: The contract ID of the contract of the factory which can be used to create instruction.
-          type: string
-        choiceContext:
-          $ref: '#/components/schemas/ChoiceContext'
-    Error:
-      type: object
-      description: 'A problem occurred with processing the request. For instance: syntactically invalid JSON body, missing required fields, etc.'
-      required:
-      - error
-      - error_description
-      properties:
-        error:
-          description: An error code, e.g. invalid_token
-          type: string
-          default: unknown_error
-        error_description:
-          description: A description of the error
-          type: string
-          default: Something went wrong
-    MintOutput:
-      description: The output to be minted.
-      type: object
-      required:
-      - owner
-      - amount
-      properties:
-        owner:
-          description: The party for whom the holding will be minted.
-          type: string
-        amount:
-          description: The amount to be minted.
-          type: string
     TransferProofStatus:
       description: 'The status of the transfer proof verification:
 
@@ -658,6 +566,59 @@ components:
       - Success
       - Failure
       - Pending
+    DisclosedContract:
+      allOf:
+      - $ref: '#/components/schemas/ContractMeta'
+      - type: object
+        required:
+        - createdEventBlob
+        properties:
+          createdEventBlob:
+            type: string
+            description: The base64 encoded created event blob
+    Error:
+      type: object
+      description: 'A problem occurred with processing the request. For instance: syntactically invalid JSON body, missing required fields, etc.'
+      required:
+      - error
+      - error_description
+      properties:
+        error:
+          description: An error code, e.g. invalid_token
+          type: string
+          default: unknown_error
+        error_description:
+          description: A description of the error
+          type: string
+          default: Something went wrong
+    ContractMeta:
+      type: object
+      required:
+      - contractId
+      - templateId
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        contractId:
+          type: string
+        templateId:
+          type: string
+        synchronizerId:
+          type: string
+          description: Preferred synchronizer identifier for disclosed contracts and contract metadata.
+        domainId:
+          type: string
+          deprecated: true
+          description: Deprecated alias of synchronizerId kept for backward compatibility.
+    VerifyTransferProofResponse:
+      description: The outcome of verifying a transfer proof.
+      type: object
+      required:
+      - status
+      properties:
+        status:
+          $ref: '#/components/schemas/TransferProofStatus'
     ChoiceContext:
       description: 'The context required to exercise a choice on a contract via an interface.
 
@@ -683,26 +644,24 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DisclosedContract'
-    ContractMeta:
+    VerifyTransferProofRequest:
+      description: Request to verify the outcome of a transfer of Registry Utility assets on Canton.
       type: object
       required:
-      - contractId
-      - templateId
+      - updateId
+      - transfer
       properties:
-        createdAt:
+        updateId:
+          description: 'For the two-step transfer workflow, specifies the most recent UpdateId.
+
+            If the transfer has completed its second step (accept, reject, or withdraw),
+
+            use the UpdateId associated with that action. Otherwise, use the UpdateId from the initial transfer offer.
+
+            '
           type: string
-          format: date-time
-        contractId:
-          type: string
-        templateId:
-          type: string
-        synchronizerId:
-          type: string
-          description: Preferred synchronizer identifier for disclosed contracts and contract metadata.
-        domainId:
-          type: string
-          deprecated: true
-          description: Deprecated alias of synchronizerId kept for backward compatibility.
+        transfer:
+          $ref: '#/components/schemas/TransferObject'
     RequestBurnRequest:
       description: The request to get the factory and choice context for creating a burn request.
       type: object
@@ -719,6 +678,18 @@ components:
           type: array
           items:
             type: string
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+    OfferMintRequest:
+      description: The request to get the factory and choice context for creating a mint offer.
+      type: object
+      required:
+      - holder
+      - instrumentId
+      properties:
+        holder:
+          description: The party for whom the holding will be minted.
+          type: string
         instrumentId:
           $ref: '#/components/schemas/InstrumentId'
     TransferObject:
@@ -761,18 +732,6 @@ components:
             type: string
         meta:
           $ref: '#/components/schemas/TransferMeta'
-    OfferBurnRequest:
-      description: The request to get the factory and choice context for creating a burn offer.
-      type: object
-      required:
-      - holder
-      - instrumentId
-      properties:
-        holder:
-          description: The party whose holding will be burned.
-          type: string
-        instrumentId:
-          $ref: '#/components/schemas/InstrumentId'
     InstrumentId:
       description: The identifier of the instrument.
       type: object
@@ -786,32 +745,26 @@ components:
         id:
           description: The unique identifier of the instrument.
           type: string
-    VerifyTransferProofRequest:
-      description: Request to verify the outcome of a transfer of Registry Utility assets on Canton.
+    GetBurnMintFactoryRequest:
+      description: The request to get the factory and choice context for burn and mint.
       type: object
       required:
-      - updateId
-      - transfer
+      - instrumentId
+      - inputHoldingCids
+      - outputs
       properties:
-        updateId:
-          description: 'For the two-step transfer workflow, specifies the most recent UpdateId.
-
-            If the transfer has completed its second step (accept, reject, or withdraw),
-
-            use the UpdateId associated with that action. Otherwise, use the UpdateId from the initial transfer offer.
-
-            '
-          type: string
-        transfer:
-          $ref: '#/components/schemas/TransferObject'
-    VerifyTransferProofResponse:
-      description: The outcome of verifying a transfer proof.
-      type: object
-      required:
-      - status
-      properties:
-        status:
-          $ref: '#/components/schemas/TransferProofStatus'
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+        inputHoldingCids:
+          description: Contract ids of Holdings to be used for the burn.
+          type: array
+          items:
+            type: string
+        outputs:
+          description: The list of specification of a holding to be minted.
+          type: array
+          items:
+            $ref: '#/components/schemas/MintOutput'
     RequestMintRequest:
       description: The request to get the factory and choice context for creating a mint request.
       type: object
@@ -824,25 +777,66 @@ components:
           type: string
         instrumentId:
           $ref: '#/components/schemas/InstrumentId'
-    OfferMintRequest:
-      description: The request to get the factory and choice context for creating a mint offer.
+    FactoryWithChoiceContext:
+      description: 'A factory contract together with the choice context required to exercise the choice
+
+        provided by the factory. Typically used to implement the generic initiation of on-ledger workflows
+
+        via a Daml interface.
+
+
+        Clients SHOULD avoid reusing the same `FactoryWithChoiceContext` for exercising multiple choices,
+
+        as the choice context MAY be specific to the choice being exercised.
+
+        '
+      type: object
+      required:
+      - factoryId
+      - choiceContext
+      properties:
+        factoryId:
+          description: The contract ID of the contract of the factory which can be used to create instruction.
+          type: string
+        choiceContext:
+          $ref: '#/components/schemas/ChoiceContext'
+    TransferMeta:
+      description: Additional metadata associated with the transfer.
+      type: object
+      required:
+      - values
+      properties:
+        values:
+          description: Arbitrary key-value metadata attached to the transfer.
+          type: object
+          additionalProperties:
+            type: string
+    MintOutput:
+      description: The output to be minted.
+      type: object
+      required:
+      - owner
+      - amount
+      properties:
+        owner:
+          description: The party for whom the holding will be minted.
+          type: string
+        amount:
+          description: The amount to be minted.
+          type: string
+    OfferBurnRequest:
+      description: The request to get the factory and choice context for creating a burn offer.
       type: object
       required:
       - holder
       - instrumentId
       properties:
         holder:
-          description: The party for whom the holding will be minted.
+          description: The party whose holding will be burned.
           type: string
         instrumentId:
           $ref: '#/components/schemas/InstrumentId'
   responses:
-    '404':
-      description: not found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     '500':
       description: Internal server error
       content:
@@ -851,6 +845,12 @@ components:
             $ref: '#/components/schemas/Error'
     '400':
       description: bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    '404':
+      description: not found
       content:
         application/json:
           schema:

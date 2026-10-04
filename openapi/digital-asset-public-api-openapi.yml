@@ -528,31 +528,29 @@ paths:
       description: Local
 components:
   schemas:
-    ChoiceContext:
-      description: 'The context required to exercise a choice on a contract via an interface.
+    FactoryWithChoiceContext:
+      description: 'A factory contract together with the choice context required to exercise the choice
 
-        Used to retrieve additional reference date that is passed in via disclosed contracts,
+        provided by the factory. Typically used to implement the generic initiation of on-ledger workflows
 
-        which are in turn referred to via their contract ID in the `choiceContextData`.
+        via a Daml interface.
+
+
+        Clients SHOULD avoid reusing the same `FactoryWithChoiceContext` for exercising multiple choices,
+
+        as the choice context MAY be specific to the choice being exercised.
 
         '
       type: object
       properties:
-        choiceContextData:
-          description: The additional data to use when exercising the choice.
-          type: object
-        disclosedContracts:
-          description: 'The contracts that are required to be disclosed to the participant node for exercising
-
-            the choice.
-
-            '
-          type: array
-          items:
-            $ref: '#/components/schemas/DisclosedContract'
+        factoryId:
+          description: The contract ID of the contract implementing the factory interface.
+          type: string
+        choiceContext:
+          $ref: '#/components/schemas/ChoiceContext'
       required:
-      - choiceContextData
-      - disclosedContracts
+      - factoryId
+      - choiceContext
     ErrorResponse:
       type: object
       required:
@@ -560,31 +558,6 @@ components:
       properties:
         error:
           type: string
-    GetFactoryRequest:
-      type: object
-      properties:
-        choiceArguments:
-          type: object
-          description: 'The arguments that are intended to be passed to the choice provided by the factory.
-
-            To avoid repeating the Daml type definitions, they are specified as JSON objects.
-
-            However the concrete format is given by how the choice arguments are encoded using the Daml JSON API
-
-            (with the `extraArgs.context` and `extraArgs.meta` fields set to the empty object).
-
-
-            The choice arguments are provided so that the registry can also provide choice-argument
-
-            specific contracts, e.g., the configuration for a specific instrument-id.
-
-            '
-        excludeDebugFields:
-          description: If set to true, the response will not include debug fields.
-          default: false
-          type: boolean
-      required:
-      - choiceArguments
     DisclosedContract:
       type: object
       properties:
@@ -634,29 +607,56 @@ components:
       - contractId
       - createdEventBlob
       - synchronizerId
-    FactoryWithChoiceContext:
-      description: 'A factory contract together with the choice context required to exercise the choice
+    GetFactoryRequest:
+      type: object
+      properties:
+        choiceArguments:
+          type: object
+          description: 'The arguments that are intended to be passed to the choice provided by the factory.
 
-        provided by the factory. Typically used to implement the generic initiation of on-ledger workflows
+            To avoid repeating the Daml type definitions, they are specified as JSON objects.
 
-        via a Daml interface.
+            However the concrete format is given by how the choice arguments are encoded using the Daml JSON API
+
+            (with the `extraArgs.context` and `extraArgs.meta` fields set to the empty object).
 
 
-        Clients SHOULD avoid reusing the same `FactoryWithChoiceContext` for exercising multiple choices,
+            The choice arguments are provided so that the registry can also provide choice-argument
 
-        as the choice context MAY be specific to the choice being exercised.
+            specific contracts, e.g., the configuration for a specific instrument-id.
+
+            '
+        excludeDebugFields:
+          description: If set to true, the response will not include debug fields.
+          default: false
+          type: boolean
+      required:
+      - choiceArguments
+    ChoiceContext:
+      description: 'The context required to exercise a choice on a contract via an interface.
+
+        Used to retrieve additional reference date that is passed in via disclosed contracts,
+
+        which are in turn referred to via their contract ID in the `choiceContextData`.
 
         '
       type: object
       properties:
-        factoryId:
-          description: The contract ID of the contract implementing the factory interface.
-          type: string
-        choiceContext:
-          $ref: '#/components/schemas/ChoiceContext'
+        choiceContextData:
+          description: The additional data to use when exercising the choice.
+          type: object
+        disclosedContracts:
+          description: 'The contracts that are required to be disclosed to the participant node for exercising
+
+            the choice.
+
+            '
+          type: array
+          items:
+            $ref: '#/components/schemas/DisclosedContract'
       required:
-      - factoryId
-      - choiceContext
+      - choiceContextData
+      - disclosedContracts
     GetChoiceContextRequest:
       description: 'A request to get the context for executing a choice on a contract.
 
@@ -672,6 +672,30 @@ components:
           type: object
           additionalProperties:
             type: string
+    ListInstrumentsResponse:
+      type: object
+      properties:
+        instruments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Instrument'
+        nextPageToken:
+          type: string
+          description: The token for the next page of results, to be used as the lastInstrumentId for the next page.
+      required:
+      - instruments
+    GetRegistryInfoResponse:
+      type: object
+      properties:
+        adminId:
+          description: The Daml party representing the registry app
+          type: string
+        supportedApis:
+          description: The token standard APIs supported by the registry. Note that this only includes the registry-wide APIs. Use the instrument lookup endpoints to see which APIs are supported for a given instrument
+          $ref: '#/components/schemas/SupportedApis'
+      required:
+      - adminId
+      - supportedApis
     Instrument:
       type: object
       properties:
@@ -717,30 +741,6 @@ components:
       - name
       - symbol
       - decimals
-      - supportedApis
-    ListInstrumentsResponse:
-      type: object
-      properties:
-        instruments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Instrument'
-        nextPageToken:
-          type: string
-          description: The token for the next page of results, to be used as the lastInstrumentId for the next page.
-      required:
-      - instruments
-    GetRegistryInfoResponse:
-      type: object
-      properties:
-        adminId:
-          description: The Daml party representing the registry app
-          type: string
-        supportedApis:
-          description: The token standard APIs supported by the registry. Note that this only includes the registry-wide APIs. Use the instrument lookup endpoints to see which APIs are supported for a given instrument
-          $ref: '#/components/schemas/SupportedApis'
-      required:
-      - adminId
       - supportedApis
     SupportedApis:
       description: 'Map from token standard API name to the minor version of the API supported, e.g.,
@@ -809,14 +809,14 @@ components:
       - choiceContext
       - transferKind
   responses:
-    '500':
-      description: Internal server error
+    '404':
+      description: not found
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
-    '404':
-      description: not found
+    '500':
+      description: Internal server error
       content:
         application/json:
           schema:
