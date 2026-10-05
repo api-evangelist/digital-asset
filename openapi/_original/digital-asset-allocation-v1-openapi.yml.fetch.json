@@ -1,0 +1,12 @@
+{
+ "url": "https://docs.digitalasset.com/registry/apis/open-api-specs/utility-token-standard/v1/allocation-v1.yaml",
+ "requested_url": "https://docs.digitalasset.com/registry/apis/open-api-specs/utility-token-standard/v1/allocation-v1.yaml",
+ "status": 200,
+ "content_type": "text/yaml",
+ "bytes": 7472,
+ "sha256": "20640caed0109a4408dcdb701daa726b49133554d21931e16e568e71cbe467d6",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
