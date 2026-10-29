@@ -64,5 +64,122 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Digital Asset is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/digital-asset_stock/
+Digital Asset is the company behind Canton, a privacy-enabled public blockchain built for regulated institutional finance, and Daml, the smart-contract language that runs on it. Its commercial products sit on top of the Canton Network: the DA Registry, a production platform for issuing, minting, burning, transferring and redeeming institutional-grade tokenized assets with credential-based allowlists, blocklists and proof-of-transfer; xReserve, which brings Circle's USDC onto Canton; and a Covalidation Service for operating validator infrastructure. Its public developer surface is the Utilities (Operator Backend) API plus four Canton Token Standard (CIP-56) off-ledger APIs — token metadata, transfer instruction, allocation and allocation instruction — all published as OpenAPI 3.0 and served across MainNet, TestNet and DevNet environments. Digital Asset also publishes an A2A agent card and a packaged Agent Skill for its Registry workflows.
+
+**Areas:** Blockchain · Tokenization · Digital Assets · Financial Services · Distributed Ledger · Smart Contracts · Capital Markets · Canton Network · Daml · Stablecoins · A2A
+
+## Digital Asset on APIs.io
+
+Everything profiled for Digital Asset is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/digital-asset/](https://apis.io/providers/digital-asset/)** — or go straight to one of the APIs or properties below.
+
+### APIs (4)
+
+- [Digital Asset Common API](https://apis.io/apis/digital-asset/digital-asset-common-api/) — The common API from Digital Asset — 3 operation(s) for common.
+- [Digital Asset Operator API](https://apis.io/apis/digital-asset/digital-asset-operator-api/) — The operator API from Digital Asset — 5 operation(s) for operator.
+- [Digital Asset Public API](https://apis.io/apis/digital-asset/digital-asset-public-api/) — The public API from Digital Asset — 11 operation(s) for public.
+- [Digital Asset Registry API](https://apis.io/apis/digital-asset/digital-asset-registry-api/) — The registry API from Digital Asset — 18 operation(s) for registry.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [digital-asset](https://apis.io/servers/digital-asset/digital-asset/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [Utilities Common API](https://apis.io/collections/digital-asset/open-digital-asset-common-api/)
+- [Digital Asset Operator API](https://apis.io/collections/digital-asset/open-digital-asset-operator-api/)
+- [Digital Asset Public API](https://apis.io/collections/digital-asset/open-digital-asset-public-api/)
+- [Digital Asset Registry API](https://apis.io/collections/digital-asset/open-digital-asset-registry-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Digital Asset Utilities Overlay](https://apis.io/overlays/digital-asset/digital-asset-utilities-overlay/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Digital Asset Authentication](https://apis.io/security/digital-asset/digital-asset-authentication/)
+- [Digital Asset Domain Security](https://apis.io/security/digital-asset/digital-asset-domain-security/)
+- [Digital Asset Trust Center](https://apis.io/security/digital-asset/digital-asset-trust-center/)
+- [Digital Asset Vulnerability Disclosure](https://apis.io/security/digital-asset/digital-asset-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.digitalasset.com/)
+- [Documentation](https://docs.digitalasset.com/registry/overview)
+- [Getting started](https://docs.digitalasset.com/registry/get-started/quickstart)
+- [API reference](https://docs.digitalasset.com/api-reference/operator/get-apiutilitiesv0operator)
+- [Support](https://docs.digitalasset.com/registry/support/contact)
+- [Blog](https://blog.digitalasset.com/blog)
+- [Security](https://www.digitalasset.com/responsible-disclosure)
+- [Compliance](https://www.digitalasset.com/trust-center)
+- [Trust centre](https://www.digitalasset.com/trust-center)
+- [Privacy policy](https://www.digitalasset.com/privacy-policy)
+- [GitHub](https://github.com/digital-asset)
+
+## API Evangelist rating
+
+**Kin Score 47.8** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 41.8 |
+| Contract governance | 4.5 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 85.7 |
+| Access clarity | 26.3 |
+
+**Agent readiness 28.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 31.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/digital-asset/](https://apis.io/providers/digital-asset/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Digital Asset: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/digital-asset/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
